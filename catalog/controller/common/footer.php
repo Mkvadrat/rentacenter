@@ -113,4 +113,73 @@ class ControllerCommonFooter extends Controller {
 			return $this->load->view('default/template/common/footer.tpl', $data);
 		}
 	}
+	
+	public function sendFullForm(){
+		$json = array();
+		
+		$json = array(
+			'status' => 0,
+			'message' => ''
+		);
+		
+		$site_url = $_SERVER['SERVER_NAME'];
+	
+		if (isset($this->request->post['name'])) {$name = $this->request->post['name']; if ($name == '') {unset($name);}}
+		if (isset($this->request->post['tel'])) {$tel = $this->request->post['tel']; if ($tel == '') {unset($tel);}}
+		if (isset($this->request->post['email'])) {$email = $this->request->post['email']; if ($email == '') {unset($email);}}
+		if (isset($this->request->post['question'])) {$question = $this->request->post['question']; if ($question == '') {unset($question);}}
+	
+		if (isset($name) && isset($tel) && isset($email) && isset($question)){
+			
+			$mail = new Mail();
+			$mail->protocol = $this->config->get('config_mail_protocol');
+			$mail->parameter = $this->config->get('config_mail_parameter');
+			$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
+			$mail->smtp_username = $this->config->get('config_mail_smtp_username');
+			$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
+			$mail->smtp_port = $this->config->get('config_mail_smtp_port');
+			$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
+
+			$mail->setTo($this->config->get('config_email'));
+			$mail->setFrom($site_url);
+			$mail->setSender(html_entity_decode($this->request->post['name'], ENT_QUOTES, 'UTF-8'));
+			$mail->setSubject(html_entity_decode(sprintf($this->language->get($site_url), $this->request->post['name']), ENT_QUOTES, 'UTF-8'));
+			$mail->setText("Имя: $name \nТелефон: $tel \nEmail: $email \nВопрос: $question\n");
+			$send = $mail->send();
+						
+			if ($mail){
+				$json = array(
+					'status' => 1,
+					'message' => 'Вы отправили заявку на ЗВОНОК. Наш менеджер свяжется с Вами в ближайшее время'
+				);
+			}else{
+				$json = array(
+					'status' => 1,
+					'message' => 'Ошибка, сообщение не отправлено!'
+				);
+			}
+		}
+	
+		if (isset($this->request->post['name']) && isset($this->request->post['tel']) && isset($this->request->post['email']) && isset($this->request->post['question'])){
+			$name = $this->request->post['name'];
+			$tel = $this->request->post['tel'];
+			$email = $this->request->post['email'];
+			$question = $this->request->post['question'];
+	
+			if ($name == '' || $email == '' || $tel == '' || $question == '') {
+				unset($name);
+				unset($tel);
+				unset($email);
+				unset($question);
+				
+				$json = array(
+					'status' => 1,
+					'message' => 'Ошибка, сообщение не отправлено! Заполните все поля!'
+				);
+			}
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
 }

@@ -64,6 +64,10 @@
 <link href="catalog/view/theme/rentacenter/css/slider-pro.min.css" rel="stylesheet">
 <script src="catalog/view/theme/rentacenter/js/jquery.sliderPro.min.js"></script>
 
+<!-- SWEETALERT -->
+<link href="catalog/view/theme/rentacenter/css/sweetalert.css" rel="stylesheet">
+<script src="catalog/view/theme/rentacenter/js/sweetalert.min.js"></script>
+
 <!-- HTML5 for IE -->
 <!--[if IE]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>

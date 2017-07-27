@@ -215,12 +215,12 @@ p {
       .black-banner .bread-crumbs li a {
         position: relative;
         display: inline-block;
-        margin-right: 16px;
+        #margin-right: 16px;
         font-size: 14px;
         font-weight: 400;
         line-height: 18px;
         color: #7d7d7d; }
-        .black-banner .bread-crumbs li a::after {
+        #.black-banner .bread-crumbs li a::after {
           content: "";
           position: absolute;
           right: -10px;
@@ -1013,7 +1013,7 @@ textarea:focus:-ms-input-placeholder {
   height: auto;
   background: #1a1a1a;
   background: rgba(26, 26, 26, 0.75); }
-  .main-contacts form .title {
+  .main-contacts .title {
     padding: 25px 0 20px 0;
     font-size: 18px;
     font-weight: 700;
@@ -1471,4 +1471,21 @@ textarea:focus:-ms-input-placeholder {
 
 .header-desctop .block-header li a {
   text-transform: uppercase;
+}
+
+.separator{
+  content: "";
+  right: -10px;
+  top: 3px;
+  display: inline-block;
+  width: 2px;
+  height: 12px;
+  background: #fec52d;
+  -webkit-transform: skewX(-30deg);
+  -moz-transform: skewX(-30deg);
+  -ms-transform: skewX(-30deg);
+  -o-transform: skewX(-30deg);
+  transform: skewX(-30deg);
+  margin-left: 5px;
+  margin-right: 4px;
 }

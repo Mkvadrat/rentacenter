@@ -158,10 +158,21 @@
                         <textarea name="config_langdata[<?php echo $language['language_id']; ?>][comment]" rows="5" placeholder="<?php echo $entry_comment; ?>" id="input-comment<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['comment'] : ''; ?></textarea>
                       </div>
                     </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-comment<?php echo $language['language_id']; ?>">Текст в контактах подвала сайта</label>
+                      <div class="col-sm-10">
+                        <textarea name="config_langdata[<?php echo $language['language_id']; ?>][config_footer_text_contacts]" rows="5" placeholder="Текст в контактах подвала сайта" id="input-comment<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['config_footer_text_contacts'] : ''; ?></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-comment<?php echo $language['language_id']; ?>">Текст в подвале сайта</label>
+                      <div class="col-sm-10">
+                        <textarea name="config_langdata[<?php echo $language['language_id']; ?>][config_footer_text]" rows="5" placeholder="Текст в подвале сайта<" id="input-comment<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['config_footer_text'] : ''; ?></textarea>
+                      </div>
+                    </div>          
                   </div><!-- </div class="tab-pane" id="store-language<?php echo $language['language_id']; ?>">  -->
                   <?php } ?>
                 </div>
-
                 <div class="form-group">
                   <label class="col-sm-2 control-label" for="input-geocode"><span data-toggle="tooltip" data-container="#tab-general" title="<?php echo $help_geocode; ?>"><?php echo $entry_geocode; ?></span></label>
                   <div class="col-sm-10">
@@ -214,18 +225,6 @@
                   <label class="col-sm-2 control-label" for="input-linkedin">Социальные сети (Linkedin)</label>
                   <div class="col-sm-10">
                     <input type="text" name="config_linkedin" value="<?php echo $config_linkedin; ?>" placeholder="Социальные сети (Linkedin)" id="input-linkedin" class="form-control" />
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-footer-text-contacts">Текст в контактах подвала сайта</label>
-                  <div class="col-sm-10">
-                    <textarea name="config_footer_text_contacts" rows="5" placeholder="Текст в контактах подвала сайта" id="input-footer-text-contacts" class="form-control"><?php echo $config_footer_text_contacts; ?></textarea>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-footer-text">Текст в подвале сайта</label>
-                  <div class="col-sm-10">
-                    <textarea name="config_footer_text" rows="5" placeholder="Текст в подвале сайта" id="input-footer-text" class="form-control"><?php echo $config_footer_text; ?></textarea>
                   </div>
                 </div>
                 <div class="form-group">

@@ -23,6 +23,9 @@ class ControllerSettingSetting extends Controller {
       $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['address'];
       $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['open'];
       $this->request->post['config_address'] = $this->request->post['config_langdata'][$front_language_id]['comment'];
+	  $this->request->post['config_footer_text_contacts'] = $this->request->post['config_langdata'][$front_language_id]['config_footer_text_contacts'];
+	  $this->request->post['config_footer_text'] = $this->request->post['config_langdata'][$front_language_id]['config_footer_text'];
+	  
 			$this->request->post['config_mail_regexp'] = trim($this->request->post['config_mail_regexp']);
 
 			$this->model_setting_setting->editSetting('config', $this->request->post);
@@ -1563,18 +1566,6 @@ class ControllerSettingSetting extends Controller {
 			$data['config_sms_copy'] = $this->request->post['config_sms_copy'];
 		} else {
 			$data['config_sms_copy'] = $this->config->get('config_sms_copy');
-		}
-		
-		if (isset($this->request->post['config_footer_text_contacts'])) {
-			$data['config_footer_text_contacts'] = $this->request->post['config_footer_text_contacts'];
-		} else {
-			$data['config_footer_text_contacts'] = $this->config->get('config_footer_text_contacts');
-		}
-		
-		if (isset($this->request->post['config_footer_text'])) {
-			$data['config_footer_text'] = $this->request->post['config_footer_text'];
-		} else {
-			$data['config_footer_text'] = $this->config->get('config_footer_text');
 		}
 
 		$data['header'] = $this->load->controller('common/header');

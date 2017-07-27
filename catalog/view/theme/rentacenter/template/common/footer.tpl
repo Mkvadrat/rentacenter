@@ -80,17 +80,35 @@
     
     </div>
 
-<!-- Theme created by Welford Media for OpenCart 2.0 www.welfordmedia.co.uk -->
 <script>
-$(function () {                                      // Когда страница загрузится
-    $('.menu-desctop li a').each(function () {             // получаем все нужные нам ссылки
-        var location = window.location.href; // получаем адрес страницы
-        var link = this.href;                // получаем адрес ссылки
-        if(location == link) {               // при совпадении адреса ссылки и адреса окна
-            $(this).addClass('active');  //добавляем класс
+$(function () {                                      
+    $('.menu-desctop li a').each(function () {             
+        var location = window.location.href; 
+        var link = this.href;                
+        if(location == link) {               
+            $(this).addClass('active');  
         }
     });
 });
+</script>
+
+<script>
+function sendFullForm(){
+	$.ajax({
+		url: 'index.php?route=common/footer/sendFullForm',
+		type: 'post',
+		data: {  
+            'name' : $('#name_contact_page').val(),
+            'tel' : $('#tel_contact_page').val(),
+            'email' : $('#email_contact_page').val(),
+			'question' : $('#question_contact_page').val(),
+        },
+		dataType: 'json',
+		success: function(data) {
+			swal(data.message);
+		}
+	});
+}
 </script>
 
 </body></html>
