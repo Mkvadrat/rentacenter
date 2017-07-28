@@ -64,6 +64,12 @@
                     </div>
                   </div>
                   <div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-rates<?php echo $language['language_id']; ?>">Тарифы</label>
+                    <div class="col-sm-10">
+                      <textarea name="product_description[<?php echo $language['language_id']; ?>][rates]" placeholder="Тарифы" id="input-rates<?php echo $language['language_id']; ?>"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['rates'] : ''; ?></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-meta-title<?php echo $language['language_id']; ?>"><?php echo $entry_meta_title; ?></label>
                     <div class="col-sm-10">
                       <input type="text" name="product_description[<?php echo $language['language_id']; ?>][meta_title]" value="<?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['meta_title'] : ''; ?>" placeholder="<?php echo $entry_meta_title; ?>" id="input-meta-title<?php echo $language['language_id']; ?>" class="form-control" />
@@ -981,8 +987,10 @@
 <?php foreach ($languages as $language) { ?>
 <?php if ($ckeditor) { ?>
 ckeditorInit('input-description<?php echo $language['language_id']; ?>', '<?php echo $token; ?>');
+ckeditorInit('input-rates<?php echo $language['language_id']; ?>', '<?php echo $token; ?>');
 <?php } else { ?>
 $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300, lang:'<?php echo $lang; ?>'});
+$('#input-rates<?php echo $language['language_id']; ?>').summernote({height: 300, lang:'<?php echo $lang; ?>'});
 <?php } ?>
 <?php } ?>
 //--></script>
