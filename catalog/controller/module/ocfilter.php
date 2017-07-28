@@ -211,7 +211,12 @@ class ControllerModuleOCFilter extends Controller {
 
     $data['symbol_left']      		= $this->currency->getSymbolLeft($this->session->data['currency']);
     $data['symbol_right']      		= $this->currency->getSymbolRight($this->session->data['currency']);
-
+		
+		$data['all_auto'] = $this->url->link('product/category&path=63');
+		$data['economy'] = $this->url->link('product/category&path=60');
+		$data['middle'] = $this->url->link('product/category&path=61');
+		$data['prestige'] = $this->url->link('product/category&path=62');
+		
     if ($this->min_price_get && $this->max_price_get) {
       $data['price'] = 'p' . $this->config->get('ocfilter_sep_opt') . $this->min_price_get . '-' . $this->max_price_get;
     } else {

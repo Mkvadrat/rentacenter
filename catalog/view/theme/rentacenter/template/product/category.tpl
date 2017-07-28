@@ -40,26 +40,7 @@
             <div class="row">
                 <div class="content-block">
                     <div class="col-md-12">
-                        <!--<div class="sorting-cars">
-                            <div class="block-button">
-                                <button class="active">все классы</button>
-                                <button>эконом</button>
-                                <button>средний</button>
-                                <button>престиж</button>
-                            </div>
-                            <div class="sort-price">
-                                <img src="images/sorting.jpg" alt="">
-                            </div>
-                            <div class="pick-up-block">
-                                <div class="check-block">
-                                    <input id="check1" type="checkbox" name="check"  value="check1">
-                                    <label for="check1">Автомат</label>
-                                    <input id="check2" type="checkbox" name="check"  value="check2">
-                                    <label for="check2">Кондиционер</label>
-                                </div>
-                            </div>
-                            <button class="pick-up-button">подобрать</button>
-                        </div>-->
+                        
                         <?php if($products){?>
                         
                         <?php echo $content_top; ?>

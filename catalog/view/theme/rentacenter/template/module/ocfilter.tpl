@@ -1,3 +1,24 @@
+	<div class="sorting-cars">
+			<div class="block-button category-cars">
+					<a href="<?php echo $all_auto; ?>">все классы</a>
+					<a href="<?php echo $economy; ?>">эконом</a>
+					<a href="<?php echo $middle; ?>">средний</a>
+					<a href="<?php echo $prestige; ?>">престиж</a>
+			</div>
+			<!--<div class="sort-price">
+					<img src="catalog/view/theme/rentacenter/images/sorting.jpg" alt="">
+			</div>
+			<div class="pick-up-block">
+					<div class="check-block">
+							<input id="check1" type="checkbox" name="check"  value="check1">
+							<label for="check1">Автомат</label>
+							<input id="check2" type="checkbox" name="check"  value="check2">
+							<label for="check2">Кондиционер</label>
+					</div>
+			</div>
+			<button class="pick-up-button">подобрать</button>-->
+	</div>
+	
 <?php if ($options || $show_price) { ?>
 <div class="visible-xs" id="ocfilter-mobile">
   <nav class="navbar navbar-default">
@@ -244,4 +265,17 @@ $(function() {
   }, 1);
 });
 //--></script>
+
+<script>
+$(function () {                                      
+    $('.category-cars a').each(function () {             
+        var location = window.location.href; 
+        var link = this.href;                
+        if(location == link) {               
+            $(this).addClass('active');  
+        }
+    });
+});
+</script>
+
 <?php } ?>

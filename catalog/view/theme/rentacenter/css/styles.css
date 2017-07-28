@@ -358,7 +358,7 @@ p {
   .sorting-cars .block-button {
     float: left;
     margin-right: 28px; }
-  .sorting-cars button {
+  .sorting-cars a {
     display: inline-block;
     padding: 1em 1.6em;
     text-align: center;
@@ -377,13 +377,13 @@ p {
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s; }
-    .sorting-cars button.active {
+    .sorting-cars a.active {
       background-color: #fec52d; }
-    .sorting-cars button:hover {
+    .sorting-cars a:hover {
       color: #333;
       background-color: #eeaa0e;
       text-decoration: none; }
-    .sorting-cars button:last-child {
+    .sorting-cars a:last-child {
       margin-right: 0; }
   .sorting-cars .sort-price {
     float: left; }
