@@ -4,6 +4,7 @@
     <ul>
       <li><a href="<?php echo $category; ?>"><?php echo $text_category; ?></a></li>
       <li><a href="<?php echo $product; ?>"><?php echo $text_product; ?></a></li>
+      <li><a href="<?php echo $ocfilter; ?>"><?php echo $text_ocfilter; ?></a></li>
       <li><a href="<?php echo $news; ?>">Новости</a></li>
       <li><a href="<?php echo $recurring; ?>"><?php echo $text_recurring; ?></a></li>
       <li><a href="<?php echo $filter; ?>"><?php echo $text_filter; ?></a></li>

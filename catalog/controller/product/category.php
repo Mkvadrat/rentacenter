@@ -38,12 +38,21 @@ class ControllerProductCategory extends Controller {
 		} else {
 			$limit = $this->config->get('config_product_limit');
 		}
+		
+		// OCFilter start
+		if (isset($this->request->get['filter_ocfilter'])) {
+		  $filter_ocfilter = $this->request->get['filter_ocfilter'];
+		} else {
+		  $filter_ocfilter = '';
+		}
+		// OCFilter end
 
 		$data['breadcrumbs'] = array();
 
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('text_home'),
-			'href' => $this->url->link('common/home')
+			'href' => $this->url->link('common/home'),
+			'separator' => $this->language->get('text_separator')
 		);
 
 		if (isset($this->request->get['path'])) {
@@ -79,7 +88,8 @@ class ControllerProductCategory extends Controller {
 				if ($category_info) {
 					$data['breadcrumbs'][] = array(
 						'text' => $category_info['name'],
-						'href' => $this->url->link('product/category', 'path=' . $path . $url)
+						'href' => $this->url->link('product/category', 'path=' . $path . $url),
+						'separator' => $this->language->get('text_separator')
 					);
 				}
 			}
@@ -128,7 +138,8 @@ class ControllerProductCategory extends Controller {
 			// Set the last category breadcrumb
 			$data['breadcrumbs'][] = array(
 				'text' => $category_info['name'],
-				'href' => $this->url->link('product/category', 'path=' . $this->request->get['path'])
+				'href' => $this->url->link('product/category', 'path=' . $this->request->get['path']),
+				'separator' => $this->language->get('text_separator')
 			);
 
 			if ($category_info['image']) {
@@ -142,6 +153,12 @@ class ControllerProductCategory extends Controller {
 			$data['compare'] = $this->url->link('product/compare');
 
 			$url = '';
+			
+			// OCFilter start
+			if (isset($this->request->get['filter_ocfilter'])) {
+				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
+			}
+			// OCFilter end
 
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
@@ -185,6 +202,10 @@ class ControllerProductCategory extends Controller {
 				'start'              => ($page - 1) * $limit,
 				'limit'              => $limit
 			);
+			
+			// OCFilter start
+			$filter_data['filter_ocfilter'] = $filter_ocfilter;
+			// OCFilter end
 
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
@@ -231,11 +252,19 @@ class ControllerProductCategory extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $result['rating'],
-					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
+					'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url),
+					'option'	  => $this->model_catalog_product->getCarsOptions($result['product_id']),
+					'booking'     => $this->url->link('product/reservation', 'product_id=' . $result['product_id']),
 				);
 			}
 
 			$url = '';
+			
+			// OCFilter start
+			if (isset($this->request->get['filter_ocfilter'])) {
+				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
+			}
+			// OCFilter end
 
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
@@ -304,6 +333,12 @@ class ControllerProductCategory extends Controller {
 			);
 
 			$url = '';
+			
+			// OCFilter start
+			if (isset($this->request->get['filter_ocfilter'])) {
+				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
+			}
+			// OCFilter end
 
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
@@ -375,6 +410,82 @@ class ControllerProductCategory extends Controller {
 			$data['sort'] = $sort;
 			$data['order'] = $order;
 			$data['limit'] = $limit;
+			
+			// OCFilter Start
+			$ocfilter_page_info = $this->load->controller('module/ocfilter/getPageInfo');
+	  
+			if ($ocfilter_page_info) {
+			  $this->document->setTitle($ocfilter_page_info['meta_title']);
+	  
+			  if ($ocfilter_page_info['meta_description']) {
+					  $this->document->setDescription($ocfilter_page_info['meta_description']);
+			  }
+	  
+			  if ($ocfilter_page_info['meta_keyword']) {
+					  $this->document->setKeywords($ocfilter_page_info['meta_keyword']);
+			  }
+	  
+					$data['heading_title'] = $ocfilter_page_info['title'];
+	  
+			  if ($ocfilter_page_info['description'] && !isset($this->request->get['page']) && !isset($this->request->get['sort']) && !isset($this->request->get['order']) && !isset($this->request->get['search']) && !isset($this->request->get['limit'])) {
+				  $data['description'] = html_entity_decode($ocfilter_page_info['description'], ENT_QUOTES, 'UTF-8');
+			  }
+			} else {
+			  $meta_title = $this->document->getTitle();
+			  $meta_description = $this->document->getDescription();
+			  $meta_keyword = $this->document->getKeywords();
+	  
+			  $filter_title = $this->load->controller('module/ocfilter/getSelectedsFilterTitle');
+	  
+			  if ($filter_title) {
+				if (false !== strpos($meta_title, '{filter}')) {
+				  $meta_title = trim(str_replace('{filter}', $filter_title, $meta_title));
+				} else {
+				  $meta_title .= ' ' . $filter_title;
+				}
+	  
+				$this->document->setTitle($meta_title);
+	  
+				if ($meta_description) {
+				  if (false !== strpos($meta_description, '{filter}')) {
+					$meta_description = trim(str_replace('{filter}', $filter_title, $meta_description));
+				  } else {
+					$meta_description .= ' ' . $filter_title;
+				  }
+	  
+					  $this->document->setDescription($meta_description);
+				}
+	  
+				if ($meta_keyword) {
+				  if (false !== strpos($meta_keyword, '{filter}')) {
+					$meta_keyword = trim(str_replace('{filter}', $filter_title, $meta_keyword));
+				  } else {
+					$meta_keyword .= ' ' . $filter_title;
+				  }
+	  
+				  $this->document->setKeywords($meta_keyword);
+				}
+	  
+				$heading_title = $data['heading_title'];
+	  
+				if (false !== strpos($heading_title, '{filter}')) {
+				  $heading_title = trim(str_replace('{filter}', $filter_title, $heading_title));
+				} else {
+				  $heading_title .= ' ' . $filter_title;
+				}
+	  
+				$data['heading_title'] = $heading_title;
+	  
+				$data['description'] = '';
+			  } else {
+				$this->document->setTitle(trim(str_replace('{filter}', '', $meta_title)));
+				$this->document->setDescription(trim(str_replace('{filter}', '', $meta_description)));
+				$this->document->setKeywords(trim(str_replace('{filter}', '', $meta_keyword)));
+	  
+				$data['heading_title'] = trim(str_replace('{filter}', '', $data['heading_title']));
+			  }
+			}
+			// OCFilter End
 
 			$data['continue'] = $this->url->link('common/home');
 
@@ -419,7 +530,8 @@ class ControllerProductCategory extends Controller {
 
 			$data['breadcrumbs'][] = array(
 				'text' => $this->language->get('text_error'),
-				'href' => $this->url->link('product/category', $url)
+				'href' => $this->url->link('product/category', $url),
+				'separator' => $this->language->get('text_separator')
 			);
 
 			$this->document->setTitle($this->language->get('text_error'));

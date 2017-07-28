@@ -31,6 +31,9 @@ class ControllerCommonHeader extends Controller {
 		$data['keywords'] = $this->document->getKeywords();
 		$data['links'] = $this->document->getLinks();
 		$data['styles'] = $this->document->getStyles();
+		// OCFilter start
+		$data['noindex'] = $this->document->isNoindex();
+		// OCFilter end
 		$data['scripts'] = $this->document->getScripts();
 		$data['lang'] = $this->language->get('code');
 		$data['direction'] = $this->language->get('direction');

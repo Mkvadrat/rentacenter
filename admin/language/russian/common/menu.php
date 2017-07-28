@@ -10,6 +10,7 @@ $_['text_banner']          					= 'Баннеры';
 $_['text_captcha']                     		= 'Captcha';
 $_['text_catalog']          				= 'Каталог';
 $_['text_category']          				= 'Категории';
+$_['text_ocfilter'] = 'Фильтр товаров OCFilter';
 $_['text_country']          				= 'Страны';
 $_['text_coupon']          					= 'Купоны';
 $_['text_currency']          				= 'Валюты';

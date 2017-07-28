@@ -1,151 +1,166 @@
 <?php echo $header; ?>
-<div class="container">
-  <ul class="breadcrumb">
-    <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-    <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-    <?php } ?>
-  </ul>
-  <div class="row"><?php echo $column_left; ?>
-    <?php if ($column_left && $column_right) { ?>
-    <?php $class = 'col-sm-6'; ?>
-    <?php } elseif ($column_left || $column_right) { ?>
-    <?php $class = 'col-sm-9'; ?>
-    <?php } else { ?>
-    <?php $class = 'col-sm-12'; ?>
-    <?php } ?>
-    <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-      <h1><?php echo $heading_title; ?></h1>
-      <?php if ($thumb || $description) { ?>
-      <div class="row">
-        <?php if ($thumb) { ?>
-        <div class="col-sm-2"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-thumbnail" /></div>
-        <?php } ?>
-        <?php if ($description) { ?>
-        <div class="col-sm-10"><?php echo $description; ?></div>
-        <?php } ?>
-      </div>
-      <hr>
-      <?php } ?>
-      <?php if ($categories) { ?>
-      <h3><?php echo $text_refine; ?></h3>
-      <?php if (count($categories) <= 5) { ?>
-      <div class="row">
-        <div class="col-sm-3">
-          <ul>
-            <?php foreach ($categories as $category) { ?>
-            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-            <?php } ?>
-          </ul>
-        </div>
-      </div>
-      <?php } else { ?>
-      <div class="row">
-        <?php foreach (array_chunk($categories, ceil(count($categories) / 4)) as $categories) { ?>
-        <div class="col-sm-3">
-          <ul>
-            <?php foreach ($categories as $category) { ?>
-            <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-            <?php } ?>
-          </ul>
-        </div>
-        <?php } ?>
-      </div>
-      <?php } ?>
-      <?php } ?>
-      <?php if ($products) { ?>
-      <p><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></p>
-      <div class="row">
-        <div class="col-md-3">
-          <div class="btn-group hidden-xs">
-            <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
-            <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
-          </div>
-        </div>
-        <div class="col-md-2 text-right">
-          <label class="control-label" for="input-sort"><?php echo $text_sort; ?></label>
-        </div>
-        <div class="col-md-3 text-right">
-          <select id="input-sort" class="form-control" onchange="location = this.value;">
-            <?php foreach ($sorts as $sorts) { ?>
-            <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-            <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
-            <?php } else { ?>
-            <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
-            <?php } ?>
-            <?php } ?>
-          </select>
-        </div>
-        <div class="col-md-2 text-right">
-          <label class="control-label" for="input-limit"><?php echo $text_limit; ?></label>
-        </div>
-        <div class="col-md-2 text-right">
-          <select id="input-limit" class="form-control" onchange="location = this.value;">
-            <?php foreach ($limits as $limits) { ?>
-            <?php if ($limits['value'] == $limit) { ?>
-            <option value="<?php echo $limits['href']; ?>" selected="selected"><?php echo $limits['text']; ?></option>
-            <?php } else { ?>
-            <option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
-            <?php } ?>
-            <?php } ?>
-          </select>
-        </div>
-      </div>
-      <br />
-      <div class="row">
-        <?php foreach ($products as $product) { ?>
-        <div class="product-layout product-list col-xs-12">
-          <div class="product-thumb">
-            <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
-            <div>
-              <div class="caption">
-                <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
-                <p><?php echo $product['description']; ?></p>
-                <?php if ($product['rating']) { ?>
-                <div class="rating">
-                  <?php for ($i = 1; $i <= 5; $i++) { ?>
-                  <?php if ($product['rating'] < $i) { ?>
-                  <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                  <?php } else { ?>
-                  <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                  <?php } ?>
-                  <?php } ?>
+
+    <!-- start main-index -->
+
+    <main class="main-cars">
+
+        <!-- start banner-under-header -->
+
+        <div class="container-fluid black-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="title-black-banner"><?php echo $heading_title; ?></p>
+                        <ul class="bread-crumbs">
+                        <?php			
+                          $count = count($breadcrumbs);
+                          $i=1;
+                          foreach ($breadcrumbs as $breadcrumb) {
+                            if($i!=$count){
+                        ?>
+                              <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a><?php echo ' ' . $breadcrumb['separator']; ?></li>
+                        <?php
+                            }else{
+                              echo '<li><span> '.$breadcrumb['text'] . '</span></li>'; 
+                            }		
+                            $i++;
+                          } 
+                        ?>
+                        </ul>
+                    </div>
                 </div>
-                <?php } ?>
-                <?php if ($product['price']) { ?>
-                <p class="price">
-                  <?php if (!$product['special']) { ?>
-                  <?php echo $product['price']; ?>
-                  <?php } else { ?>
-                  <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
-                  <?php } ?>
-                  <?php if ($product['tax']) { ?>
-                  <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-                  <?php } ?>
-                </p>
-                <?php } ?>
-              </div>
-              <div class="button-group">
-                <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
-                <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
-                <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
-              </div>
             </div>
-          </div>
         </div>
-        <?php } ?>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
-        <div class="col-sm-6 text-right"><?php echo $results; ?></div>
-      </div>
-      <?php } ?>
-      <?php if (!$categories && !$products) { ?>
-      <p><?php echo $text_empty; ?></p>
-      <div class="buttons">
-        <div class="pull-right"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
-      </div>
-      <?php } ?>
-      <?php echo $content_bottom; ?></div>
-    <?php echo $column_right; ?></div>
-</div>
+
+        <!-- end banner-under-header -->
+
+        <!-- start list-car -->
+
+        <div class="container">
+            <div class="row">
+                <div class="content-block">
+                    <div class="col-md-12">
+                        <!--<div class="sorting-cars">
+                            <div class="block-button">
+                                <button class="active">все классы</button>
+                                <button>эконом</button>
+                                <button>средний</button>
+                                <button>престиж</button>
+                            </div>
+                            <div class="sort-price">
+                                <img src="images/sorting.jpg" alt="">
+                            </div>
+                            <div class="pick-up-block">
+                                <div class="check-block">
+                                    <input id="check1" type="checkbox" name="check"  value="check1">
+                                    <label for="check1">Автомат</label>
+                                    <input id="check2" type="checkbox" name="check"  value="check2">
+                                    <label for="check2">Кондиционер</label>
+                                </div>
+                            </div>
+                            <button class="pick-up-button">подобрать</button>
+                        </div>-->
+                        <?php if($products){?>
+                        
+                        <?php echo $content_top; ?>
+                        
+                        <ul class="list-car">
+                            <?php foreach ($products as $product) { ?>
+                            <li>
+                                <div class="block-photo">
+                                    <img src="catalog/view/theme/rentacenter/images/car.jpg" alt="">
+                                </div>
+                                <div class="description">
+                                    <p class="title"><?php echo $product['name']; ?></p>
+                                    <ul>
+                                      <?php if($product['option']){ ?>
+                                      <li>
+                                      <?php foreach ($product['option'] as $product_option) { ?>
+                                          <?php if($product_option['option_id'] != 17){ ?>
+                                          <?php if($product_option['type'] == 'text') {?>
+                                          <div class="option">
+                                          <div class="product-option"><?php echo $product_option['name']; ?>:</div>
+                                          <div class="product-value"><?php echo $product_option['value']; ?></div>
+                                          </div>
+                                          <?php }else{ ?>
+                                          <div class="option">
+                                          <div class="product-option"><?php echo $product_option['name']; ?>:</div>
+                                          <?php foreach ($product_option['product_option_value'] as $product_option_value) { ?>
+                                          <div class="product-value"><?php echo $product_option_value['name']; ?></div>
+                                          <?php } ?>
+                                          </div>
+                                          <?php } ?>
+                                          <?php } ?>
+                                      <?php } ?>
+                                      </li>
+                                      <li>
+                                      <?php foreach ($product['option'] as $product_option) { ?>
+                                          <?php if($product_option['option_id'] == 17){ ?>
+                                          <div class="option">
+                                          <div class="product-option"><?php echo $product_option['name']; ?>:</div>
+                                          <div class="block-select">
+                                          <select id="price_<?php echo $product['product_id']; ?>">
+                                          <?php foreach ($product_option['product_option_value'] as $product_option_value) { ?>
+                                          <option value="<?php echo $product_option_value['price']; ?>"><?php echo $product_option_value['name']; ?></option>
+                                          <?php } ?>
+                                          </select>
+                                          </div>
+                                          </div>
+                                          <?php } ?>
+                                      <?php } ?>
+                                      </li>
+                                      <?php } ?>
+                                      <li>
+                                          Цена в сутки от <span><?php echo $product['price']; ?></span>
+                                      </li>
+                                      <li id="total-<?php echo $product['product_id']; ?>">Итого: <strong><?php echo $product['price']; ?></strong></li>
+                                    </ul>
+                                    <a class="button-yellow" id="booking-<?php echo $product['product_id']; ?>" href="<?php echo $product['booking']; ?>">Забронировать авто</a>
+                                    <a href="<?php echo $product['href']; ?>">Подробнее об авто</a>
+                                </div>
+                            </li>
+                            <?php } ?>
+                        </ul>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- end list-car -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="bread-crumbs-numbers">
+                        <?php echo $pagination; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <script>
+    <?php foreach ($products as $product) { ?>
+    $(function() {
+      $("#price_<?php echo $product['product_id']; ?>").change(function() {
+        $.ajax({
+            url: 'index.php?route=module/rentcar/renderTotal',
+            type: 'post',
+            data: {
+                'product_id' : '<?php echo $product['product_id']; ?>',
+                'change_price' : $('#price_<?php echo $product['product_id']; ?>').val()
+            },
+            dataType: 'json',
+            success: function(data) {
+                $( "#total-<?php echo $product['product_id']; ?>" ).replaceWith('<li id="total-<?php echo $product['product_id']; ?>">Итого: <strong>'+ data.message +'</strong></li>');
+                $( "#booking-<?php echo $product['product_id']; ?>" ).replaceWith('<a class="button-yellow" id="booking-<?php echo $product['product_id']; ?>" href="<?php echo $product['booking'] . '&total='; ?>' + data.clear_price +'">Забронировать авто</a>');
+            }
+        });
+      });
+    });
+    <?php } ?>
+    </script>
+
 <?php echo $footer; ?>

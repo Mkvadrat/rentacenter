@@ -139,6 +139,16 @@ class ModelCatalogProduct extends Model {
 
 			$sql .= ")";
 		}
+		
+		if (!empty($data['filter_ocfilter'])) {
+			$this->load->model('catalog/ocfilter');
+
+			$ocfilter_product_sql = $this->model_catalog_ocfilter->getProductSQL($data['filter_ocfilter']);
+
+			if ($ocfilter_product_sql) {
+			  $sql .= $ocfilter_product_sql;
+			}
+		}
 
 		if (!empty($data['filter_manufacturer_id'])) {
 			$sql .= " AND p.manufacturer_id = '" . (int)$data['filter_manufacturer_id'] . "'";
@@ -521,6 +531,16 @@ class ModelCatalogProduct extends Model {
 			}
 
 			$sql .= ")";
+		}
+		
+		if (!empty($data['filter_ocfilter'])) {
+			$this->load->model('catalog/ocfilter');
+
+			$ocfilter_product_sql = $this->model_catalog_ocfilter->getProductSQL($data['filter_ocfilter']);
+
+			if ($ocfilter_product_sql) {
+			  $sql .= $ocfilter_product_sql;
+			}
 		}
 
 		if (!empty($data['filter_manufacturer_id'])) {
