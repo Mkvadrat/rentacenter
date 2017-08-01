@@ -104,7 +104,7 @@
       $("#price_<?php echo $product['product_id']; ?>").change(function() {
         $.ajax({
             url: 'index.php?route=module/rentcar/renderTotal',
-            type: 'post',
+            type: 'POST',
             data: {
                 'product_id' : '<?php echo $product['product_id']; ?>',
                 'change_price' : $('#price_<?php echo $product['product_id']; ?>').val()

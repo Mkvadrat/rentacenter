@@ -11,11 +11,13 @@ class ControllerInformationNews extends Controller {
 		
 		$data['breadcrumbs'][] = array(
 			'text' 		=> 'Главная',
-			'href' 		=> $this->url->link('common/home')
+			'href' 		=> $this->url->link('common/home'),
+			'separator' => $this->language->get('text_separator')
 		);
 		$data['breadcrumbs'][] = array(
 			'text' 		=> $this->language->get('heading_title'),
-			'href' 		=> $this->url->link('information/news')
+			'href' 		=> $this->url->link('information/news'),
+			'separator' => $this->language->get('text_separator')
 		);
 		  
 		$url = '';
@@ -32,8 +34,8 @@ class ControllerInformationNews extends Controller {
 		
 		$filter_data = array(
 			'page' 	=> $page,
-			'limit' => 10,
-			'start' => 10 * ($page - 1),
+			'limit' => 5,
+			'start' => 5 * ($page - 1),
 		);
 		
 		$total = $this->model_extension_news->getTotalNews();
@@ -41,12 +43,12 @@ class ControllerInformationNews extends Controller {
 		$pagination = new Pagination();
 		$pagination->total = $total;
 		$pagination->page = $page;
-		$pagination->limit = 10;
+		$pagination->limit = 5;
 		$pagination->url = $this->url->link('information/news', 'page={page}');
 		
 		$data['pagination'] = $pagination->render();
 	 
-		$data['results'] = sprintf($this->language->get('text_pagination'), ($total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($total - 10)) ? $total : ((($page - 1) * 10) + 10), $total, ceil($total / 10));
+		$data['results'] = sprintf($this->language->get('text_pagination'), ($total) ? (($page - 1) * 5) + 1 : 0, ((($page - 1) * 5) > ($total - 5)) ? $total : ((($page - 1) * 5) + 5), $total, ceil($total / 5));
 
 		$data['heading_title'] = $this->language->get('heading_title');
 		$data['text_title'] = $this->language->get('text_title');
@@ -63,13 +65,25 @@ class ControllerInformationNews extends Controller {
 		foreach ($all_news as $news) {
 			$data['all_news'][] = array (
 				'title' 		=> $news['title'],
-				'image'			=> $this->model_tool_image->resize($news['image'], 200, 200),
-				'description' 	=> strip_tags(html_entity_decode($news['short_description'])),
+				'image'			=> $this->model_tool_image->resize($news['image'], 737, 381),
+				'description' 	=> utf8_substr(strip_tags(html_entity_decode($news['short_description'], ENT_QUOTES, 'UTF-8')), 0, 200) . '..',
 				'view' 			=> $this->url->link('information/news/news', 'news_id=' . $news['news_id']),
 				'date_added' 	=> date($this->language->get('date_format_short'), strtotime($news['date_added']))
 			);
 		}
-	 
+		
+		$data['related_news'] = array();
+		
+		$related_news = $this->model_extension_news->getRalatedNews();
+		
+		foreach ($related_news as $news) {
+			$data['related_news'][] = array (
+				'title' 		=> $news['title'],
+				'view' 			=> $this->url->link('information/news/news', 'news_id=' . $news['news_id']),
+				'date_added' 	=> date($this->language->get('date_format_short'), strtotime($news['date_added']))
+			);
+		}
+
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
@@ -101,18 +115,21 @@ class ControllerInformationNews extends Controller {
 	  
 		$data['breadcrumbs'][] = array(
 			'text' 			=> 'Главная',
-			'href' 			=> $this->url->link('common/home')
+			'href' 			=> $this->url->link('common/home'),
+			'separator' => $this->language->get('text_separator')
 		);
 	  
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('information/news')
+			'href' => $this->url->link('information/news'),
+			'separator' => $this->language->get('text_separator')
 		);
  
 		if ($news) {
 			$data['breadcrumbs'][] = array(
 				'text' 		=> $news['title'],
-				'href' 		=> $this->url->link('information/news/news', 'news_id=' . $news_id)
+				'href' 		=> $this->url->link('information/news/news', 'news_id=' . $news_id),
+				'separator' => $this->language->get('text_separator')
 			);
  
 			$this->document->setTitle($news['title']);
@@ -124,6 +141,18 @@ class ControllerInformationNews extends Controller {
 			$data['heading_title'] = $news['title'];
 			$data['description'] = html_entity_decode($news['description']);
 			$data['date_added'] = date('d.m.Y', strtotime($news['date_added']));
+			
+			$data['related_news'] = array();
+		
+			$related_news = $this->model_extension_news->getRalatedNews();
+			
+			foreach ($related_news as $news) {
+				$data['related_news'][] = array (
+					'title' 		=> $news['title'],
+					'view' 			=> $this->url->link('information/news/news', 'news_id=' . $news['news_id']),
+					'date_added' 	=> date($this->language->get('date_format_short'), strtotime($news['date_added']))
+				);
+			}
 	 
 			$data['column_left'] = $this->load->controller('common/column_left');
 			$data['column_right'] = $this->load->controller('common/column_right');
@@ -140,7 +169,8 @@ class ControllerInformationNews extends Controller {
 		} else {
 			$data['breadcrumbs'][] = array(
 				'text' 		=> $this->language->get('text_error'),
-				'href' 		=> $this->url->link('information/news', 'news_id=' . $news_id)
+				'href' 		=> $this->url->link('information/news', 'news_id=' . $news_id),
+				'separator' => $this->language->get('text_separator')
 			);
 	 
 			$this->document->setTitle($this->language->get('text_error'));

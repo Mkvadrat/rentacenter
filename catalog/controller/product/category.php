@@ -468,11 +468,11 @@ class ControllerProductCategory extends Controller {
 	  
 				$heading_title = $data['heading_title'];
 	  
-				if (false !== strpos($heading_title, '{filter}')) {
+				/*if (false !== strpos($heading_title, '{filter}')) {
 				  $heading_title = trim(str_replace('{filter}', $filter_title, $heading_title));
 				} else {
 				  $heading_title .= ' ' . $filter_title;
-				}
+				}*/
 	  
 				$data['heading_title'] = $heading_title;
 	  

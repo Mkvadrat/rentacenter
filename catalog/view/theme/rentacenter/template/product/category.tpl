@@ -75,6 +75,9 @@
                                       <?php } ?>
                                       </li>
                                       <li>
+                                          Цена в сутки от <span><?php echo $product['price']; ?></span>
+                                      </li>
+                                      <li>
                                       <?php foreach ($product['option'] as $product_option) { ?>
                                           <?php if($product_option['option_id'] == 17){ ?>
                                           <div class="option">
@@ -91,9 +94,6 @@
                                       <?php } ?>
                                       </li>
                                       <?php } ?>
-                                      <li>
-                                          Цена в сутки от <span><?php echo $product['price']; ?></span>
-                                      </li>
                                       <li id="total-<?php echo $product['product_id']; ?>">Итого: <strong><?php echo $product['price']; ?></strong></li>
                                     </ul>
                                     <a class="button-yellow" id="booking-<?php echo $product['product_id']; ?>" href="<?php echo $product['booking']; ?>">Забронировать авто</a>
@@ -102,6 +102,8 @@
                             </li>
                             <?php } ?>
                         </ul>
+                        <?php }else{ ?>
+                            <p>Автомобилей не найдено!</p>
                         <?php } ?>
                     </div>
                 </div>

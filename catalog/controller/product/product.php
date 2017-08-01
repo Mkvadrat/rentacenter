@@ -360,7 +360,8 @@ class ControllerProductProduct extends Controller {
 				foreach ($option['product_option_value'] as $option_value) {
 					if (!$option_value['subtract'] || ($option_value['quantity'] > 0)) {
 						if ((($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) && (float)$option_value['price']) {
-							$price = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax') ? 'P' : false));
+							//$price = $this->currency->format($this->tax->calculate($option_value['price'], $product_info['tax_class_id'], $this->config->get('config_tax') ? 'P' : false));
+							$price = $option_value['price'];
 						} else {
 							$price = false;
 						}
@@ -386,7 +387,9 @@ class ControllerProductProduct extends Controller {
 					'required'             => $option['required']
 				);
 			}
-
+					
+			$data['booking'] = $this->url->link('product/reservation', 'product_id=' . $this->request->get['product_id']);
+			
 			if ($product_info['minimum']) {
 				$data['minimum'] = $product_info['minimum'];
 			} else {
@@ -425,9 +428,9 @@ class ControllerProductProduct extends Controller {
 
 			foreach ($results as $result) {
 				if ($result['image']) {
-					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_related_width'), $this->config->get('config_image_related_height'));
+					$image = $this->model_tool_image->resize($result['image'], 240, 178);
 				} else {
-					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get('config_image_related_width'), $this->config->get('config_image_related_height'));
+					$image = $this->model_tool_image->resize('placeholder.png', 240, 178);
 				}
 
 				if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
@@ -464,7 +467,8 @@ class ControllerProductProduct extends Controller {
 					'tax'         => $tax,
 					'minimum'     => $result['minimum'] > 0 ? $result['minimum'] : 1,
 					'rating'      => $rating,
-					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id'])
+					'href'        => $this->url->link('product/product', 'product_id=' . $result['product_id']),
+					'booking'     => $this->url->link('product/reservation', 'product_id=' . $result['product_id'])
 				);
 			}
 
@@ -579,6 +583,49 @@ class ControllerProductProduct extends Controller {
 				$this->response->setOutput($this->load->view('default/template/error/not_found.tpl', $data));
 			}
 		}
+	}
+	
+	public function totalPrice(){
+		$json = array();
+		
+		$json = array(
+			'status' => 0,
+			'clear_price' => 0,
+			'message' => ''
+		);
+		
+		if (isset($this->request->post['product_id'])) {$product_id = $this->request->post['product_id']; if ($product_id == '') {unset($product_id);}}
+		if (isset($this->request->post['change_price'])) {$change_price = $this->request->post['change_price']; if ($change_price == '') {unset($change_price);}}
+
+		if (isset($product_id) && isset($change_price)){
+			
+			$this->load->model('catalog/product');
+			
+			$product_info = $this->model_catalog_product->getProduct($product_id);
+			
+			if ($product_info) {
+				$price = $product_info['price'];
+				$clear_price = $price + $change_price;
+				$total = $this->currency->format($this->tax->calculate($product_info['price'], $product_info['tax_class_id'], $this->config->get('config_tax')) + $change_price);
+			}
+		} else {
+			$total = false;
+		}
+	
+		$json = array(
+			'status' => 1,
+			'clear_price' => $clear_price,
+			'message' => $total
+		);
+		
+		return $json;
+	}
+	
+	public function renderTotal(){
+		$json = $this->totalPrice();
+		
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
 	}
 
 	public function review() {

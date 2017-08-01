@@ -59,4 +59,10 @@ class ModelExtensionNews extends Model {
 		
 		return $query->rows;
 	}
+	
+	public function getRalatedNews(){
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "news AS n JOIN " . DB_PREFIX . "news_description AS nd ON (n.news_id = nd.news_id) AND n.status = 1 AND nd.language_id = '" . (int)$this->config->get('config_language_id') . "' ORDER BY n.date_added DESC LIMIT 10");
+		
+		return $query->rows;	
+	}
 }

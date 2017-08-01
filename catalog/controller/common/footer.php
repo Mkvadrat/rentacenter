@@ -44,7 +44,8 @@ class ControllerCommonFooter extends Controller {
 		} else {
 			$data['logo'] = '';
 		}
-
+		
+		$data['home'] = $this->url->link('common/home');
 		$data['contact'] = $this->url->link('information/contact');
 		$data['return'] = $this->url->link('account/return/add', '', 'SSL');
 		$data['sitemap'] = $this->url->link('information/sitemap');
