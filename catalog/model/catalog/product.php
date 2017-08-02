@@ -570,4 +570,10 @@ class ModelCatalogProduct extends Model {
 			return 0;
 		}
 	}
+	
+	public function getTransmissionValue($product_id){
+		$query = $this->db->query("SELECT name FROM " . DB_PREFIX . "option_value_description AS ovd JOIN " . DB_PREFIX . "product_option_value AS pov ON (ovd.option_value_id = pov.option_value_id) AND (ovd.option_id = pov.option_id) AND pov.product_id = " . (int) $product_id . " AND pov.option_id = 13 AND ovd.language_id = " . (int)$this->config->get('config_language_id') . "");
+		
+		return $query->row;
+	}
 }

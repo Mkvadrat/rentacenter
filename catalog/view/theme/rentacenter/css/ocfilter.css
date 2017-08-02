@@ -29,7 +29,7 @@
 			.ocfilter-option label.disabled{color: #999999;}
       .ocfilter-option label.disabled small{background-color: #EFEFEF; color: #999999;}
 
-			.ocfilter-option label a{color: #236BBB; text-decoration: none;}
+			.ocfilter-option label a{color: #000; text-decoration: none;}
       .ocfilter-option label.selected {color: #E56101;}
       .ocfilter-option label.selected small{display: none;}
 

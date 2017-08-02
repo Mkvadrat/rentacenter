@@ -101,7 +101,7 @@
     <script>
     <?php foreach ($products as $product) { ?>
     $(function() {
-      $("#price_<?php echo $product['product_id']; ?>").change(function() {
+      $("#price_<?php echo $product['product_id']; ?>").click(function() {
         $.ajax({
             url: 'index.php?route=module/rentcar/renderTotal',
             type: 'POST',

@@ -1,3 +1,5 @@
 <?php
-// Text
+// Heading
+$_['heading_title']  = 'Бронирование';
+
 

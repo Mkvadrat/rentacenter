@@ -176,7 +176,7 @@
     
     <script>
     $(function() {
-      $("#price_<?php echo $product_id; ?>").change(function() {
+      $("#price_<?php echo $product_id; ?>").click(function() {
         $.ajax({
             url: 'index.php?route=product/product/renderTotal',
             type: 'POST',
