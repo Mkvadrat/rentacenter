@@ -102,12 +102,18 @@ p {
   -webkit-justify-content: space-between;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  -webkit-justify-content: flex-start;
+           justify-content: flex-start; }
   .list-car li {
     width: 23%;
     margin-bottom: 23px;
     background: #fff;
-    border-bottom: 2px solid #d8d8d8; }
+    border-bottom: 2px solid #d8d8d8;
+    margin-right: 28px; }
+    .list-car li:nth-child(4n) {
+      margin-right: 0;
+    }
     .list-car li:nth-last-child(-n + 4) {
       margin-bottom: 0; }
     .list-car li .block-photo {
@@ -1325,7 +1331,7 @@ textarea:focus:-ms-input-placeholder {
       line-height: 18px;
       color: #333; }
   .main-reservation .pasport-form .address-fact input {
-    margin-left: 26px; }
+    margin-left: 29px; }
 
 .main-reservation .more-info-form {
   padding-bottom: 40px; }
@@ -1488,4 +1494,75 @@ textarea:focus:-ms-input-placeholder {
   transform: skewX(-30deg);
   margin-left: 5px;
   margin-right: 4px;
+}
+
+
+/*----- 04.08.2017 -----*/
+
+.text-danger {
+  font-size: 12px;
+  padding-bottom: 10px;
+  color: red;
+}
+
+.main-reservation .first-form .surname {
+  width: 267px;
+}
+
+.main-reservation .first-form .name {
+  width: 207px;
+}
+
+.main-reservation .first-form .patronymic {
+  width: 269px;
+}
+
+.main-reservation .pasport-form .number {
+  width: 297px;
+}
+
+.add-services-form .more-info label {
+  margin-bottom: 7px;
+}
+
+select {
+  border: 1px solid #d8d8d8;
+  
+  /*for WebKit*/
+  -webkit-appearance: none;
+  /* for FF */
+  -moz-appearance: none;
+  text-indent: 0.01px; 
+  text-overflow: '';
+  /* for IE */
+  -ms-appearance: none;
+  appearance: none!important;
+  
+
+    background-image: url('../images/arrow-select.png');
+    background-position: 98% center;
+    background-repeat: no-repeat;
+
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.list-car .option div,
+.description ul li .option div {
+  display: inline-block;
+}
+
+.list-car .option,
+.description ul li .option {
+  margin-bottom: 10px;
+}
+
+.list-car .option select {
+  padding-right: 22px;
 }
