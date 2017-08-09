@@ -49,7 +49,7 @@
                             <?php foreach ($products as $product) { ?>
                             <li>
                                 <div class="block-photo">
-                                    <img src="catalog/view/theme/rentacenter/images/car.jpg" alt="">
+                                    <img src="<?php echo $product['thumb']; ?>" alt="">
                                 </div>
                                 <div class="description">
                                     <p class="title"><?php echo $product['name']; ?></p>

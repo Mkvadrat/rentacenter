@@ -139,7 +139,7 @@
                         <li><a href="<?php echo $rates; ?>"><?php echo $text_rates; ?></a></li>
                         <li><a href="<?php echo $cars; ?>"><?php echo $text_cars; ?></a></li>
                         <li><a href="<?php echo $news; ?>"><?php echo $text_news; ?></a></li>
-                        <li><a href="<?php echo $cooperation; ?>"><?php echo $text_cooperation; ?></a></li>
+                        <!--<li><a href="<?php echo $cooperation; ?>"><?php echo $text_cooperation; ?></a></li>-->
                         <li><a href="<?php echo $contact; ?>"><?php echo $text_contacts; ?></a></li>
                     </ul>
                     

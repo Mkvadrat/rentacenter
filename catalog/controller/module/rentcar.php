@@ -32,9 +32,9 @@ class ControllerModuleRentcar extends Controller {
 				
 				if ($product_info) {					
 					if ($product_info['image']) {
-						$image = $this->model_tool_image->resize($product_info['image'], $setting['width'], $setting['height']);
+						$image = $this->model_tool_image->resize($product_info['image'], 240, 178);
 					} else {
-						$image = $this->model_tool_image->resize('placeholder.png', $setting['width'], $setting['height']);
+						$image = $this->model_tool_image->resize('placeholder.png', 240, 178);
 					}
 
 					if (($this->config->get('config_customer_price')) || !$this->config->get('config_customer_price')) {

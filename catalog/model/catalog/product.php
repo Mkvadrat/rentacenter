@@ -576,4 +576,25 @@ class ModelCatalogProduct extends Model {
 		
 		return $query->row;
 	}
+	
+	public function getNameCar($product_id){
+		$query = $this->db->query("SELECT name FROM " . DB_PREFIX . "product_description WHERE product_id = " . (int) $product_id . "");
+		
+		return $query->row;
+	
+		/*$query = $this->db->query("SELECT pd.name, p.price FROM " . DB_PREFIX . "product_description AS pd JOIN " . DB_PREFIX . "product AS p ON (pd.product_id = p.product_id) AND pd.language_id = " . (int)$this->config->get('config_language_id') . " AND p.product_id = " . (int) $product_id . "");
+		
+		return $query->rows;*/
+	}
+	
+	public function getPriceCar($product_id){
+		$query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product WHERE product_id = " . (int) $product_id . "");
+		
+		return $query->row;
+	
+		/*$query = $this->db->query("SELECT pd.name, p.price FROM " . DB_PREFIX . "product_description AS pd JOIN " . DB_PREFIX . "product AS p ON (pd.product_id = p.product_id) AND pd.language_id = " . (int)$this->config->get('config_language_id') . " AND p.product_id = " . (int) $product_id . "");
+		
+		return $query->rows;*/
+	}
+	
 }
