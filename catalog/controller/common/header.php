@@ -106,6 +106,7 @@ class ControllerCommonHeader extends Controller {
 		$data['telephone'] = $this->config->get('config_telephone');
 		$data['mobile'] = $this->config->get('config_mobile_telephone');
 		$data['fax'] = $this->config->get('config_fax');
+		$data['booking'] = $this->url->link('product/reservation', 'product_id=0', 'SSL');
 
 		$status = true;
 

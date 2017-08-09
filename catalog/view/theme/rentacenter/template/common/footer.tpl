@@ -8,8 +8,8 @@
                     <div class="col-md-12">
                         <p class="title"><span>Начните прямо сейчас,</span> забронируйте автомобиль через наш сервис</p>
                         <div class="buttons-block">
-                            <a href="#">автопарк</a>
-                            <a href="#">забронировать авто</a>
+                            <a href="<?php echo $autopark; ?>">автопарк</a>
+                            <a href="<?php echo $booking; ?>">забронировать авто</a>
                         </div>
                     </div>
                 </div>

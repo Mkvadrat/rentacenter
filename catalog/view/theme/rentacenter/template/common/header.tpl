@@ -35,6 +35,17 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="catalog/view/theme/rentacenter/js/jquery-1.9.1.min.js"></script>
 
+<!-- JQUERY UI -->
+<script src="catalog/view/theme/rentacenter/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="catalog/view/theme/rentacenter/js/jquery-ui-1.12.1/jquery-ui.min.css">
+
+<!-- TIMEPICKER -->
+<script src="catalog/view/theme/rentacenter/js/timepicker/jquery.timepicker.min.js"></script>
+<link rel="stylesheet" href="catalog/view/theme/rentacenter/js/timepicker/jquery.timepicker.css">
+
+<!-- VALIDATE -->
+<script src="catalog/view/theme/rentacenter/js/validate/dist/jquery.validate.min.js"></script>
+
 <!-- Bootstrap -->
 <link href="catalog/view/theme/rentacenter/css/bootstrap.min.css" rel="stylesheet">
 <script src="catalog/view/theme/rentacenter/js/bootstrap.min.js"></script>
@@ -145,7 +156,7 @@
                     
                     <?php echo $language; ?>
 
-                    <a href="#" class="button-yellow">Забронировать авто</a>
+                    <a href="<?php echo $booking; ?>" class="button-yellow">Забронировать авто</a>
                     <div class="header-phones">
                         <a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a>
                         <a href="tel:<?php echo $mobile; ?>"><?php echo $mobile; ?></a>

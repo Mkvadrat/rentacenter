@@ -47,7 +47,7 @@
                             </p>
                         </div>
                     </div>
-                    <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+                    <form action="<?php echo $action; ?>" method="post" id="booking-form" enctype="multipart/form-data">
                         <div class="col-md-6 pad-left">
                             <p class="form-title">
                                 <span>1</span> Бронирование автомобиля
@@ -66,26 +66,26 @@
                                     </select>
                                 </p>
                                 <label class="from"><em>*</em>Срок аренды, c
-                                    <input type="date" name="date_from" placeholder="01.01.2017" value="" >
+                                    <input type="text" name="date_from" id="date_from" class="datepicker" placeholder="01.01.2017" value="" >
 
-                                    <input type="time" name="time_from" placeholder="12:00" value="">
+                                    <input type="text" name="time_from" id="time_from" class="timepicker" placeholder="12:00" value="">
 
                                 </label>
                                 <label class="to">по 
-                                    <input type="date" name="date_before" placeholder="01.01.2017" value="">
+                                    <input type="text" name="date_before" id="date_before" class="datepicker" placeholder="01.01.2017" value="">
 
-                                    <input type="time" name="time_before" placeholder="12:00" value="">
+                                    <input type="text" name="time_before" id="time_before" class="timepicker" placeholder="12:00" value="">
 
                                 </label>
-                                <label class="surname"><em>*</em>Фамилия:<input type="text" name="surname" placeholder="Фамилия" value=""></label>
+                                <label class="surname"><em>*</em>Фамилия:<input type="text" name="surname" id="surname" placeholder="Фамилия" value=""></label>
 
-                                <label class="name"><em>*</em>Имя: <input type="text" name="name" placeholder="Имя:" value=""></label>
+                                <label class="name"><em>*</em>Имя: <input type="text" name="name" id="name" placeholder="Имя:" value=""></label>
 
-                                <label class="patronymic"><em>*</em>Отчество:<input type="text" name="patronymic" placeholder="Отчество" value=""></label>
+                                <label class="patronymic"><em>*</em>Отчество:<input type="text" name="patronymic" id="patronymic" placeholder="Отчество" value=""></label>
 
-                                <label class="birthday"><em>*</em>Дата рождения: <input type="date" name="born" placeholder="01.01.2017" value=""></label>
+                                <label class="birthday"><em>*</em>Дата рождения: <input type="text" name="born" id="born" class="datepicker" placeholder="01.01.2017" value=""></label>
                             
-                                <label class="primary-phone"><em>*</em>Основной номер телефона: <input type="tel" name="phone" placeholder="+7 (123) 456 78 9" value=""></label>
+                                <label class="primary-phone"><em>*</em>Основной номер телефона: <input type="tel" name="phone" id="phone" placeholder="+7 (123) 456 78 9" value=""></label>
                             </div>
                         </div>
                         <div class="col-md-6 pad-right">
@@ -93,23 +93,22 @@
                                 Паспорт
                             </p>
                             <div class="pasport-form">
-                                <label class="number"><em>*</em>Серия и номер:<input type="text" name="serial" placeholder="Серия и номер" value=""></label>
+                                <label class="number"><em>*</em>Серия и номер:<input type="text" name="serial" id="serial" placeholder="Серия и номер" value=""></label>
 
-                                <label class="date"><em>*</em>Дата выдачи:<input type="date" name="issue_date" placeholder="01.01.2017" value=""></label>
+                                <label class="date"><em>*</em>Дата выдачи:<input type="text" name="issue_date" id="issue_date" class="datepicker" placeholder="01.01.2017" value=""></label>
                                
+                                <label class="issued"><em>*</em>Кем выдан: <input type="text" name="issued_by" id="issued_by" placeholder="123456789" value=""></label>
 
-                                <label class="issued"><em>*</em>Кем выдан: <input type="text" name="issued_by" placeholder="123456789" value=""></label>
+                                <label class="address"><em>*</em>Адрес регистрации: <input type="text" name="registration" id="registration" placeholder="123456789" value=""></label>
 
-                                <label class="address"><em>*</em>Адрес регистрации: <input type="text" name="registration" placeholder="123456789" value=""></label>
-
-                                <label class="address-fact"><em>*</em>Фактический адрес прожимания: <input type="text" name="address" placeholder="123456789" value=""></label>
+                                <label class="address-fact"><em>*</em>Фактический адрес прожимания: <input type="text" name="address" id="address" placeholder="123456789" value=""></label>
 
                                 <p class="form-title form-title-pasport">
                                 Водительские права
                                 </p>
-                                <label class="number"><em>*</em>Серия и номер:<input type="text" name="license" placeholder="123456789" value=""></label>
+                                <label class="number"><em>*</em>Серия и номер:<input type="text" name="license" id="license" placeholder="123456789" value=""></label>
 
-                                <label class="date"><em>*</em>Дата выдачи:<input type="date" name="license_issued_by" placeholder="01.01.2017" value=""></label>
+                                <label class="date"><em>*</em>Дата выдачи:<input type="text" name="license_issued_by" id="license_issued_by" class="datepicker" placeholder="01.01.2017" value=""></label>
                                
                             </div>
                         </div>
@@ -119,12 +118,12 @@
                                 <span>2</span> Дополнительная информация
                             </p>
                             <div class="more-info-form">
-                                <label class="place-birth"><em>*</em>Место рождения: <input type="text" name="city" placeholder="г. Ростов-на-Дону" value=""></label>
+                                <label class="place-birth"><em>*</em>Место рождения: <input type="text" name="city" id="city" placeholder="г. Ростов-на-Дону" value=""></label>
 
                                 <label class="add-phone">Дополнительный телефон: <input type="text" name="add_phone" placeholder="+7 (123) 456 78 9" value=""></label>
-                                <label class="mail">E-mail: <input type="email" name="email" placeholder="Введите Ваш  e-mail" value=""></label>
+                                <label class="mail"><em>*</em>E-mail: <input type="email" name="email" id="email" placeholder="Введите Ваш  e-mail" value=""></label>
 
-                                <label class="car-supply"><em>*</em>Место подачи авто: <input type="text" name="issue_place" placeholder="г. Ростов-на-Дону" value=""></label>
+                                <label class="car-supply"><em>*</em>Место подачи авто: <input type="text" name="issue_place" id="issue_place" placeholder="г. Ростов-на-Дону" value=""></label>
 
                                 <div class="i-take-block">
                                     <input id="i-take" type="checkbox" name="i_take" value="1">
@@ -194,5 +193,108 @@
     </main>
 
     <!-- end main-index -->
+    
+    <script type="text/javascript">
+		//локализация календаря
+		$.datepicker.regional['ru'] = {
+			closeText: 'Закрыть',
+			prevText: '&#x3c;Пред',
+			nextText: 'След&#x3e;',
+			currentText: 'Сегодня',
+			monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+			monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн', 'Июл','Авг','Сен','Окт','Ноя','Дек'],
+			dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+			dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
+			dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
+			dateFormat: 'dd.mm.yy',
+			firstDay: 1,
+			isRTL: false
+		};
+
+		$.datepicker.setDefaults($.datepicker.regional['ru']);
+
+		$('.datepicker').datepicker({
+			dateFormat: 'dd.mm.yy',
+			//minDate:0,
+		});
+        
+        $('.timepicker').timepicker({ 'timeFormat': 'H:i' });
+        
+        $().ready(function() {
+            $("#booking-form").validate({
+                rules: {
+                    /*date_from: "required",
+                    time_from: "required",
+                    date_before: "required",
+                    time_before: "required",*/
+                    /*Бронирование автомобиля*/
+                    surname: {
+                        required: true,
+                        minlength: 2
+                    },
+                    name: {
+                        required: true,
+                        minlength: 2
+                    },
+                    patronymic: {
+                        required: true,
+                        minlength: 2
+                    },
+                    /*born: "required",*/
+                    phone: {
+                        required: true,
+                        minlength: 9
+                    },
+                    /*Паспорт*/
+                    serial: "required",
+                    issued_by: "required",
+                    registration: "required",
+                    address: "required",
+                    /*issue_date: "required",*/
+                    /*Водительские права*/
+                    license: "required",
+                    /*license_issued_by: "required",*/
+                    /*Дополнительная информация*/
+                    city: "required",
+                    issue_place: "required",
+                    email: "required",
+                },
+                messages: {
+                    /*date_from: "Выберите срок аренды, c",
+                    time_from: "Выберите срок аренды, c",
+                    date_before: "Выберите срок аренды, по",
+                    time_before: "Выберите срок аренды, по",*/
+                    surname: {
+                        required: "Пожалуйста введите Вашу фамилию",
+                        minlength: "Фамилия должна содержать не менее 2 знаков"
+                    },
+                    name: {
+                        required: "Пожалуйста введите Ваше имя",
+                        minlength: "Имя должно содержать не менее 2 знаков"
+                    },
+                    patronymic: {
+                        required: "Пожалуйста введите Ваше отчество",
+                        minlength: "Отчество должно содержать не менее 2 знаков"
+                    },
+                    /*born: "Введите Вашу дату рождения!",*/
+                    phone: {
+                        required: "Пожалуйста введите Ваш номер телефона",
+                        minlength: "Номер телефона должен содержать не менее 9 знаков"
+                    },
+                    serial: "Введите серию и номер паспорта!",
+                    issued_by: "Введите кем выдан Ваш паспорт!",
+                    registration: "Введите Ваш адрес регистрации!",
+                    /*issue_date: "Введите дату выдачи паспорта!",*/
+                    address: "Введите Ваш фактический адрес прожимания!",
+                    license: "Введите Ваши серию и номер водительского удостоверения!",
+                    /*license_issued_by: "Введите дату выдачи водительского удостоверения!",*/
+                    city: "Введите Ваше место рождения!",
+                    issue_place: "Введите место подачи авто!",
+                    email: "Вы ввели не верно email",
+                }
+            });
+            
+        });
+	</script>
 
 <?php echo $footer; ?>
