@@ -21,7 +21,7 @@ $(document).ready(function() {
     $(".fancybox").fancybox();
 
     // OWL-CAROUSEL
-    $('.owl-carousel').owlCarousel({
+    /*$('.owl-carousel').owlCarousel({
         loop:true,
         margin:10,
         nav:true,
@@ -44,7 +44,7 @@ $(document).ready(function() {
                 items:1
             }
         }
-    });
+    });*/
 
     // MMENU
 

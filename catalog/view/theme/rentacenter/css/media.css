@@ -3,21 +3,206 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
 
+	#page .header,
+	#page .menu {
+	  display: block; }
+	
+	.block-menu {
+		display: none;
+	}
+
+	.header-desctop .block-header .button-yellow,
+	.header-desctop .block-header .header-phones {
+		float: right;
+	}
+
+	.menu-button {
+		float: left;
+		background-color: #fec52d;
+		border: none;
+		color: #333;
+		margin: 17px 0 0 0;
+		width: 40px;
+		height: 40px;
+		font-size: 25px;
+	}
+
+	.header-desctop .block-header .header-phones {
+		margin-right: 15px;
+	}
+
+	.header-desctop {
+		height: auto;
+	}
+
+	.header-desctop .block-header ul {
+		float: none;
+		width: 100%;
+		display: table;
+		text-align: center;
+	}
+
+	.header-desctop .block-header ul li {
+		display: table-cell;
+		float: none;
+	}
+
+	.list-car li {
+	    width: 23.2%;
+	    margin-right: 20px;
+	}
+
+	.footer .start-now .title {
+		float: none;
+		text-align: center;
+		padding-bottom: 20px;
+	}
+
+	.footer .start-now .buttons-block {
+		top: 0;
+		float: none;
+		text-align: center;
+	}
+
+	.logo-footer img {
+		width: 150px;
+	}
+
+	.footer .midle-footer-block .social-list {
+		margin-top: 25px;
+	}
+
+	.footer .midle-footer-block .social-list li a {
+		width: 20px;
+		height: 20px;
+	}
+
+	.footer .midle-footer-block .social-list li a i {
+		line-height: 24px;
+	}
+
+	.footer .midle-footer-block .social-list li {
+	    margin-left: 5px;
+	}
+
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
 
+	.list-car li:nth-child(3n) {
+		margin-right: 0px;
+	}
+
+	.list-car li:nth-child(4n) {
+		margin-right: 20px;
+	}
+
+	.list-car li {
+   		width: 31.3%;
+	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 
+	.list-car {
+		-webkit-justify-content: space-between;
+		        justify-content: space-between;
+	}
+
+	.list-car li {
+		width: 47%;
+	}
+
+	.list-car li:nth-child(2n) {
+		margin-right: 0px !important;
+	}
+
+	.header-desctop .block-header ul {
+		display: block;
+	}
+
+	.header-desctop .block-header ul li {
+		display: block;
+	}
+
+	.header-desctop .block-header li a {
+		padding: 13px 0px;
+		border-bottom: 1px solid #5c5454;;
+	}
+}
+
+@media only screen and (max-width : 600px) {
+	.header-desctop .block-header .header-phones {
+		margin-top: 5px;
+		margin-right: 0px;
+	}
+
+	.header-desctop .block-header .header-phones a {
+		font-size: 14px;
+	}
+
+	.block-header .button-yellow  {
+		font-size: 70%;
+		min-width: 130px;
+		position: absolute;
+		right: 0;
+		left: auto;
+		top: 35px;
+		padding: .6em .7em;
+	}
+
+	.header-desctop {
+	    min-height: 125px;
+	}
+
+	.header a {
+		top: 80px !important;
+		left: 8px !important;
+	}
+
+	.logo img {
+		width: 150px;
+	}
+
+	.banner-under-header {
+		padding-top: 30px;
+	}
+
+	.title-banner {
+		font-size: 20px;
+	}
+
+	.banner-under-header img {
+		width: 100%;
+		padding-bottom: 30px;
+	}
+
+	.content-block {
+		padding: 30px 15px;
+	}
+
+	.about-block img {
+		width: 100%;
+	}
+
+	.main-index .about-block p {
+		padding: 0px;
+	}
+
+	.main-index .column-text {
+		padding-bottom: 20px;
+	}
+
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
-
+	.list-car li {
+		width: 100%;
+		margin-right: 0 !important;
+	}
 }
 
 /* Custom, iPhone Retina */

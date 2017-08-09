@@ -22,8 +22,9 @@ nav:not(.mm-menu)
 	height: 18px;
 	padding: 11px;
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 8px;
+	left: 200px;
+	outline: none !important;
 }
 .header a:before,
 .header a:after

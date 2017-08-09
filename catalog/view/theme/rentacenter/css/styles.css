@@ -596,8 +596,9 @@ textarea:focus:-ms-input-placeholder {
       .header-desctop .block-header .language-list select::-ms-expand {
         display: none; }
     .header-desctop .block-header .button-yellow {
-      float: left;
-      margin-top: 17px; }
+      float: right;
+      margin-top: 20px;
+      margin-right: 15px; }
     .header-desctop .block-header .header-phones {
       float: right;
       margin-top: 19px; }

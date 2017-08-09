@@ -62,7 +62,7 @@
 
 <link rel="stylesheet" href="catalog/view/theme/rentacenter/js/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 <script type="text/javascript" src="catalog/view/theme/rentacenter/js/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-<script src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+<!-- <script src="js/jquery.mousewheel-3.0.6.pack.js"></script> -->
 
 <link rel="stylesheet" href="catalog/view/theme/rentacenter/js/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
 <script type="text/javascript" src="catalog/view/theme/rentacenter/js/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
@@ -84,6 +84,7 @@
 <link href="catalog/view/theme/rentacenter/css/sweetalert.css" rel="stylesheet">
 <script src="catalog/view/theme/rentacenter/js/sweetalert.min.js"></script>
 
+<script src="catalog/view/theme/rentacenter/js/common.js"></script>
 <!-- HTML5 for IE -->
 <!--[if IE]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -116,18 +117,13 @@
         </div>
         <nav id="menu">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="<?php echo $servises; ?>"><?php echo $text_services; ?></a></li>
+                <li><a href="<?php echo $conditions; ?>"><?php echo $text_conditions; ?></a></li>
+                <li><a href="<?php echo $rates; ?>"><?php echo $text_rates; ?></a></li>
+                <li><a href="<?php echo $cars; ?>"><?php echo $text_cars; ?></a></li>
+                <li><a href="<?php echo $news; ?>"><?php echo $text_news; ?></a></li>
+                <!--<li><a href="<?php echo $cooperation; ?>"><?php echo $text_cooperation; ?></a></li>-->
+                <li><a href="<?php echo $contact; ?>"><?php echo $text_contacts; ?></a></li>
             </ul>
         </nav>
 
@@ -143,24 +139,28 @@
                     <?php } else { ?>
                         <h1 class="logo"><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
                     <?php } ?>
-                    
-                    <ul class="menu-desctop">
-                        <li><a href="<?php echo $servises; ?>"><?php echo $text_services; ?></a></li>
-                        <li><a href="<?php echo $conditions; ?>"><?php echo $text_conditions; ?></a></li>
-                        <li><a href="<?php echo $rates; ?>"><?php echo $text_rates; ?></a></li>
-                        <li><a href="<?php echo $cars; ?>"><?php echo $text_cars; ?></a></li>
-                        <li><a href="<?php echo $news; ?>"><?php echo $text_news; ?></a></li>
-                        <!--<li><a href="<?php echo $cooperation; ?>"><?php echo $text_cooperation; ?></a></li>-->
-                        <li><a href="<?php echo $contact; ?>"><?php echo $text_contacts; ?></a></li>
-                    </ul>
-                    
-                    <?php echo $language; ?>
 
-                    <a href="<?php echo $booking; ?>" class="button-yellow">Забронировать авто</a>
                     <div class="header-phones">
                         <a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a>
                         <a href="tel:<?php echo $mobile; ?>"><?php echo $mobile; ?></a>
                     </div>
+
+                    <a href="<?php echo $booking; ?>" class="button-yellow">Забронировать авто</a>
+                    
+                    <!-- <button type="button" class="menu-button hidden-lg"><i class="fa fa-bars"></i></button> -->
+                    <div class="block-menu">
+                        <ul class="menu-desctop">
+                            <li><a href="<?php echo $servises; ?>"><?php echo $text_services; ?></a></li>
+                            <li><a href="<?php echo $conditions; ?>"><?php echo $text_conditions; ?></a></li>
+                            <li><a href="<?php echo $rates; ?>"><?php echo $text_rates; ?></a></li>
+                            <li><a href="<?php echo $cars; ?>"><?php echo $text_cars; ?></a></li>
+                            <li><a href="<?php echo $news; ?>"><?php echo $text_news; ?></a></li>
+                            <!--<li><a href="<?php echo $cooperation; ?>"><?php echo $text_cooperation; ?></a></li>-->
+                            <li><a href="<?php echo $contact; ?>"><?php echo $text_contacts; ?></a></li>
+                        </ul>
+                    </div>
+                    
+                    <?php echo $language; ?>
                 </div>
             </div>
         </header>
