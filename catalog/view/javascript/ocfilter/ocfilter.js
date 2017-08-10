@@ -343,7 +343,7 @@ Math.easeIn = function (val, min, max, strength) {
             return $('#ocfilter-button').html();
           },
           html: true,
-          placement: $this.options['mobile'] ? 'bottom' : 'right',
+          placement: $this.options['mobile'] ? 'bottom' : 'bottom',
           container: '#ocfilter',
           trigger: 'manual'
         });
