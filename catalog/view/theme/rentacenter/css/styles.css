@@ -912,7 +912,8 @@ textarea:focus:-ms-input-placeholder {
         font-weight: 700; }
       .main-cars-in .block-slider .description li .block-select {
         position: relative;
-        margin-top: 8px; }
+        margin-top: 8px;
+        min-width: 100px; }
         .main-cars-in .block-slider .description li .block-select:after {
           content: "";
           position: absolute;
@@ -1173,7 +1174,7 @@ textarea:focus:-ms-input-placeholder {
       width: 93px;
       height: 30px;
       margin-right: 5px;
-      margin-left: 8px;
+      margin-left: 7px;
       background-color: white;
       border: 1px solid #d8d8d8;
       text-align: center;
@@ -1231,10 +1232,10 @@ textarea:focus:-ms-input-placeholder {
       text-align: center; }
   .main-reservation .first-form .surname input {
     margin-left: 24px;
-    margin-right: 12px; }
+    margin-right: 0px; }
   .main-reservation .first-form .patronymic input {
-    margin-left: 22px;
-    margin-right: 14px; }
+    margin-left: 24px;
+    margin-right: 0px; }
   .main-reservation .first-form .birthday input {
     margin-left: 6px; }
   .main-reservation .first-form .primary-phone {
@@ -1325,14 +1326,14 @@ textarea:focus:-ms-input-placeholder {
       height: 30px;
       background-color: white;
       border: 1px solid #d8d8d8;
-      margin-left: 109px;
+      margin-left: 111px;
       padding: 5px 10px;
       font-size: 14px;
       font-weight: 400;
       line-height: 18px;
       color: #333; }
   .main-reservation .pasport-form .address-fact input {
-    margin-left: 29px; }
+    margin-left: 30px; }
 
 .main-reservation .more-info-form {
   padding-bottom: 40px; }
@@ -1507,7 +1508,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-reservation .first-form .surname {
-  width: 267px;
+  width: 266px;
 }
 
 .main-reservation .first-form .name {
@@ -1515,7 +1516,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-reservation .first-form .patronymic {
-  width: 269px;
+  width: 270px;
 }
 
 .main-reservation .pasport-form .number {
@@ -1566,4 +1567,8 @@ select::-ms-expand {
 
 .list-car .option select {
   padding-right: 22px;
+}
+
+.scale {
+  margin-bottom: 64px !important;
 }
