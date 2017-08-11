@@ -102,9 +102,9 @@ class ModelCatalogOCFilter extends Model {
 
   public function getProductPrices($data) {
 		$cache = 'ocfilter.product.price.' . md5(serialize($data));
-
+		
 		$product_price_data = $this->cache->get($cache);
-
+		
     if (false !== $product_price_data) {
     	return $product_price_data;
     }

@@ -43,7 +43,7 @@ class ControllerModuleOCFilter extends Controller {
 
         if ($this->config->get('ocfilter_show_price') && !empty($options_get['p'])) {
           $range = getRangeParts(end($options_get['p']));
-
+					
           if (isset($range['from']) && isset($range['to'])) {
           	$this->min_price_get = $range['from'];
           	$this->max_price_get = $range['to'];
@@ -76,10 +76,11 @@ class ControllerModuleOCFilter extends Controller {
       $filter_data['filter_ocfilter'] = $this->cancelOptionParams('p');
 
       $this->product_prices = $this->model_catalog_ocfilter->getProductPrices($filter_data);
-
+			
       if ($this->product_prices) {
         $this->min_price = floor($this->product_prices['min'] * $this->currency->getValue($this->session->data['currency']));
-    	  $this->max_price = ceil($this->product_prices['max'] * $this->currency->getValue($this->session->data['currency']));
+    	  //$this->max_price = ceil($this->product_prices['max'] * $this->currency->getValue($this->session->data['currency']));
+				$this->max_price = ceil('6000' * $this->currency->getValue($this->session->data['currency']));
       }
     }
 
