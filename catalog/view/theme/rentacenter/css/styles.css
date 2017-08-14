@@ -1572,3 +1572,38 @@ select::-ms-expand {
 .scale {
   margin-bottom: 64px !important;
 }
+
+/* 14.08.2017 */
+
+table td {
+  border: 1px solid #c6c6c6;
+  padding: 10px;
+}
+
+table td a {
+  color: #333;
+}
+
+table tr:nth-child(odd) {
+  background: #f3f3f3;
+}
+
+table tr {
+  -webkit-transition: 0.5s;
+     -moz-transition: 0.5s;
+      -ms-transition: 0.5s;
+       -o-transition: 0.5s;
+          transition: 0.5s;
+}
+
+table tr:hover {
+  background: #e0dede;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.list-info li {
+  padding-bottom: 10px;
+}
