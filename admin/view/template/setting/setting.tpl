@@ -33,6 +33,7 @@
           <ul class="nav nav-tabs">
             <li class="active"><a href="#tab-general" data-toggle="tab"><?php echo $tab_general; ?></a></li>
             <li><a href="#tab-store" data-toggle="tab"><?php echo $tab_store; ?></a></li>
+            <li><a href="#tab-contact" data-toggle="tab">Страница контактов</a></li>
             <li><a href="#tab-local" data-toggle="tab"><?php echo $tab_local; ?></a></li>
             <li><a href="#tab-option" data-toggle="tab"><?php echo $tab_option; ?></a></li>
             <li><a href="#tab-image" data-toggle="tab"><?php echo $tab_image; ?></a></li>
@@ -255,6 +256,28 @@
                 <?php } ?>
 
             </div>
+            
+            <div class="tab-pane" id="tab-contact">
+                <ul class="nav nav-tabs" id="contacts-language">
+                  <?php foreach ($languages as $language) { ?>
+                  <li><a href="#contacts-language<?php echo $language['language_id']; ?>" data-toggle="tab"><img src="view/image/flags/<?php echo $language['image']; ?>" title="<?php echo $language['name']; ?>" /> <?php echo $language['name']; ?></a></li>
+                  <?php } ?>
+                </ul>
+
+                <div class="tab-content">
+                  <?php foreach ($languages as $language) { ?>
+                  <div class="tab-pane" id="contacts-language<?php echo $language['language_id']; ?>">
+                    <div class="form-group">
+                      <label class="col-sm-2 control-label" for="input-contacts-data<?php echo $language['language_id']; ?>">Страница контактов</label>
+                      <div class="col-sm-10">
+                        <textarea name="config_langdata[<?php echo $language['language_id']; ?>][contacts_data]" rows="5" placeholder="Страница контактов" id="input-contacts-data<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($config_langdata[$language['language_id']]) ? $config_langdata[$language['language_id']]['contacts_data'] : ''; ?></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <?php } ?>
+                </div>
+            </div>
+            
             <div class="tab-pane" id="tab-local">
               <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-country"><?php echo $entry_country; ?></label>
@@ -1957,6 +1980,15 @@
     </div>
   </div>
   <script type="text/javascript"><!--
+<?php foreach ($languages as $language) { ?>
+<?php if ($ckeditor) { ?>
+ckeditorInit('input-contacts-data<?php echo $language['language_id']; ?>', '<?php echo $token; ?>');
+<?php } else { ?>
+$('#input-contacts-data<?php echo $language['language_id']; ?>').summernote({height: 300, lang:'<?php echo $lang; ?>'});
+<?php } ?>
+<?php } ?>
+//--></script>
+  <script type="text/javascript"><!--
 $('select[name=\'config_template\']').on('change', function() {
 	$.ajax({
 		url: 'index.php?route=setting/setting/template&token=<?php echo $token; ?>&template=' + encodeURIComponent(this.value),
@@ -2018,5 +2050,6 @@ $('select[name=\'config_country_id\']').trigger('change');
 
 $('#store-language a:first').tab('show');
 $('#content-language a:first').tab('show');
+$('#contacts-language a:first').tab('show');
 //--></script></div>
 <?php echo $footer; ?>

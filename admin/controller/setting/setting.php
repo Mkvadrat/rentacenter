@@ -300,6 +300,15 @@ class ControllerSettingSetting extends Controller {
 		$data['tab_sms'] = $this->language->get('tab_sms');
 
 		$data['sms_gatenames'] = array();
+		
+		//CKEditor
+		if ($this->config->get('config_editor_default')) {
+			$this->document->addScript('view/javascript/ckeditor/ckeditor.js');
+			$this->document->addScript('view/javascript/ckeditor/ckeditor_init.js');
+		}
+		
+		$data['ckeditor'] = $this->config->get('config_editor_default');
+		$data['lang'] = $this->language->get('lang');
 
 		$files = glob(DIR_SYSTEM . 'smsgate/*.php');
 
