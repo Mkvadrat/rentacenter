@@ -33,6 +33,18 @@
 
             <!-- end banner-under-header -->
 
+            <div class="container">
+                <div class="row">
+                    <div class="content-block">
+                        <div class="col-md-12">
+                            <p><strong>Телефоны автопроката в Ростове-на-Дону: +7 989 500 18 46,  +7 988 990 63 59</strong><br>Оснащенный всем необходимым, заправленный бензином, сверкающий чистотой автомобиль уже ждет вас.<br>Условия аренды – вы должны быть старше 23 лет и иметь водительский стаж не менее 2-х лет. Документы, которые необходимо иметь при себе, чтобы взять машину напрокат – паспорт, водительское удостоверение, миграционная карта (для жителей Украины).<br>Оплата производится в рублях с помощью наличного или безналичного платежа.</p>
+                            <p>В случае необходимости мы пригоним автомобиль на вокзал или аэропорт, чтобы пребывание в нашем городе было для вас максимально безопасным.</p>
+                            <p>БЕСПЛАТНАЯ  подача арендованного авто по Ростову на Дону с 8.00 до 18.00<br>AVTO PROKAT – самая комфортная служба проката автомобилей в Ростове-на-Дону.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- start map-block -->
 
             <div class="container-fluid map-container">
@@ -96,16 +108,17 @@
             <div class="container">
                 <div class="row">
                     <div class="content-block">
-                        <div class="col-md-12">
+                        <div class="col-md-12" itemscope itemtype="http://schema.org/LocalBusiness">
                             <p class="title-text">Головной офис в Ростове-на-Дону</p>
                             
-                            <p>Адрес:</p>
+                            <meta itemscope itemtype="http://schema.org/Organization" itemprop="name" content="Avto prokat">
+                            <p itemscope itemtype="http://schema.org/PostalAddress" itemprop="location">Адрес:</p>
                             <address><?php echo $address; ?></address>
                             <p><a href="<?php echo $email; ?>"><?php echo $email; ?></a></p>
 
                             <p class="sub-titile">Номера телефона:</p>
-                            <p><a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a></p>
-                            <p><a href="tel:<?php echo $mobile; ?>"><?php echo $mobile; ?></a></p>
+                            <p><a href="tel:<?php echo $telephone; ?>" itemprop="telephone"><?php echo $telephone; ?></a></p>
+                            <p><a href="tel:<?php echo $mobile; ?>" itemprop="telephone"><?php echo $mobile; ?></a></p>
 
                             <p class="sub-titile">Часы работы:</p>
                             <?php echo $open; ?>
