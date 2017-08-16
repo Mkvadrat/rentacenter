@@ -626,7 +626,7 @@ textarea:focus:-ms-input-placeholder {
   .banner-under-header .title-banner {
     padding-bottom: 25px; }
   .banner-under-header img {
-    padding-bottom: 110px; }
+    padding-bottom: 50px; }
 
 /*--------------------------------------------------------*/
 /*--------------- end banner-under-header ----------------*/
@@ -1606,4 +1606,8 @@ table tr:hover {
 
 .list-info li {
   padding-bottom: 10px;
+}
+
+main .text-block p {
+  text-indent: 20px;
 }
