@@ -8,7 +8,7 @@
                     <p class="title-banner"><?php echo $main_title; ?></p>
                     <img src="catalog/view/theme/rentacenter/images/banner-main.png" alt="">
                     <div class="about-block">
-                        <?php echo $main_description; ?>
+                        <?php echo $main_description?>
                     </div>
                 </div>
             </div>
