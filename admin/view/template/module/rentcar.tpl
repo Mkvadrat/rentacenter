@@ -35,6 +35,18 @@
               <?php foreach ($languages as $language) { ?>
               <div class="tab-pane" id="language<?php echo $language['language_id']; ?>">
                 <div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-title<?php echo $language['language_id']; ?>">Заголовок модуля</label>
+                  <div class="col-sm-10">
+                    <input type="text" name="module_rent_description[<?php echo $language['language_id']; ?>][title]" placeholder="Заголовок модуля" id="input-heading<?php echo $language['language_id']; ?>" value="<?php echo isset($module_rent_description[$language['language_id']]['title']) ? $module_rent_description[$language['language_id']]['title'] : ''; ?>" class="form-control" />
+                  </div>
+                </div>
+								<div class="form-group">
+                  <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>">Описание на главной</label>
+                  <div class="col-sm-10">
+                    <textarea name="module_rent_description[<?php echo $language['language_id']; ?>][main_text]" placeholder="Описание на главной" id="input-main-text<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($module_rent_description[$language['language_id']]['main_text']) ? $module_rent_description[$language['language_id']]['main_text'] : ''; ?></textarea>
+                  </div>
+                </div>
+								<div class="form-group">
                   <label class="col-sm-2 control-label" for="input-description<?php echo $language['language_id']; ?>"><?php echo $entry_description; ?></label>
                   <div class="col-sm-10">
                     <textarea name="module_rent_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description; ?>" id="input-description<?php echo $language['language_id']; ?>" class="form-control"><?php echo isset($module_rent_description[$language['language_id']]['description']) ? $module_rent_description[$language['language_id']]['description'] : ''; ?></textarea>
@@ -142,8 +154,10 @@ $('#rentcar-product').delegate('.fa-minus-circle', 'click', function() {
 <?php foreach ($languages as $language) { ?>
 <?php if ($ckeditor) { ?>
 ckeditorInit('input-description<?php echo $language['language_id']; ?>', '<?php echo $token; ?>');
+ckeditorInit('input-main-text<?php echo $language['language_id']; ?>', '<?php echo $token; ?>');
 <?php } else { ?>
 $('#input-description<?php echo $language['language_id']; ?>').summernote({height: 300, lang:'<?php echo $lang; ?>'});
+$('#input-main-text<?php echo $language['language_id']; ?>').summernote({height: 300, lang:'<?php echo $lang; ?>'});
 <?php } ?>
 <?php } ?>
 //--></script> 

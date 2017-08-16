@@ -11,6 +11,8 @@ class ControllerModuleRentcar extends Controller {
 		$data['button_wishlist'] = $this->language->get('button_wishlist');
 		$data['button_compare'] = $this->language->get('button_compare');
 		$data['view_all'] = $this->url->link('product/category&path=59');
+		$data['main_title'] = html_entity_decode($setting['module_rent_description'][$this->config->get('config_language_id')]['title'], ENT_QUOTES, 'UTF-8');
+		$data['main_description'] = html_entity_decode($setting['module_rent_description'][$this->config->get('config_language_id')]['main_text'], ENT_QUOTES, 'UTF-8');
 		$data['html'] = html_entity_decode($setting['module_rent_description'][$this->config->get('config_language_id')]['description'], ENT_QUOTES, 'UTF-8');
 		
 		$this->load->model('catalog/product');

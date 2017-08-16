@@ -5,8 +5,11 @@
         <div class="container banner-under-header">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="title-banner">Прокат автомобилей без водителя в Ростове на дону</p>
+                    <p class="title-banner"><?php echo $main_title; ?></p>
                     <img src="catalog/view/theme/rentacenter/images/banner-main.png" alt="">
+                    <div class="about-block">
+                        <?php echo $main_description; ?>
+                    </div>
                 </div>
             </div>
         </div>
