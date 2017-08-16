@@ -13,7 +13,7 @@
                 </div>
             </div>
         </div>
-    
+        <!-- ТЕКСТ ГЛАВНОЙ -->
         <!-- end banner-under-header -->
     
         <?php if($products){?>
