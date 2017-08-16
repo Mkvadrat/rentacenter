@@ -1,7 +1,7 @@
     <main class="main-index">
     
         <!-- start banner-under-header -->
-    
+        <!-- ТЕКСТ ГЛАВНОЙ -->
         <div class="container banner-under-header">
             <div class="row">
                 <div class="col-md-12">
