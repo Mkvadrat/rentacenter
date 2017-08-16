@@ -7,7 +7,7 @@
         <div class="container banner-under-header">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="title-banner"><?php echo $main_title; ?></p>
+                    <h1 class="title-banner"><?php echo $main_title; ?></h1>
                     <img src="catalog/view/theme/rentacenter/images/banner-main.png" alt="">
                     <div class="about-block">
                         <?php echo $main_description?>
