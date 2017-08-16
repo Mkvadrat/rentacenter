@@ -4,8 +4,6 @@
 
         <!-- ТЕКСТ ГЛАВНОЙ -->
 
-        <?php if($main_title && $main_description){ ?>
-
         <div class="container banner-under-header">
             <div class="row">
                 <div class="col-md-12">
@@ -19,8 +17,6 @@
         </div>
 
         <!-- ТЕКСТ ГЛАВНОЙ -->
-
-        <?php } ?>
 
         <!-- end banner-under-header -->
     
