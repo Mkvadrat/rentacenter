@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="title-black-banner"><?php echo $heading_title; ?></h1>
+                        <h1 class="title-black-banner"><?php echo $heading_name; ?></h1>
                         <ul class="bread-crumbs">
                         <?php			
                           $count = count($breadcrumbs);
@@ -35,6 +35,19 @@
         <!-- end banner-under-header -->
 
         <!-- start list-car -->
+        <div class="container banner-under-header">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="title-banner"><?php echo $heading_title; ?></p>
+                    <img src="catalog/view/theme/rentacenter/images/banner-main.png" alt="">
+                    <div class="about-block">
+                    <?php if ($description) { ?>
+                        <?php echo $description; ?>
+                    <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="container">
             <div class="row">

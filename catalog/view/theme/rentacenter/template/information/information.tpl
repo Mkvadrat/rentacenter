@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                  <h1 class="title-black-banner"><?php echo $heading_title; ?></h1>
+                  <p class="title-black-banner"><?php echo $heading_title; ?></p>
                   <ul class="bread-crumbs">
                   <?php			
                     $count = count($breadcrumbs);
