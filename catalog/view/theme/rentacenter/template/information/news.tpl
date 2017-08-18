@@ -38,7 +38,7 @@
                 <div class="content-block">
                     <div class="col-md-9">
                         <div class="text-block">
-                            <p class="title-text"><?php echo $heading_title; ?></p>
+                            <!--<p class="title-text"><?php echo $heading_title; ?></p>-->
 							<?php echo $description; ?>
 							<p><time datetime=""><?php echo $date_added; ?></time></p>
 						</div>

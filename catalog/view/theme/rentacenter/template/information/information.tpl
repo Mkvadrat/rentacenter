@@ -38,7 +38,7 @@
         <div class="content-block">
           <div class="col-md-12">
             <div class="text-block">
-                <p class="title-text"><?php echo $heading_title; ?></p>
+                <!--<p class="title-text"><?php echo $heading_title; ?></p>-->
                 <?php echo $description; ?>
             </div>
           </div>

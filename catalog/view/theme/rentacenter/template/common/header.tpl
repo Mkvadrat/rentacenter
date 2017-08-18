@@ -155,6 +155,10 @@
                     <div class="block-menu">
                         <ul class="menu-desctop">
                             <li><a href="<?php echo $servises; ?>"><?php echo $text_services; ?></a></li>
+                            <!--<ul>
+                                <li><a href="<?php echo $without_driver; ?>">Прокат авто без водителя</a></li>
+                                <li><a href="<?php echo $rental_airport; ?>">Прокат авто в аэропорту</a></li>
+                            </ul> --> 
                             <li><a href="<?php echo $conditions; ?>"><?php echo $text_conditions; ?></a></li>
                             <li><a href="<?php echo $rates; ?>"><?php echo $text_rates; ?></a></li>
                             <li><a href="<?php echo $cars; ?>"><?php echo $text_cars; ?></a></li>
