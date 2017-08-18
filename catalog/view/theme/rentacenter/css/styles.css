@@ -539,10 +539,27 @@ textarea:focus:-ms-input-placeholder {
     margin: 0 auto; }
     .header-desctop .block-header ul {
       padding: 24px 27px;
-      overflow: hidden;
+      /*overflow: hidden;*/
       float: left; }
     .header-desctop .block-header li {
+      position: relative;
       float: left; }
+
+      .header-desctop .block-header li ul {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0;
+        padding-top: 35px;
+        width: 200px;
+        background: #333;
+      }
+
+      .header-desctop .block-header li:hover ul {
+        display: block;
+      }
+      
       .header-desctop .block-header li a {
         display: block;
         padding: 8px 10px;
@@ -555,7 +572,9 @@ textarea:focus:-ms-input-placeholder {
         -moz-transition: 0.5s;
         -ms-transition: 0.5s;
         -o-transition: 0.5s;
-        transition: 0.5s; }
+        transition: 0.5s;
+        z-index: 1;
+        position: relative; }
         .header-desctop .block-header li a:hover {
           color: #fec52d; }
     .header-desctop .block-header .language-list {
