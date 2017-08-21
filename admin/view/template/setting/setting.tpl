@@ -205,9 +205,9 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 control-label" for="input-fax"><?php echo $entry_fax; ?></label>
+                  <label class="col-sm-2 control-label" for="input-fax">Viber</label>
                   <div class="col-sm-10">
-                    <input type="text" name="config_fax" value="<?php echo $config_fax; ?>" placeholder="<?php echo $entry_fax; ?>" id="input-fax" class="form-control" />
+                    <input type="text" name="config_fax" value="<?php echo $config_fax; ?>" placeholder="Viber" id="input-fax" class="form-control" />
                   </div>
                 </div>
                 <div class="form-group">
