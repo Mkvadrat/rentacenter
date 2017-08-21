@@ -118,16 +118,13 @@
         <nav id="menu">
             <ul>
                 <li><a href="<?php echo $servises; ?>"><?php echo $text_services; ?></a></li>
+                <li><a href="<?php echo $without_driver; ?>">Прокат авто без водителя</a></li>
+                <li><a href="<?php echo $rental_airport; ?>">Прокат авто в аэропорту</a></li>
                 <li><a href="<?php echo $conditions; ?>"><?php echo $text_conditions; ?></a></li>
                 <li><a href="<?php echo $rates; ?>"><?php echo $text_rates; ?></a></li>
                 <li><a href="<?php echo $cars; ?>"><?php echo $text_cars; ?></a></li>
                 <li><a href="<?php echo $news; ?>"><?php echo $text_news; ?></a></li>
-                <!-- <ul class="drodown">
-                    <li><a href="<?php echo $cooperation; ?>"><?php echo $text_cooperation; ?></a></li>
-                    <li><a href="<?php echo $cooperation; ?>"><?php echo $text_cooperation; ?></a></li>
-                    <li><a href="<?php echo $cooperation; ?>"><?php echo $text_cooperation; ?></a></li>
-                    <li><a href="<?php echo $contact; ?>"><?php echo $text_contacts; ?></a></li>
-                </ul> -->
+                <!-- <li><a href="<?php echo $cooperation; ?>"><?php echo $text_cooperation; ?></a></li> -->
             </ul>
         </nav>
 
@@ -154,11 +151,12 @@
                     <!-- <button type="button" class="menu-button hidden-lg"><i class="fa fa-bars"></i></button> -->
                     <div class="block-menu">
                         <ul class="menu-desctop">
-                            <li><a href="<?php echo $servises; ?>"><?php echo $text_services; ?></a></li>
-                            <!--<ul>
-                                <li><a href="<?php echo $without_driver; ?>">Прокат авто без водителя</a></li>
-                                <li><a href="<?php echo $rental_airport; ?>">Прокат авто в аэропорту</a></li>
-                            </ul> --> 
+                            <li><a href="<?php echo $servises; ?>"><?php echo $text_services; ?></a>
+                                <ul class="dropdown">
+                                    <li><a href="<?php echo $without_driver; ?>">Прокат авто без водителя</a></li>
+                                    <li><a href="<?php echo $rental_airport; ?>">Прокат авто в аэропорту</a></li>
+                                </ul>
+                            </li>
                             <li><a href="<?php echo $conditions; ?>"><?php echo $text_conditions; ?></a></li>
                             <li><a href="<?php echo $rates; ?>"><?php echo $text_rates; ?></a></li>
                             <li><a href="<?php echo $cars; ?>"><?php echo $text_cars; ?></a></li>
