@@ -5771,3 +5771,11 @@
 =======
 >>>>>>> 6dc7416392d17e8fd08adb0abb18ca6d8e53ee85
 >>>>>>> 68abeef94cb68d33f0aa47c79de16eefad5026e1
+2017-08-22 15:13:23 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\footer.tpl on line 27
+2017-08-22 15:13:23 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\footer.tpl on line 27
+2017-08-22 15:13:26 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\footer.tpl on line 27
+2017-08-22 15:13:26 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\footer.tpl on line 27
+2017-08-22 15:15:47 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\footer.tpl on line 27
+2017-08-22 15:15:47 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\footer.tpl on line 27
+2017-08-22 15:15:48 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\footer.tpl on line 27
+2017-08-22 15:15:48 - PHP Notice:  Undefined variable: name in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\footer.tpl on line 27

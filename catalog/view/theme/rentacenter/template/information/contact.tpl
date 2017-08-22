@@ -124,7 +124,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="facade-photo">
-                                <img src="http://rentacenter.ru/image/cache/catalog/fordfiesta/image-for-contact-page.jpg" alt="">
+                                <img src="catalog/view/theme/rentacenter/images/image-for-contact-page.jpg" alt="">
                             </div>
                         </div>
                     </div>
