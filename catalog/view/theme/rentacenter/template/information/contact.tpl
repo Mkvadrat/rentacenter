@@ -117,7 +117,8 @@
                             <p class="sub-titile">Номера телефона:</p>
                             <p><a href="tel:<?php echo $telephone; ?>" itemprop="telephone"><?php echo $telephone; ?></a></p>
                             <p><a href="tel:<?php echo $mobile; ?>" itemprop="telephone"><?php echo $mobile; ?></a></p>
-
+                            <p>Viber:  <a href="tel:<?php echo $fax; ?>" itemprop="telephone"><?php echo $fax; ?></a></p>
+                            
                             <p class="sub-titile">Часы работы:</p>
                             <?php echo $open; ?>
                         </div>
