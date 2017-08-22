@@ -1630,3 +1630,8 @@ table tr:hover {
 main .text-block p {
   text-indent: 20px;
 }
+
+.facade-photo img {
+  max-width: 774px;
+  width: 100%;
+}

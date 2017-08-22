@@ -106,7 +106,7 @@
             <div class="container">
                 <div class="row">
                     <div class="content-block">
-                        <div class="col-md-12" itemscope itemtype="http://schema.org/LocalBusiness">
+                        <div class="col-md-6" itemscope itemtype="http://schema.org/LocalBusiness">
                             <p class="title-text">Головной офис в Ростове-на-Дону</p>
                             
                             <meta itemscope itemtype="http://schema.org/Organization" itemprop="name" content="Avto prokat">
@@ -121,6 +121,11 @@
                             
                             <p class="sub-titile">Часы работы:</p>
                             <?php echo $open; ?>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="facade-photo">
+                                <img src="http://rentacenter.ru/image/cache/catalog/fordfiesta/image-for-contact-page.jpg" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
