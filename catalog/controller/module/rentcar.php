@@ -15,6 +15,13 @@ class ControllerModuleRentcar extends Controller {
 		$data['main_description'] = html_entity_decode($setting['module_rent_description'][$this->config->get('config_language_id')]['main_text'], ENT_QUOTES, 'UTF-8');
 		$data['html'] = html_entity_decode($setting['module_rent_description'][$this->config->get('config_language_id')]['description'], ENT_QUOTES, 'UTF-8');
 		
+		$data['mobile']  = isMobile;    /*мобильный агент*/
+		$data['tablet']  = isTablet;    /*агент планшета*/
+		$data['ios']     = isiOS;       /*агент ios*/
+		$data['android'] = isAndroidOS; /*агент android*/
+		$data['getbrowser'] = browser_detect; /*броузер ПК*/
+		$data['getplatform'] = platform_detect; /*операционная система устройства*/
+		
 		$this->load->model('catalog/product');
 
 		$this->load->model('tool/image');

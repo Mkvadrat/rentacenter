@@ -121,6 +121,20 @@ require_once(modification(DIR_SYSTEM . 'engine/loader.php'));
 require_once(modification(DIR_SYSTEM . 'engine/model.php'));
 require_once(modification(DIR_SYSTEM . 'engine/registry.php'));
 
+/*Определение мобильного устройства клиента*/
+require_once(DIR_SYSTEM . 'helper/mobile_detect.php');
+	$detect = new mobile_detect(); 
+	define('isMobile', $detect->isMobile(), false);//Это используем
+	define('isTablet', $detect->isTablet(), false); //Это используем
+//Остальные в принципе не нужны
+	define('isiOS', $detect->isiOS(), false);
+	define('isAndroidOS', $detect->isAndroidOS(), false);
+/*Определение броузера клиента*/
+require_once(DIR_SYSTEM . 'helper/browser_detect.php');
+	$browser_detect = new Browser(); 
+	define('browser_detect', $browser_detect->getBrowser(), false);//Это используем
+	define('platform_detect', $browser_detect->getPlatform(), false);//Это используем
+
 // Helper
 require_once(DIR_SYSTEM . 'helper/general.php');
 require_once(DIR_SYSTEM . 'helper/json.php');

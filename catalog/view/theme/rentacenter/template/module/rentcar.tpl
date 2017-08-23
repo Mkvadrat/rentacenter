@@ -125,6 +125,25 @@
         });
     });
 
+    <?php if($mobile || $tablet){ ?>
+    $(function() {
+      $("#price_<?php echo $product['product_id']; ?>").change(function() {
+        $.ajax({
+            url: 'index.php?route=module/rentcar/renderTotal',
+            type: 'POST',
+            data: {
+                'product_id' : '<?php echo $product['product_id']; ?>',
+                'change_price' : $('#price_<?php echo $product['product_id']; ?>').val()
+            },
+            dataType: 'json',
+            success: function(data) {
+                $( "#total-<?php echo $product['product_id']; ?>" ).replaceWith('<li id="total-<?php echo $product['product_id']; ?>">Итого: <strong>'+ data.message +'</strong></li>');
+                $( "#booking-<?php echo $product['product_id']; ?>" ).replaceWith('<a class="button-yellow" id="booking-<?php echo $product['product_id']; ?>" href="<?php echo $product['booking'] . '&total='; ?>' + data.clear_price +'">Забронировать авто</a>');
+            }
+        });
+      });
+    });
+    <?php }else{ ?>
     $(function() {
       $("#price_<?php echo $product['product_id']; ?>").click(function() {
         $.ajax({
@@ -142,6 +161,7 @@
         });
       });
     });
+    <?php } ?>
     <?php } ?>
     </script>
 
