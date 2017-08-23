@@ -196,7 +196,7 @@
    
    <?php if($mobile || $tablet){ ?>
     $(function() {
-      $("#price_<?php echo $product['product_id']; ?>").change(function() {
+      $("#price_<?php echo $product_id; ?>").change(function() {
         $.ajax({
             url: 'index.php?route=product/product/renderTotal',
             type: 'POST',
