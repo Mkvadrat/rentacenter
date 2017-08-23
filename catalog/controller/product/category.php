@@ -133,6 +133,13 @@ class ControllerProductCategory extends Controller {
 			$data['button_continue'] = $this->language->get('button_continue');
 			$data['button_list'] = $this->language->get('button_list');
 			$data['button_grid'] = $this->language->get('button_grid');
+			
+			$data['mobile']  = isMobile;    /*мобильный агент*/
+			$data['tablet']  = isTablet;    /*агент планшета*/
+			$data['ios']     = isiOS;       /*агент ios*/
+			$data['android'] = isAndroidOS; /*агент android*/
+			$data['getbrowser'] = browser_detect; /*броузер ПК*/
+			$data['getplatform'] = platform_detect; /*операционная система устройства*/
 
 			// Set the last category breadcrumb
 			$data['breadcrumbs'][] = array(

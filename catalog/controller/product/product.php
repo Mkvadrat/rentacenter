@@ -288,6 +288,13 @@ class ControllerProductProduct extends Controller {
 			$data['points'] = $product_info['points'];
 			$data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 			$data['rates'] = html_entity_decode($product_info['rates'], ENT_QUOTES, 'UTF-8');
+			
+			$data['mobile']  = isMobile;    /*мобильный агент*/
+			$data['tablet']  = isTablet;    /*агент планшета*/
+			$data['ios']     = isiOS;       /*агент ios*/
+			$data['android'] = isAndroidOS; /*агент android*/
+			$data['getbrowser'] = browser_detect; /*броузер ПК*/
+			$data['getplatform'] = platform_detect; /*операционная система устройства*/
 
 			if ($product_info['quantity'] <= 0) {
 				$data['stock'] = $product_info['stock_status'];
