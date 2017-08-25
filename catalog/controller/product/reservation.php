@@ -76,11 +76,11 @@ class ControllerProductReservation extends Controller {
 				$patronymic = '';
 			}
 			
-			if (isset($this->request->post['born'])) {
+			/*if (isset($this->request->post['born'])) {
 				$born = $this->request->post['born'];
 			}else{
 				$born = '';
-			}
+			}*/
 			
 			if (isset($this->request->post['phone'])) {
 				$phone = $this->request->post['phone'];
@@ -216,6 +216,8 @@ class ControllerProductReservation extends Controller {
 			}else{
 				$radar = 'Нет';
 			}
+			
+			//<p><strong>Дата рождения: '.$born.'</strong></p>
 			
 			$mail = new Mail();
 			$mail->protocol = $this->config->get('config_mail_protocol');
@@ -457,7 +459,6 @@ class ControllerProductReservation extends Controller {
 			<p><strong>Фамилия: '.$surname.'</strong></p>
 			<p><strong>Имя: '.$name.'</strong></p>
 			<p><strong>Отчество: '.$patronymic.'</strong></p>
-			<p><strong>Дата рождения: '.$born.'</strong></p>
 			<p><strong>Основной номер телефона: '.$phone.'</strong></p>
 
 			<h3>Паспорт</h3>
@@ -632,11 +633,11 @@ class ControllerProductReservation extends Controller {
 			$data['error_patronymic'] = '';
 		}
 		
-		if (isset($this->error['born'])) {
+		/*if (isset($this->error['born'])) {
 			$data['error_born'] = $this->error['born'];
 		} else {
 			$data['error_born'] = '';
-		}
+		}*/
 		
 		if (isset($this->error['phone'])) {
 			$data['error_phone'] = $this->error['phone'];
@@ -742,9 +743,9 @@ class ControllerProductReservation extends Controller {
 			$this->error['patronymic'] = $this->language->get('Отчество должно содержать не менее 3 символов!');
 		}
 		
-		if (preg_match('~^\\d{1,2}\\.\\d{1,2}\\.\\d{4}$~', $this->request->post['born'])) {
+		/*if (preg_match('~^\\d{1,2}\\.\\d{1,2}\\.\\d{4}$~', $this->request->post['born'])) {
 			$this->error['born'] = $this->language->get('Дата рождения введена не верно!');
-		}
+		}*/
 		
 		if ((utf8_strlen($this->request->post['phone']) < 8) || (utf8_strlen($this->request->post['phone']) > 32)) {
 			$this->error['phone'] = $this->language->get('Телефон должен содержать не менее 8 символов!');

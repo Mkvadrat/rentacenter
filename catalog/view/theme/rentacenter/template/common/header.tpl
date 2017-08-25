@@ -84,6 +84,10 @@
 <link href="catalog/view/theme/rentacenter/css/sweetalert.css" rel="stylesheet">
 <script src="catalog/view/theme/rentacenter/js/sweetalert.min.js"></script>
 
+<!-- MASKEDINPUT -->
+<script src="catalog/view/theme/rentacenter/js/jquery.maskedinput.min.js"></script>
+
+<!-- MAIN PAGE -->
 <script src="catalog/view/theme/rentacenter/js/common.js"></script>
 <!-- HTML5 for IE -->
 <!--[if IE]>

@@ -66,15 +66,15 @@
                                     </select>
                                 </p>
                                 <label class="from"><em>*</em>Срок аренды, c
-                                    <input type="date" name="date_from" id="date_from" class="datepicker" placeholder="01.01.2017" value="" >
+                                    <input type="text" name="date_from" id="date_from" class="datepicker" placeholder="01.01.2017" value="" >
 
-                                    <input type="time" name="time_from" id="time_from" class="timepicker" placeholder="12:00" value="">
+                                    <input type="text" name="time_from" id="time_from" class="timepicker" placeholder="12:00" value="">
 
                                 </label>
                                 <label class="to">по 
-                                    <input type="date" name="date_before" id="date_before" class="datepicker" placeholder="01.01.2017" value="">
+                                    <input type="text" name="date_before" id="date_before" class="datepicker" placeholder="01.01.2017" value="">
 
-                                    <input type="time" name="time_before" id="time_before" class="timepicker" placeholder="12:00" value="">
+                                    <input type="text" name="time_before" id="time_before" class="timepicker" placeholder="12:00" value="">
 
                                 </label>
                                 <label class="surname"><em>*</em>Фамилия:<input type="text" name="surname" id="surname" placeholder="Фамилия" value=""></label>
@@ -83,7 +83,7 @@
 
                                 <label class="patronymic"><em>*</em>Отчество:<input type="text" name="patronymic" id="patronymic" placeholder="Отчество" value=""></label>
 
-                                <label class="birthday"><em>*</em>Дата рождения: <input type="date" name="born" id="born" class="datepicker" placeholder="01.01.2017" value=""></label>
+                                <!--<label class="birthday"><em>*</em>Дата рождения: <input type="date" name="born" id="born" class="datepicker" placeholder="01.01.2017" value=""></label>-->
                             
                                 <label class="primary-phone"><em>*</em>Основной номер телефона: <input type="tel" name="phone" id="phone" placeholder="+7 (123) 456 78 9" value=""></label>
                             </div>
@@ -95,7 +95,7 @@
                             <div class="pasport-form">
                                 <label class="number"><em>*</em>Серия и номер:<input type="text" name="serial" id="serial" placeholder="Серия и номер" value=""></label>
 
-                                <label class="date"><em>*</em>Дата выдачи:<input type="date" name="issue_date" id="issue_date" class="datepicker" placeholder="01.01.2017" value=""></label>
+                                <label class="text"><em>*</em>Дата выдачи:<input type="text" name="issue_date" id="issue_date" class="datepicker" placeholder="01.01.2017" value=""></label>
                                
                                 <label class="issued"><em>*</em>Кем выдан: <input type="text" name="issued_by" id="issued_by" placeholder="123456789" value=""></label>
 
@@ -108,7 +108,7 @@
                                 </p>
                                 <label class="number"><em>*</em>Серия и номер:<input type="text" name="license" id="license" placeholder="123456789" value=""></label>
 
-                                <label class="date"><em>*</em>Дата выдачи:<input type="date" name="license_issued_by" id="license_issued_by" class="datepicker" placeholder="01.01.2017" value=""></label>
+                                <label class="text"><em>*</em>Дата выдачи:<input type="text" name="license_issued_by" id="license_issued_by" class="datepicker" placeholder="01.01.2017" value=""></label>
                                
                             </div>
                         </div>
@@ -198,7 +198,7 @@
     
     <script type="text/javascript">
 		//локализация календаря
-		$.datepicker.regional['ru'] = {
+		/*$.datepicker.regional['ru'] = {
 			closeText: 'Закрыть',
 			prevText: '&#x3c;Пред',
 			nextText: 'След&#x3e;',
@@ -218,14 +218,19 @@
 		$('.datepicker').datepicker({
 			dateFormat: 'dd.mm.yy',
 			//minDate:0,
-		});
+		});*/
         
+        $('.datepicker').mask("99.99.9999");
+
         $('.timepicker').timepicker({ 'timeFormat': 'H:i' });
         
         $().ready(function() {
             $("#booking-form").validate({
                 rules: {
-                    /*date_from: "required",
+                    /*date_from: {
+                        required: false
+                    },
+                    date_from: "required",
                     time_from: "required",
                     date_before: "required",
                     time_before: "required",*/

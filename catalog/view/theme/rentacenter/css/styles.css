@@ -1188,6 +1188,7 @@ textarea:focus:-ms-input-placeholder {
     display: inline-block;
     width: auto; }
     .main-reservation .first-form .from input[type="date"],
+    .main-reservation .datepicker,
     .main-reservation .first-form .to input[type="date"] {
       display: inline-block;
       width: 93px;
@@ -1202,6 +1203,7 @@ textarea:focus:-ms-input-placeholder {
       line-height: 18px;
       color: #333; }
     .main-reservation .first-form .from input[type="time"],
+    .main-reservation .timepicker,
     .main-reservation .first-form .to input[type="time"] {
       display: inline-block;
       width: 64px;
