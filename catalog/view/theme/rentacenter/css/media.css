@@ -3,6 +3,10 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
 
+	.facade-photo img {
+		width: 72%;
+	}
+
 	#page .header,
 	#page .menu {
 	  display: block; }
@@ -89,6 +93,10 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+
+	.facade-photo {
+		margin-top: 30px;
+	}
 
 	.list-car li:nth-child(3n) {
 		margin-right: 0px;
