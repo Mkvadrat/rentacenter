@@ -979,6 +979,8 @@ textarea:focus:-ms-input-placeholder {
 .main-cars-in .nav-tabs {
   border: none; }
   .main-cars-in .nav-tabs li {
+    padding-left: 0;
+    padding-bottom: 0;
     background: #E4E4E4; }
     .main-cars-in .nav-tabs li a {
       font-size: 14px;
@@ -1659,32 +1661,32 @@ main .text-block p {
   padding-left: 15px;
 }
 
-table {
+.overflow-auto table {
   width: 1040px !important;
 }
 
-table thead tr {
+.overflow-auto table thead tr {
   width: 100%;
   display: block;
 }
 
-table tbody {
+.overflow-auto table tbody {
   display: block;
   height: 400px;
   overflow: auto;
   width: 100%;
 }
 
-table tbody tr {
+.overflow-auto table tbody tr {
   display: table;
   width: 100%;
 }
 
-table thead tr td {
+.overflow-auto table thead tr td {
   width: 102.2px;
 }
 
-table tbody tr td {
+.overflow-auto table tbody tr td {
   width: 102px;
 }
 
