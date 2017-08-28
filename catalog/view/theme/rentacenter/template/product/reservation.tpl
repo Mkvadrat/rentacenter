@@ -83,7 +83,7 @@
 
                                 <label class="patronymic"><em>*</em>Отчество:<input type="text" name="patronymic" id="patronymic" placeholder="Отчество" value=""></label>
 
-                                <!--<label class="birthday"><em>*</em>Дата рождения: <input type="date" name="born" id="born" class="datepicker" placeholder="01.01.2017" value=""></label>-->
+                                <label class="birthday"><em>*</em>Дата рождения: <input type="text" name="born" id="born" class="datepicker" placeholder="01.01.2017" value=""></label>
                             
                                 <label class="primary-phone"><em>*</em>Основной номер телефона: <input type="tel" name="phone" id="phone" placeholder="+7 (123) 456 78 9" value=""></label>
                             </div>
@@ -118,7 +118,7 @@
                                 <span>2</span> Дополнительная информация
                             </p>
                             <div class="more-info-form">
-                                <label class="place-birth"><em>*</em>Место рождения: <input type="text" name="city" id="city" placeholder="г. Ростов-на-Дону" value=""></label>
+                                <!-- <label class="place-birth"><em>*</em>Место рождения: <input type="text" name="city" id="city" placeholder="г. Ростов-на-Дону" value=""></label> -->
 
                                 <label class="add-phone">Дополнительный телефон: <input type="text" name="add_phone" placeholder="+7 (123) 456 78 9" value=""></label>
                                 <label class="mail"><em>*</em>E-mail: <input type="email" name="email" id="email" placeholder="Введите Ваш  e-mail" value=""></label>
@@ -262,7 +262,7 @@
                     license: "required",
                     /*license_issued_by: "required",*/
                     /*Дополнительная информация*/
-                    city: "required",
+                    /*city: "required",*/
                     issue_place: "required",
                     email: "required",
                 },
@@ -295,7 +295,7 @@
                     address: "Введите Ваш фактический адрес прожимания!",
                     license: "Введите Ваши серию и номер водительского удостоверения!",
                     /*license_issued_by: "Введите дату выдачи водительского удостоверения!",*/
-                    city: "Введите Ваше место рождения!",
+                    //city: "Введите Ваше место рождения!",
                     issue_place: "Введите место подачи авто!",
                     email: "Вы ввели не верно email",
                 }
