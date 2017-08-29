@@ -137,7 +137,8 @@ p {
         line-height: 18px;
         color: #333;
         text-transform: uppercase;
-        padding-bottom: 18px; }
+        padding-bottom: 18px;
+        text-indent: 0; }
       .list-car li .description li {
         width: 100%;
         border-bottom: none;
@@ -201,7 +202,8 @@ p {
         line-height: 18px;
         color: #333;
         font-style: italic;
-        text-decoration: underline; }
+        text-decoration: underline;
+        display: block; }
         .list-car li .description a:last-child:hover {
           text-decoration: none; }
 
@@ -559,6 +561,7 @@ textarea:focus:-ms-input-placeholder {
         padding-top: 35px;
         width: 200px;
         background: #333;
+        z-index: 100;
       }
 
       .header-desctop .block-header li:hover ul {
@@ -578,7 +581,7 @@ textarea:focus:-ms-input-placeholder {
         -ms-transition: 0.5s;
         -o-transition: 0.5s;
         transition: 0.5s;
-        z-index: 1;
+        z-index: 1000;
         position: relative; }
         .header-desctop .block-header li a:hover {
           color: #fec52d; }
@@ -650,7 +653,7 @@ textarea:focus:-ms-input-placeholder {
   .banner-under-header .title-banner {
     padding-bottom: 25px; }
   .banner-under-header img {
-    padding-bottom: 50px; }
+    padding-bottom: 30px; }
 
 /*--------------------------------------------------------*/
 /*--------------- end banner-under-header ----------------*/
@@ -671,7 +674,7 @@ textarea:focus:-ms-input-placeholder {
 
 .main-index .column-text {
   text-align: center;
-  padding-bottom: 70px; }
+  padding-bottom: 20px; }
   .main-index .column-text .block-photo {
     position: relative;
     width: 100%;
@@ -937,7 +940,7 @@ textarea:focus:-ms-input-placeholder {
       .main-cars-in .block-slider .description li .block-select {
         position: relative;
         margin-top: 8px;
-        min-width: 100px; }
+        min-width: 100%; }
         .main-cars-in .block-slider .description li .block-select:after {
           content: "";
           position: absolute;
@@ -959,6 +962,7 @@ textarea:focus:-ms-input-placeholder {
         font-weight: 400;
         line-height: 18px;
         color: #333;
+        padding-right: 25px;
         /* for FF */
         -moz-appearance: none;
         text-indent: 0.01px;
@@ -1658,7 +1662,7 @@ main .text-block p {
 /* 25.08.2017 */
 
 .content-block ul li {
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   padding-left: 15px;
 }
 
@@ -1693,4 +1697,103 @@ main .text-block p {
 
 .main-reservation .timepicker {
   margin-right: 4px;
+}
+
+/* 29.08.2017 главная страница */
+
+p {
+  line-height: 20px;
+  text-indent: 20px;
+}
+
+.big-banner {
+  margin-bottom: 30px;
+}
+
+.big-banner img {
+  width: 100%;
+}
+
+.attention-block .col-md-6:first-of-type {
+  text-align: right;
+}
+
+.attention-block .title-banner {
+  text-indent: 0px;
+  padding-bottom: 15px;
+  padding-top: 65px;
+}
+
+.attention-block p {
+  text-indent: 0px;
+  color: #2b292a;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 30px;
+}
+
+.attention-block .title-banner {
+  font-style: normal;
+}
+
+.view-all-park {
+  text-align: center;
+  padding: 20px 0 40px;
+}
+
+.text-block-main {
+  padding: 40px 60px;
+}
+
+.banner-main {
+  padding-top: 10px;
+}
+
+.photo-text-block img {
+  width: 100%;
+}
+
+.conditions-block {
+  
+}
+
+.conditions-block .content-block {
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+
+.conditions-block .text-block {
+  display: flex;
+  width: 48.5%;
+  padding: 30px;
+  margin-bottom: 40px;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+.conditions-block .text-block .photo-block {
+  margin-right: 30px;
+}
+
+.conditions-block .text-block p strong {
+  font-weight: 700;
+}
+
+p i {
+  font-style: italic;
+}
+
+.main-index .content-block {
+  margin-bottom: 45px;
+}
+
+.banner-main h3.title-banner {
+  padding-top: 50px;
 }

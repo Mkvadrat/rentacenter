@@ -50,7 +50,7 @@
                     </div>
                     <?php if($news_list){ ?>
                     <div class="col-md-4">
-                        <p class="title">Новости</p>
+                        <p class="title">Акции</p>
                         <ul class="list-news">
                             <?php foreach($news_list as $list){ ?>
                             <li>

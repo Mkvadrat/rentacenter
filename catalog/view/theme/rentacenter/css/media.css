@@ -3,6 +3,11 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
 
+	#page .header a {
+		top: 20px;
+		left: 210px;
+	}
+
 	.facade-photo img {
 		width: 72%;
 	}
@@ -250,7 +255,17 @@
 	}
 }
 
+@media only screen and (max-width : 640px) {
+	.text-block {
+		padding: 30px 20px;
+	}
+}
+
 @media only screen and (max-width : 600px) {
+
+	.sorting-cars a {
+		margin-top: 18px;
+	}
 
 	.midle-footer-block {
 		padding: 0;
@@ -292,8 +307,12 @@
 		padding-top: 0;
 	}
 
+	.header-desctop .block-header .button-yellow {
+		margin-top: 35px;
+	}
+
 	.header-desctop .block-header .header-phones {
-		margin-top: 5px;
+		margin-top: 15px;
 		margin-right: 0px;
 	}
 
@@ -316,7 +335,7 @@
 	}
 
 	.header a {
-		top: 80px !important;
+		top: 62px !important;
 		left: 8px !important;
 	}
 

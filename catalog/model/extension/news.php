@@ -47,7 +47,7 @@ class ModelExtensionNews extends Model {
 	}
 	
 	public function getTotalNews() {
-		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "news");
+		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "news WHERE status = 1");
 	
 		return $query->row['total'];
 	}

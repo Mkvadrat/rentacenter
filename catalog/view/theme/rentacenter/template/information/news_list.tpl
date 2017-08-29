@@ -50,14 +50,14 @@
 						<?php } ?>
 						<?php }else{ ?>
 						<div class="text-block">
-							<p>Новости не найдены</p>
+							<p>Акции не найдены</p>
                         </div>
 						<?php } ?>
                     </div>
 					
 					<?php if($related_news){ ?>
                     <div class="col-md-3">
-                        <p class="title-text">Последние новости</p>
+                        <p class="title-text">Последние акции</p>
                         <ul class="last-news">
 							<?php foreach ($related_news as $news) { ?>
                             <li>
