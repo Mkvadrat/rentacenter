@@ -3,6 +3,15 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {
 
+	#page .header a {
+		top: 20px;
+		left: 210px;
+	}
+
+	.facade-photo img {
+		width: 72%;
+	}
+
 	#page .header,
 	#page .menu {
 	  display: block; }
@@ -85,10 +94,123 @@
 	    margin-left: 5px;
 	}
 
+	.to {
+	  margin-left: 82px;
+	}
+
+	.main-reservation .first-form .surname,
+	.main-reservation .first-form .name,
+	.main-reservation .first-form .patronymic,
+	.main-reservation .first-form .birthday,
+	.main-reservation .first-form .primary-phone,
+	.pasport-form label {
+	    width: 100% !important;
+	}
+
+	.main-reservation .first-form .surname input {
+	  margin-left: 45px;
+	  width: 163px;
+	}
+
+	.main-reservation .first-form .name input {
+	    margin-left: 72px;
+	}
+
+	.main-reservation .first-form .patronymic input {
+	    margin-left: 44px;
+	}
+
+	.main-reservation .first-form .birthday input {
+	    margin-left: 4px;
+	}
+
+	.main-reservation .pasport-form .number input[type="text"] {
+	  margin: 0 0 0 39px;
+	}
+
+	.main-reservation .datepicker {
+	  margin-left: 9px;
+	}
+
+	.pasport-form .datepicker {
+	  margin-left: 54px;
+	}
+
+	.main-reservation .pasport-form .issued input {
+	    width: 288px;
+	    margin-left: 63px;
+	}
+
+	.main-reservation .pasport-form .address input {
+	  width: 289px;
+	  margin-left: 9px;
+	}
+
+	.main-reservation .pasport-form .address-fact input {
+	    margin-left: 10px;
+	    width: 208px;
+	}
+
+	.main-reservation .more-info-form .car-supply {
+	  margin-right: 0;
+	}
+
+	.main-reservation .more-info-form .car-supply input {
+	  margin-left: 0;
+	  width: 274px;
+	}
+
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+
+	.main-reservation .submit input[type="submit"] {
+		float: none;
+		margin-bottom: 20px;
+	}
+
+	.main-reservation .submit p {
+		padding-left: 0;
+	}
+
+	#booking-form .pad-left {
+		padding-left: 15px;
+	}
+
+	#booking-form .pad-right {
+		padding-right: 15px;
+	}
+
+	.main-reservation .add-services-form .column {
+    	width: 50%;
+    }
+
+	.main-reservation .first-form .datepicker {
+	    margin-left: 9px;
+	}
+
+	.main-reservation .pasport-form .datepicker {
+	    margin-left: 55px;
+	}
+
+	.main-reservation .first-form {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.to,
+	.main-reservation .datepicker {
+	    margin-left: 0px;
+	}
+
+	table thead tr td {
+	    width: 104px;
+	}
+
+	.facade-photo {
+		margin-top: 30px;
+	}
 
 	.list-car li:nth-child(3n) {
 		margin-right: 0px;
@@ -133,9 +255,64 @@
 	}
 }
 
+@media only screen and (max-width : 640px) {
+	.text-block {
+		padding: 30px 20px;
+	}
+}
+
 @media only screen and (max-width : 600px) {
+
+	.sorting-cars a {
+		margin-top: 18px;
+	}
+
+	.midle-footer-block {
+		padding: 0;
+	}
+
+	.footer .midle-footer-block .list-news li p {
+		font-size: 15px;
+	}
+
+	.black-banner .title-black-banner {
+		font-size: 30px;
+	}
+
+	.main-reservation .first-form p select {
+	    width: 100%;
+	    display: block;
+	}
+
+	.main-reservation .first-form label,
+	.main-reservation .pasport-form label,
+	.main-reservation .more-info-form label {
+		display: block !important;
+		width: 100% !important;
+		padding-bottom: 0 !important;;
+		margin-left: 0 !important;
+	}
+
+	.main-reservation .first-form input[type="text"],
+	.main-reservation .first-form input[type="tel"],
+	.main-reservation .pasport-form input[type="text"],
+	.main-reservation .more-info-form input[type="text"],
+	.main-reservation .more-info-form input[type="email"] {
+		width: 100% !important;
+		display: block !important;
+		margin: 5px 0 10px !important;
+	}
+
+	.main-reservation .first-form .primary-phone {
+		padding-top: 0;
+	}
+
+	.header-desctop .block-header .button-yellow {
+		margin-top: 35px;
+	}
+
 	.header-desctop .block-header .header-phones {
-		margin-top: 5px;
+		margin-top: 15px;
 		margin-right: 0px;
 	}
 
@@ -158,7 +335,7 @@
 	}
 
 	.header a {
-		top: 80px !important;
+		top: 62px !important;
 		left: 8px !important;
 	}
 
@@ -199,6 +376,15 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
+
+	.main-reservation .first-form p select {
+		padding-right: 20px;
+	}
+
+	.main-reservation .add-services-form .column {
+	    width: 100%;
+	}
+
 	.list-car li {
 		width: 100%;
 		margin-right: 0 !important;
