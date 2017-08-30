@@ -97,16 +97,16 @@
 
                                 <label class="text"><em>*</em>Дата выдачи:<input type="text" name="issue_date" id="issue_date" class="datepicker" placeholder="01.01.2017" value=""></label>
                                
-                                <label class="issued"><em>*</em>Кем выдан: <input type="text" name="issued_by" id="issued_by" placeholder="123456789" value=""></label>
+                                <label class="issued"><em>*</em>Кем выдан: <input type="text" name="issued_by" id="issued_by" placeholder="Кем выдан" value=""></label>
 
-                                <label class="address"><em>*</em>Адрес регистрации: <input type="text" name="registration" id="registration" placeholder="123456789" value=""></label>
+                                <label class="address"><em>*</em>Адрес регистрации: <input type="text" name="registration" id="registration" placeholder="Адрес регистрации" value=""></label>
 
-                                <label class="address-fact"><em>*</em>Фактический адрес прожимания: <input type="text" name="address" id="address" placeholder="123456789" value=""></label>
+                                <label class="address-fact"><em>*</em>Фактический адрес прожимания: <input type="text" name="address" id="address" placeholder="Фактический адрес прожимания" value=""></label>
 
                                 <p class="form-title form-title-pasport">
                                 Водительские права
                                 </p>
-                                <label class="number"><em>*</em>Серия и номер:<input type="text" name="license" id="license" placeholder="123456789" value=""></label>
+                                <label class="number"><em>*</em>Серия и номер:<input type="text" name="license" id="license" placeholder="Серия и номер" value=""></label>
 
                                 <label class="text"><em>*</em>Дата выдачи:<input type="text" name="license_issued_by" id="license_issued_by" class="datepicker" placeholder="01.01.2017" value=""></label>
                                

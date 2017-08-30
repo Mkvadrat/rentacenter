@@ -1792,3 +1792,11 @@ p i {
 .banner-main h3.title-banner {
   padding-top: 50px;
 }
+
+label.error {
+  color: red !important;
+}
+
+.main-reservation .pasport-form label {
+  vertical-align: top;
+}
