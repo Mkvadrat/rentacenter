@@ -1615,7 +1615,7 @@ select::-ms-expand {
 
 table td {
   border: 1px solid #c6c6c6;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 table td a {
@@ -1646,10 +1646,6 @@ table tr:hover {
   padding-bottom: 10px;
 }
 
-main .text-block p {
-  text-indent: 20px;
-}
-
 .facade-photo {
   text-align: center;
 }
@@ -1667,7 +1663,7 @@ main .text-block p {
 }
 
 .overflow-auto table {
-  width: 1040px !important;
+  width: 918px !important;
 }
 
 .overflow-auto table thead tr {
@@ -1688,11 +1684,11 @@ main .text-block p {
 }
 
 .overflow-auto table thead tr td {
-  width: 102.2px;
+  width: 90px;
 }
 
 .overflow-auto table tbody tr td {
-  width: 102px;
+  width: 84px;
 }
 
 .main-reservation .timepicker {
@@ -1703,7 +1699,6 @@ main .text-block p {
 
 p {
   line-height: 20px;
-  text-indent: 20px;
 }
 
 .big-banner {
