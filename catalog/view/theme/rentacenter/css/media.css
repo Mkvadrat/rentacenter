@@ -165,6 +165,31 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
 
+	.conditions-block .text-block {
+		-webkit-flex-wrap: wrap;
+		    -ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
+	   	-webkit-align-items: flex-start;
+	   	        align-items: flex-start;
+	}
+
+	.conditions-block .text-block .photo-block {
+		margin-bottom: 20px;
+	}
+
+	.photo-text-block img {
+		padding-bottom: 30px;
+	}
+
+	.main-index .about-block p {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.attention-block .title-banner {
+		padding-top: 20px;
+	}
+
 	.main-reservation .submit input[type="submit"] {
 		float: none;
 		margin-bottom: 20px;
@@ -227,6 +252,10 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+
+	.conditions-block .text-block {
+		width: 100%;
+	}
 
 	.list-car {
 		-webkit-justify-content: space-between;
