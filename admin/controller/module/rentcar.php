@@ -145,15 +145,17 @@ class ControllerModuleRentcar extends Controller {
 		$data['languages'] = $this->model_localisation_language->getLanguages();
 
 		$data['lang'] = $this->language->get('lang');
-
-		foreach ($products as $product_id) {
-			$product_info = $this->model_catalog_product->getProduct($product_id);
-
-			if ($product_info) {
-				$data['products'][] = array(
-					'product_id' => $product_info['product_id'],
-					'name'       => $product_info['name']
-				);
+		
+		if($products){
+			foreach ($products as $product_id) {
+				$product_info = $this->model_catalog_product->getProduct($product_id);
+	
+				if ($product_info) {
+					$data['products'][] = array(
+						'product_id' => $product_info['product_id'],
+						'name'       => $product_info['name']
+					);
+				}
 			}
 		}
 
