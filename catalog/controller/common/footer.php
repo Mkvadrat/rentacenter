@@ -70,6 +70,7 @@ class ControllerCommonFooter extends Controller {
 		$data['footer_text'] = utf8_substr(strip_tags(html_entity_decode($this->config->get('config_footer_text'), ENT_QUOTES, 'UTF-8')), 0, 300);
 		$data['autopark'] = $this->url->link('product/category&path=59', '', 'SSL');
 		$data['booking'] = $this->url->link('product/reservation', 'product_id=0', 'SSL');
+		$data['comment'] = utf8_substr(html_entity_decode($this->config->get('config_comment'), ENT_QUOTES, 'UTF-8'), 0, 300);
 		
 		$this->load->model('extension/news');
 		

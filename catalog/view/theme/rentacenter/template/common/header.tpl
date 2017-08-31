@@ -147,12 +147,8 @@
                     <?php } ?> -->
 
                     <a href="<?php echo $home; ?>" class="logo-text">
-                        <span class="text-block-logo">
-                            <span>AП</span>
-                            <span>АВТО ПРОКАТ</span>
-                            <span>ростов-на-дону</span>
-                        </span>
-                        <img src="catalog/view/theme/rentacenter/images/half-logo.jpg" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+                        <?php echo $comment; ?>
+                        <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" />
                     </a>
 
                     <div class="header-phones">
