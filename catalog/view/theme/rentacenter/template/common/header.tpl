@@ -140,11 +140,20 @@
                 <div class="block-header">      
                     <!--<a href="index.html" class="logo"><img src="catalog/view/theme/rentacenter/images/logo.png" alt=""></a>-->
                     
-                    <?php if ($logo) { ?>
+                    <!-- <?php if ($logo) { ?>
                         <a href="<?php echo $home; ?>" class="logo"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
                     <?php } else { ?>
                         <h1 class="logo"><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-                    <?php } ?>
+                    <?php } ?> -->
+
+                    <a href="<?php echo $home; ?>" class="logo-text">
+                        <span class="text-block-logo">
+                            <span>AП</span>
+                            <span>АВТО ПРОКАТ</span>
+                            <span>ростов-на-дону</span>
+                        </span>
+                        <img src="catalog/view/theme/rentacenter/images/half-logo.jpg" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+                    </a>
 
                     <div class="header-phones">
                         <a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a>

@@ -540,6 +540,61 @@ textarea:focus:-ms-input-placeholder {
     height: 80px;
     float: left;
     margin-right: 20px; }
+
+    .header-desctop .logo-text {
+      background-color: #333;
+      display: block;
+      float: left;
+      height: 80px;
+    }
+
+    .header-desctop .logo-text span,
+    .footer .text-block-logo span {
+      display: block;
+      width: 114px;
+      text-align: center;
+    }
+
+    .header-desctop .logo-text .text-block-logo,
+    .footer .text-block-logo,
+    .footer .logo-text-footer {
+      float: left;
+    }
+
+    .footer .logo-text-footer {
+      margin-right: 25px;
+    }
+
+    .header-desctop .logo-text .text-block-logo span:nth-child(1),
+    .footer .logo-text-footer .text-block-logo span:nth-child(1) {
+      font-family: "MyriadProBold";
+      color: white;
+      font-size: 41px;
+      font-weight: 700;
+      font-style: italic;
+      text-transform: uppercase;
+    }
+
+    .header-desctop .logo-text .text-block-logo span:nth-child(2),
+    .footer .logo-text-footer .text-block-logo span:nth-child(2) {
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 18px;
+      text-transform: uppercase;
+    }
+
+    .header-desctop .logo-text .text-block-logo span:nth-child(3),
+    .footer .logo-text-footer .text-block-logo span:nth-child(3) {
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 17px;
+      text-transform: uppercase;
+    }
+
   .header-desctop .block-header {
     max-width: 1270px;
     width: 100%;
