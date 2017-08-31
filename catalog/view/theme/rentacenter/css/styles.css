@@ -808,6 +808,7 @@ textarea:focus:-ms-input-placeholder {
   background: #333;
   padding-bottom: 55px; }
   .footer .midle-footer-block .title {
+    display: block;
     padding: 60px 0 40px;
     font-size: 18px;
     font-weight: 700;
