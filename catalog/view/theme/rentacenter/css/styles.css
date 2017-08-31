@@ -1861,3 +1861,20 @@ label.error {
 .text-block span {
   line-height:35px;
  }
+
+ .text-block {
+  display:inline-block;
+ }
+ .text-block .eich {
+  display:inline-block;
+  padding-bottom: 30px;
+ }
+ @media screen and (max-width:450px) {
+  .text-block span {
+   line-height:20px;
+  }
+  .text-block .eich, .eich div {
+   padding-left:0;
+   padding-right:0;
+  }
+ }
