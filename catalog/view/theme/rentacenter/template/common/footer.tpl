@@ -23,11 +23,20 @@
                         <p class="title">О кампании avto prokat</p>
                         <div class="logo-social-block">
                             
-                             <?php if ($logo) { ?>
+                            <!-- <?php if ($logo) { ?>
                                  <a href="<?php echo $home; ?>"  class="logo-footer"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" /></a>
                              <?php } else { ?>
                                  <h1  class="logo-footer"><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-                             <?php } ?>
+                             <?php } ?> -->
+
+                             <a href="<?php echo $home; ?>" class="logo-text-footer">
+                             <span class="text-block-logo">
+                                    <span>AП</span>
+                                    <span>АВТО ПРОКАТ</span>
+                                    <span>ростов-на-дону</span>
+                                </span>
+                                <img src="catalog/view/theme/rentacenter/images/half-logo.jpg" title="<?php echo $name; ?>" alt="<?php echo $name; ?>">
+                            </a>
                              
                             <!--<a href="index.html" class="logo-footer"><img src="images/logo.png" alt=""></a>-->
                             <ul class="social-list">

@@ -4,8 +4,8 @@
 @media only screen and (max-width : 1200px) {
 
 	#page .header a {
-		top: 20px;
-		left: 210px;
+		top: 31px;
+		left: 240px;
 	}
 
 	.facade-photo img {
@@ -284,13 +284,39 @@
 	}
 }
 
-@media only screen and (max-width : 640px) {
+@media only screen and (max-width : 650px) {
 	.text-block {
 		padding: 30px 20px;
 	}
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 650px) {
+
+	.footer .logo-text-footer {
+      margin-right: 10px;
+    }
+
+	.header-desctop .logo-text span {
+		width: 100px;
+	}
+
+	.text-block-logo span:nth-child(1) {
+		font-size: 30px !important;
+	}
+
+	.text-block-logo span:nth-child(2) {
+		font-size: 11px !important;
+		line-height: 15px !important;
+	}
+
+	.text-block-logo span:nth-child(3) {
+		font-size: 8px !important;
+		line-height: 15px !important;
+	}
+
+	.logo-text img {
+		width: 60px;
+	}
 
 	.sorting-cars a {
 		margin-top: 18px;
@@ -337,11 +363,11 @@
 	}
 
 	.header-desctop .block-header .button-yellow {
-		margin-top: 35px;
+		margin-top: 45px;
 	}
 
 	.header-desctop .block-header .header-phones {
-		margin-top: 15px;
+		margin-top: 20px;
 		margin-right: 0px;
 	}
 
@@ -364,8 +390,8 @@
 	}
 
 	.header a {
-		top: 62px !important;
-		left: 8px !important;
+		top: 84px !important;
+		left: 20px !important;
 	}
 
 	.logo img {
