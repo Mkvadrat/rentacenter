@@ -573,6 +573,7 @@ textarea:focus:-ms-input-placeholder {
       font-weight: 700;
       font-style: italic;
       text-transform: uppercase;
+      text-transform: uppercase;
     }
 
     .header-desctop .logo-text .text-block-logo span:nth-child(2),
