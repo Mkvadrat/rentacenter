@@ -562,7 +562,7 @@ textarea:focus:-ms-input-placeholder {
     }
 
     .footer .logo-text-footer {
-      margin-right: 25px;
+      margin-right: 5px;
     }
 
     .header-desctop .logo-text .text-block-logo span:nth-child(1),
@@ -822,7 +822,7 @@ textarea:focus:-ms-input-placeholder {
     margin-top: 20px; }
     .footer .midle-footer-block .social-list li {
       float: left;
-      margin-left: 16px; }
+      margin-left: 10px; }
       .footer .midle-footer-block .social-list li a {
         display: block;
         width: 40px;
