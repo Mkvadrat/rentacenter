@@ -1857,3 +1857,7 @@ label.error {
 .main-reservation .pasport-form label {
   vertical-align: top;
 }
+
+.text-block span {
+  line-height:35px;
+ }
