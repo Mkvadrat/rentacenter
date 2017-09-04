@@ -87,6 +87,8 @@ class ControllerCommonSeoPro extends Controller {
 				$this->request->get['route'] = 'product/category';
 			} elseif (isset($this->request->get['manufacturer_id'])) {
 				$this->request->get['route'] = 'product/manufacturer/info';
+			} elseif (isset($this->request->get['news_id'])) {
+				$this->request->get['route'] = 'information/news/news';
 			} elseif (isset($this->request->get['information_id'])) {
 				$this->request->get['route'] = 'information/information';
 			} elseif(isset($this->cache_data['queries'][$route_])) {
@@ -179,7 +181,12 @@ class ControllerCommonSeoPro extends Controller {
 						unset($data[$key]);
 						$postfix = 1;
 						break;
-
+					case 'news_id':
+						$queries[] = $key . '=' . $value;
+						unset($data[$key]);
+						$postfix = 1;
+						$is_news = true;
+						break;
 					case 'path':
 						$categories = explode('_', $value);
 						foreach($categories as $category) {
