@@ -101,6 +101,21 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 
+<script type="text/javascript">
+        $(function() {
+           $(window).scroll(function() {
+               if($(this).scrollTop() != 0) {
+                   $('#toTop').fadeIn();
+               } else {
+                   $('#toTop').fadeOut();
+               }
+           });
+           $('#toTop').click(function() {
+               $('body,html').animate({scrollTop:0},800);
+           });
+       });
+   </script>
+
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
@@ -115,6 +130,9 @@
 <?php } ?>
 </head>
 <body class="<?php echo $class; ?>">
+
+    <div id="toTop" ><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></div>
+
     <div id="page">
         <div class="header">
             <a href="#menu"><span></span></a>
