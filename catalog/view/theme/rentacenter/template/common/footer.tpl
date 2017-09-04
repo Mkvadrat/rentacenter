@@ -20,7 +20,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <a href="#" class="title">О кампании avto prokat</a>
+                        <a href="<?php echo $servises; ?>" class="title">О кампании avto prokat</a>
                         <div class="logo-social-block">
                             
                             <!-- <?php if ($logo) { ?>
@@ -44,7 +44,7 @@
                         <p><?php echo $footer_text; ?></p>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" class="title">Контакты</a>
+                        <a href="<?php echo $contact; ?>" class="title">Контакты</a>
                         <p><?php echo $contacts_text; ?></p>
                         <address>
                             <p><a href="tel:<?php echo $telephone; ?>"><i class="fa fa-phone-square" aria-hidden="true"></i> <?php echo $telephone; ?></a></p>
@@ -55,7 +55,7 @@
                     </div>
                     <?php if($news_list){ ?>
                     <div class="col-md-4">
-                        <a href="#" class="title">Акции</a>
+                        <a href="<?php echo $news; ?>" class="title">Акции</a>
                         <ul class="list-news">
                             <?php foreach($news_list as $list){ ?>
                             <li>
