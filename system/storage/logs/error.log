@@ -21,3 +21,7 @@
 2017-09-04 10:38:08 - PHP Notice:  Undefined variable: heading_title in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\success.tpl on line 10
 2017-09-04 10:38:08 - PHP Notice:  Undefined variable: heading_title in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\success.tpl on line 40
 2017-09-04 10:38:46 - PHP Notice:  Undefined variable: heading_title in D:\OpenServer\domains\rentacenter.ru\catalog\view\theme\rentacenter\template\common\success.tpl on line 10
+2017-09-04 9:18:10 - PHP Notice:  Undefined variable: ocfilter_stock_status_type in /var/www/vhosts/3331141.xeovo.ml/public_html/rentacenter/admin/view/template/module/ocfilter.tpl on line 205
+2017-09-04 9:18:10 - PHP Notice:  Undefined variable: ocfilter_stock_status_type in /var/www/vhosts/3331141.xeovo.ml/public_html/rentacenter/admin/view/template/module/ocfilter.tpl on line 205
+2017-09-04 9:18:10 - PHP Notice:  Undefined variable: ocfilter_stock_status_type in /var/www/vhosts/3331141.xeovo.ml/public_html/rentacenter/admin/view/template/module/ocfilter.tpl on line 205
+2017-09-04 10:37:26 - PHP Notice:  Undefined variable: product_id in /var/www/vhosts/3331141.xeovo.ml/public_html/rentacenter/catalog/controller/common/seo_pro.php on line 174

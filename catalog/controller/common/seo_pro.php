@@ -145,6 +145,7 @@ class ControllerCommonSeoPro extends Controller {
 				break;
 
 			case 'product/product/review':
+			case 'product/reservation':
 			case 'information/information/agree':
 				return $link;
 				break;
@@ -166,7 +167,7 @@ class ControllerCommonSeoPro extends Controller {
 		}
 
 		$queries = array();
-		if(!in_array($route, array('product/search'))) {
+		if(!in_array($route, array('product/search')) && $this->request->get['route'] != 'product/reservation') {
 			foreach($data as $key => $value) {
 				switch($key) {
 					case 'product_id':
