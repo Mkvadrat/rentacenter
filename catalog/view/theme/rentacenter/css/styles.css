@@ -1213,7 +1213,8 @@ textarea:focus:-ms-input-placeholder {
   font-size: 14px; }
 
 .main-reservation em {
-  color: red; }
+  color: red;
+  vertical-align: top; }
 
 .main-reservation .text-block {
   margin-bottom: 25px; }
@@ -1806,10 +1807,6 @@ p {
   width: 100%;
 }
 
-.conditions-block {
-  
-}
-
 .conditions-block .content-block {
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -1864,6 +1861,7 @@ label.error {
  }
 
  .text-block {
+  width: 100%;
   display:inline-block;
  }
  .text-block .eich {

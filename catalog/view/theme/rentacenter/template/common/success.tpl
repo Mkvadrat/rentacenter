@@ -7,7 +7,7 @@
           <div class="container">
               <div class="row">
                   <div class="col-md-12">
-                    <h1 class="title-black-banner"><?php echo $heading_title; ?></h1>
+                    <h1 class="title-black-banner"><?php echo $heading_success; ?></h1>
                     <ul class="bread-crumbs">
                     <?php			
                       $count = count($breadcrumbs);
@@ -34,10 +34,10 @@
 
       <div class="container">
           <div class="row">
-              <div class="content-block">
+              <div class="content-block success-content">
                   <div class="col-md-12 pad-left pad-right">
                       <div class="text-block">
-                          <p class="title-text"><?php echo $heading_title; ?></p>
+                          <p class="title-text"><?php echo $title_success; ?></p>
                           <p><?php echo $text_message; ?></p>
                       </div>
                   </div>

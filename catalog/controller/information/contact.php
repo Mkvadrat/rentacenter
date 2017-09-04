@@ -186,7 +186,7 @@ class ControllerInformationContact extends Controller {
 	public function success() {
 		$this->load->language('information/contact');
 
-		$this->document->setTitle($this->language->get('heading_title'));
+		$this->document->setTitle($this->language->get('heading_success'));
 
 		$data['breadcrumbs'] = array();
 
@@ -197,12 +197,14 @@ class ControllerInformationContact extends Controller {
 		);
 
 		$data['breadcrumbs'][] = array(
-			'text' => $this->language->get('heading_title'),
+			'text' => $this->language->get('heading_success'),
 			'href' => $this->url->link('information/contact'),
 			'separator' => $this->language->get('text_separator')
 		);
 
-		$data['heading_title'] = $this->language->get('heading_title');
+		$data['heading_success'] = $this->language->get('heading_success');
+		
+		$data['title_success'] = $this->language->get('title_success');
 
 		$data['text_message'] = $this->language->get('text_success');
 

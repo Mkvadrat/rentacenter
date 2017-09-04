@@ -23,6 +23,8 @@ Disallow: /*?filter_description=
 Disallow: /*&filter_description=
 Disallow: /*?tracking=
 Disallow: /*&tracking=
+Disallow: /*?filter_ocfilter=
+Disallow: /*?page=*&filter_ocfilter=
 
 User-agent: Yandex
 Disallow: /*route=account/
@@ -47,4 +49,10 @@ Disallow: /*?filter_sub_category=
 Disallow: /*&filter_sub_category=
 Disallow: /*?filter_description=
 Disallow: /*&filter_description=
+Disallow: /*?filter_ocfilter=
+Disallow: /*?page=*&filter_ocfilter=
+
 Clean-param: tracking
+
+Host: rentacentr.ru
+Sitemap: http://rentacentr.ru/sitemap.xml
