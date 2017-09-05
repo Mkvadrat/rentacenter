@@ -101,7 +101,7 @@
 
                                 <label class="address"><em>*</em>Адрес регистрации: <input type="text" name="registration" id="registration" placeholder="Адрес регистрации" value=""></label>
 
-                                <label class="address-fact"><em>*</em>Фактический адрес прожимания: <input type="text" name="address" id="address" placeholder="Фактический адрес прожимания" value=""></label>
+                                <label class="address-fact"><em>*</em>Фактический адрес проживания: <input type="text" name="address" id="address" placeholder="Фактический адрес прожимания" value=""></label>
 
                                 <p class="form-title form-title-pasport">
                                 Водительские права
