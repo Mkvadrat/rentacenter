@@ -1895,20 +1895,18 @@ label.error {
   color: #6c6b69;
 }
 
-#header-fixed { 
+.header-fixed { 
   position: fixed; 
   top: 0px;
   display:none;
 }
 
-#table-1 tbody {
+.table-price{
   display: block;
   overflow: auto;
-  max-width: 100%;
 }
 
-#table-1 thead {
-  display: block;
+.fixed-overflow{
+  display: block !important;
   overflow: auto;
-  max-width: 100%;
 }

@@ -64,7 +64,7 @@
 	<li>• GPS навигатор 100 р.</li>
 </ul>
 <br>
-                            <table cellspacing="0" cellpadding="0" border="0" id="table-1">
+                            <table cellspacing="0" cellpadding="0" border="0" id="table-1" class="table-price">
                               <thead>
                                 <tr>
                                     <td style="text-align: center;" class="sttdone"><strong>Авто</strong>                                    </td>
@@ -334,7 +334,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <table id="header-fixed"></table>
+                        <table class="header-fixed"></table>
             </div>
           </div>
         </div>
@@ -345,11 +345,11 @@
   <script>
 $(document).ready(function(){
 
-    var tableOffset = $("#table-1").offset().top;
-    var jQueryheader = $("#table-1 > thead").clone();
-    var jQueryfixedHeader = $("#header-fixed").append(jQueryheader);
+    var tableOffset = $(".table-price").offset().top;
+    var jQueryheader = $(".table-price > thead").clone();
+    var jQueryfixedHeader = $(".header-fixed").append(jQueryheader);
     var bottable = $("#close").offset().top;
-    $("#header-fixed").width($("#table-1").width());    
+    $("#header-fixed").width($(".table-price").width());    
  
     $(window).bind("scroll", function() {
  
@@ -358,12 +358,13 @@ $(document).ready(function(){
  
         if (offset >= tableOffset && jQueryfixedHeader.is(":hidden")  && offset < bottable) {
             jQueryfixedHeader.show();
+            jQueryfixedHeader.addClass( "fixed-overflow" );
         } else if (offset < tableOffset || offset > bottable) {
             jQueryfixedHeader.hide();
         }
-        $("#header-fixed td").each(function(index) {
+        $(".header-fixed td").each(function(index) {
             $(this).width(function() {
-                return $("#table-1 td").eq(index).width();
+                return $(".table-price td").eq(index).width();
             });
         });
     });
