@@ -1894,3 +1894,15 @@ label.error {
   font-size: 60px;
   color: #6c6b69;
 }
+
+#header-fixed { 
+  position: fixed; 
+  top: 0px;
+  display:none;
+}
+
+#table-1 table {
+  display: block;
+  overflow: auto;
+  max-width: 100%;
+}
