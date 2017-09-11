@@ -1901,7 +1901,13 @@ label.error {
   display:none;
 }
 
-#table-1 table {
+#table-1 tbody {
+  display: block;
+  overflow: auto;
+  max-width: 100%;
+}
+
+#table-1 thead {
   display: block;
   overflow: auto;
   max-width: 100%;
