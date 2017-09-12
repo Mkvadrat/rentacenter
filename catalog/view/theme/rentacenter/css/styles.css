@@ -1910,3 +1910,8 @@ label.error {
   display: block !important;
   overflow: auto;
 }
+
+.fixed-width{
+  width: 100%;
+}
+

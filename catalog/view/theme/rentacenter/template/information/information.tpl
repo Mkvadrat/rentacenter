@@ -64,7 +64,8 @@
 	<li>• GPS навигатор 100 р.</li>
 </ul>
 <br>
-                            <table cellspacing="0" cellpadding="0" border="0" id="table-1" class="table-price">
+                          <div class="fully-shit">
+                            <table cellspacing="0" cellpadding="0" border="0" class="table-price">
                               <thead>
                                 <tr>
                                     <td style="text-align: center;" class="sttdone"><strong>Авто</strong>                                    </td>
@@ -78,7 +79,7 @@
                                     <td style="text-align: center;" class="sttdnine"><strong>Залог, р.</strong>                                    </td>
                                     <td style="text-align: center;" class="sttdten"><strong>Доп. час, р.</strong>                                    </td>
                                 </tr>
-                                 </thead>
+                              </thead>
                                <tbody>
                                 <tr>
                                     <td style="text-align: center;" class="tdone"><a href="/index.php?route=product/product&amp;path=59&amp;product_id=65">Renault Logan</a>                                    </td>
@@ -335,40 +336,42 @@
                             </tbody>
                         </table>
                         <table class="header-fixed"></table>
+                      </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </main>
-  
-  <script>
-$(document).ready(function(){
 
-    var tableOffset = $(".table-price").offset().top;
-    var jQueryheader = $(".table-price > thead").clone();
-    var jQueryfixedHeader = $(".header-fixed").append(jQueryheader);
-    var bottable = $("#close").offset().top;
-    $("#header-fixed").width($(".table-price").width());    
- 
-    $(window).bind("scroll", function() {
- 
-        
-       var offset = $(this).scrollTop();
- 
-        if (offset >= tableOffset && jQueryfixedHeader.is(":hidden")  && offset < bottable) {
-            jQueryfixedHeader.show();
-            jQueryfixedHeader.addClass( "fixed-overflow" );
-        } else if (offset < tableOffset || offset > bottable) {
-            jQueryfixedHeader.hide();
-        }
-        $(".header-fixed td").each(function(index) {
-            $(this).width(function() {
-                return $(".table-price td").eq(index).width();
-            });
+<?php if(!$mobile){ ?>
+<script>
+$(document).ready(function(){
+  var tableOffset = $(".table-price").offset().top;
+  var jQueryheader = $(".table-price > thead").clone();
+  var jQueryfixedHeader = $(".header-fixed").append(jQueryheader);
+  var bottable = $("#close").offset().top;
+  $(".header-fixed").width($(".table-price").width());    
+  
+  $(window).bind("scroll", function() {
+    var offset = $(this).scrollTop();
+    
+    if (offset >= tableOffset && jQueryfixedHeader.is(":hidden")  && offset < bottable) {
+        jQueryfixedHeader.show();
+        jQueryfixedHeader.toggleClass( "fixed-overflow" );
+    } else if (offset < tableOffset || offset > bottable) {
+        jQueryfixedHeader.hide();
+        jQueryfixedHeader.removeClass( "fixed-overflow" );
+    }
+    
+    $(".header-fixed td").each(function(index) {
+        $(this).width(function() {
+            return $(".table-price td").eq(index).width();
         });
     });
- 
- });
-  </script>
+  });
+});
+</script>
+<?php } ?>
+
 <?php echo $footer; ?>

@@ -43,6 +43,13 @@ class ControllerInformationInformation extends Controller {
 			} else {
 				$data['heading_title'] = $information_info['title'];
 			}
+			
+			$data['mobile']  = isMobile;    /*мобильный агент*/
+			$data['tablet']  = isTablet;    /*агент планшета*/
+			$data['ios']     = isiOS;       /*агент ios*/
+			$data['android'] = isAndroidOS; /*агент android*/
+			$data['getbrowser'] = browser_detect; /*броузер ПК*/
+			$data['getplatform'] = platform_detect; /*операционная система устройства*/
 
 			$data['button_continue'] = $this->language->get('button_continue');
 
