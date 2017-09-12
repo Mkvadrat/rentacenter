@@ -87,6 +87,8 @@
 <!-- MASKEDINPUT -->
 <script src="catalog/view/theme/rentacenter/js/jquery.maskedinput.min.js"></script>
 
+<script src="catalog/view/theme/rentacenter/js/tableHeadFixer.js"></script>
+
 <!-- MAIN PAGE -->
 <script src="catalog/view/theme/rentacenter/js/common.js"></script>
 <!-- HTML5 for IE -->

@@ -64,8 +64,8 @@
 	<li>• GPS навигатор 100 р.</li>
 </ul>
 <br>
-                          <div class="fully-shit">
-                            <table cellspacing="0" cellpadding="0" border="0" class="table-price">
+													<div class="default">
+                            <table id="enable" class="table-price">
                               <thead>
                                 <tr>
                                     <td style="text-align: center;" class="sttdone"><strong>Авто</strong>                                    </td>
@@ -336,7 +336,7 @@
                             </tbody>
                         </table>
                         <table class="header-fixed"></table>
-                      </div>
+											</div>
             </div>
           </div>
         </div>
@@ -344,34 +344,43 @@
     </div>
   </main>
 
-<?php if(!$mobile){ ?>
 <script>
 $(document).ready(function(){
-  var tableOffset = $(".table-price").offset().top;
-  var jQueryheader = $(".table-price > thead").clone();
-  var jQueryfixedHeader = $(".header-fixed").append(jQueryheader);
-  var bottable = $("#close").offset().top;
-  $(".header-fixed").width($(".table-price").width());    
-  
-  $(window).bind("scroll", function() {
-    var offset = $(this).scrollTop();
-    
-    if (offset >= tableOffset && jQueryfixedHeader.is(":hidden")  && offset < bottable) {
-        jQueryfixedHeader.show();
-        jQueryfixedHeader.toggleClass( "fixed-overflow" );
-    } else if (offset < tableOffset || offset > bottable) {
-        jQueryfixedHeader.hide();
-        jQueryfixedHeader.removeClass( "fixed-overflow" );
-    }
-    
-    $(".header-fixed td").each(function(index) {
-        $(this).width(function() {
-            return $(".table-price td").eq(index).width();
-        });
-    });
-  });
+	
+	
+	if(window.matchMedia('(max-width: 768px)').matches){
+		$("#enable").tableHeadFixer();
+		$(".table-price").toggleClass('table');
+		$('.default').toggleClass('size-block');
+		 
+
+		
+	}else{
+		$(".table-price").removeClass(".table");
+		$(".default").removeClass(".size-block");  
+		var tableOffset = $(".table-price").offset().top;
+		var jQueryheader = $(".table-price > thead").clone();
+		var jQueryfixedHeader = $(".header-fixed").append(jQueryheader);
+		var bottable = $("#close").offset().top;
+		$(".header-fixed").width($(".table-price").width());    
+		
+		$(window).bind("scroll", function() {
+			var offset = $(this).scrollTop();
+			
+			if (offset >= tableOffset && jQueryfixedHeader.is(":hidden")  && offset < bottable) {
+					jQueryfixedHeader.show();
+			} else if (offset < tableOffset || offset > bottable) {
+					jQueryfixedHeader.hide();
+			}
+			
+			$(".header-fixed td").each(function(index) {
+					$(this).width(function() {
+							return $(".table-price td").eq(index).width();
+					});
+			});
+		});
+	}
 });
 </script>
-<?php } ?>
 
 <?php echo $footer; ?>

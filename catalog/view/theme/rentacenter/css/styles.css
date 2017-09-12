@@ -1898,7 +1898,7 @@ label.error {
 .header-fixed { 
   position: fixed; 
   top: 0px;
-  display:none;
+  display: none;
 }
 
 .table-price{
@@ -1906,12 +1906,22 @@ label.error {
   overflow: auto;
 }
 
-.fixed-overflow{
-  display: block !important;
-  overflow: auto;
+.size-block{
+  height: 300px;
 }
 
-.fixed-width{
-  width: 100%;
+/* Smartphones (portrait) ----------- */
+@media only screenand (max-width:320px) {
+ 
+}
+ 
+/* Desktops and laptops ----------- */
+@media only screenand (min-width:1224px) {
+     
+}
+ 
+/* Large screens ----------- */
+@media only screenand (min-width:1824px) {
+  
 }
 
