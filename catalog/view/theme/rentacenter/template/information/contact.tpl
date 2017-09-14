@@ -84,16 +84,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <form>
-                                <p class="title">Обратная связь
-                                    <img src="catalog/view/theme/rentacenter/images/banner-main.png" alt="">
-                                </p>
-                                <input type="text" id="name_contact_page" placeholder="Ваше Имя">
-                                <input type="text" id="tel_contact_page" placeholder="Ваш Номер Телефона">
-                                <input type="text" id="email_contact_page" placeholder="Ваш e-mail">
-                                <textarea id="question_contact_page" placeholder="Текст сообщения"></textarea>
-                                <input type="submit" onclick="sendFullForm();" class="button-yellow" value="Отправить сообщение">
-                            </form>
+                            <div class="block-form">
+                                <div>
+                                    <p class="title">Обратная связь
+                                        <img src="catalog/view/theme/rentacenter/images/banner-main.png" alt="">
+                                    </p>
+                                    <input type="text" id="name_contact_page" placeholder="Ваше Имя">
+                                    <input type="text" id="tel_contact_page" placeholder="Ваш Номер Телефона">
+                                    <input type="text" id="email_contact_page" placeholder="Ваш e-mail">
+                                    <textarea id="question_contact_page" placeholder="Текст сообщения"></textarea>
+                                    <input type="submit" onclick="sendFullForm();" class="button-yellow" value="Отправить сообщение">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

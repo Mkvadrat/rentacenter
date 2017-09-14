@@ -1100,7 +1100,7 @@ textarea:focus:-ms-input-placeholder {
     bottom: 0;
     left: 0; }
 
-.main-contacts form {
+.main-contacts .block-form {
   float: right;
   text-align: center;
   max-width: 450px;
@@ -1115,11 +1115,11 @@ textarea:focus:-ms-input-placeholder {
     font-weight: 700;
     line-height: 22px;
     color: #e2e2e2; }
-    .main-contacts form .title img {
+    .main-contacts .block-form.title img {
       padding-top: 15px; }
-  .main-contacts form input[type="text"],
-  .main-contacts form input[type="tel"],
-  .main-contacts form input[type="email"] {
+  .main-contacts .block-form input[type="text"],
+  .main-contacts .block-form input[type="tel"],
+  .main-contacts .block-form input[type="email"] {
     display: inline-block;
     width: 87%;
     height: 50px;
@@ -1131,7 +1131,7 @@ textarea:focus:-ms-input-placeholder {
     color: #a7a7a9;
     padding: 15px 15px;
     margin-bottom: 15px; }
-  .main-contacts form textarea {
+  .main-contacts .block-form textarea {
     display: inline-block;
     width: 87%;
     height: 120px;
@@ -1144,7 +1144,7 @@ textarea:focus:-ms-input-placeholder {
     padding: 15px 15px;
     margin-bottom: 25px;
     resize: none; }
-  .main-contacts form input[type="submit"] {
+  .main-contacts .block-form input[type="submit"] {
     min-width: 184px;
     margin-bottom: 25px; }
 
@@ -1894,34 +1894,3 @@ label.error {
   font-size: 60px;
   color: #6c6b69;
 }
-
-.header-fixed { 
-  position: fixed; 
-  top: 0px;
-  display: none;
-}
-
-.table-price{
-  display: block;
-  overflow: auto;
-}
-
-.size-block{
-  height: 300px;
-}
-
-/* Smartphones (portrait) ----------- */
-@media only screenand (max-width:320px) {
- 
-}
- 
-/* Desktops and laptops ----------- */
-@media only screenand (min-width:1224px) {
-     
-}
- 
-/* Large screens ----------- */
-@media only screenand (min-width:1824px) {
-  
-}
-
