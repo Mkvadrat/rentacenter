@@ -220,7 +220,11 @@
 			//minDate:0,
 		});*/
         
-        $('.datepicker').mask("99.99.9999");
+        //$('.datepicker').mask("99.99.9999");
+        
+        $(document).ready(function(){
+            $(".datepicker").inputmask("99.99.9999",{ "clearIncomplete": true });
+        });
 
         $('.timepicker').timepicker({ 'timeFormat': 'H:i' });
         

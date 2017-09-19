@@ -85,7 +85,8 @@
 <script src="catalog/view/theme/rentacenter/js/sweetalert.min.js"></script>
 
 <!-- MASKEDINPUT -->
-<script src="catalog/view/theme/rentacenter/js/jquery.maskedinput.min.js"></script>
+<script src="catalog/view/theme/rentacenter/js/jquery.inputmask.bundle.min.js"></script>
+<script src="catalog/view/theme/rentacenter/js/inputmask.date.extensions.js"></script>
 
 <!-- TABLE_RESPONSSIVE -->
 <script src="catalog/view/theme/rentacenter/js/jquery.floatThead.js"></script>
