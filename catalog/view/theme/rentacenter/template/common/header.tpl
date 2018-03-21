@@ -147,7 +147,7 @@
                 <li><a href="<?php echo $without_driver; ?>">Прокат авто без водителя</a></li>
                 <li><a href="<?php echo $rental_airport; ?>">Прокат авто в аэропорту</a></li>
                 <li><a href="<?php echo $conditions; ?>"><?php echo $text_conditions; ?></a></li>
-                <li><a href="<?php echo $rates; ?>"><?php echo $text_rates; ?></a></li>
+                <li><a href="<?php echo $rates; ?>"><?php //echo $text_rates; ?>Цены</a></li>
                 <li><a href="<?php echo $cars; ?>"><?php echo $text_cars; ?></a></li>
                 <li><a href="<?php echo $news; ?>">Акции</a></li>
                 <!-- <li><a href="<?php //echo $cooperation; ?>"><?php //echo $text_cooperation; ?></a></li> -->
@@ -178,7 +178,7 @@
                         <a href="tel:<?php echo $mobile; ?>"><?php echo $mobile; ?></a>
                     </div>
 
-                    <a href="<?php echo $booking; ?>" class="button-yellow">Забронировать авто</a>
+                    <a href="<?php echo $booking; ?>" class="button-yellow">Заказать</a>
                     
                     <!-- <button type="button" class="menu-button hidden-lg"><i class="fa fa-bars"></i></button> -->
                     <div class="block-menu">
@@ -190,7 +190,7 @@
                                 </ul>
                             </li>
                             <li><a href="<?php echo $conditions; ?>"><?php echo $text_conditions; ?></a></li>
-                            <li><a href="<?php echo $rates; ?>"><?php echo $text_rates; ?></a></li>
+                            <li><a href="<?php echo $rates; ?>"><?php //echo $text_rates; ?>Цены</a></li>
                             <li><a href="<?php echo $cars; ?>"><?php echo $text_cars; ?></a></li>
                             <li><a href="<?php echo $news; ?>">Акции</a></li>
                             <!--<li><a href="<?php //echo $cooperation; ?>"><?php //echo $text_cooperation; ?></a></li>-->

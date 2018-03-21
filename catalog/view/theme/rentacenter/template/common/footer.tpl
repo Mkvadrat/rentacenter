@@ -9,7 +9,7 @@
                         <p class="title"><span>Начните прямо сейчас,</span> забронируйте автомобиль через наш сервис</p>
                         <div class="buttons-block">
                             <a href="<?php echo $autopark; ?>">автопарк</a>
-                            <a href="<?php echo $booking; ?>">забронировать авто</a>
+                            <a href="<?php echo $booking; ?>">Заказать</a>
                         </div>
                     </div>
                 </div>

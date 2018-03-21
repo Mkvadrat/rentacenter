@@ -111,7 +111,7 @@
                                 
                                 <li id="total-<?php echo $product_id; ?>">Итого: <strong><?php echo $price; ?></strong></li>
                               </ul>
-                              <a class="button-yellow" id="booking-<?php echo $product_id; ?>" href="<?php echo $booking; ?>">Забронировать авто</a>
+                              <a class="button-yellow" id="booking-<?php echo $product_id; ?>" href="<?php echo $booking; ?>">Заказать</a>
                             </div>
                         </div>
                 
@@ -141,7 +141,7 @@
                               <div class="description">
                                     <p class="title"><?php echo $product['name']; ?></p>
                                     <p>Цена в сутки от <span><?php echo $product['price']; ?></span></p>
-                                    <a class="button-yellow" href="<?php echo $product['booking']; ?>">Забронировать авто</a>
+                                    <a class="button-yellow" href="<?php echo $product['booking']; ?>">Заказать</a>
                                 <a href="<?php echo $product['href']; ?>">Подробнее об авто</a>
                               </div>
                             </li>
@@ -188,7 +188,7 @@
                 dataType: 'json',
                 success: function(data) {
                     $( "#total-<?php echo $product_id; ?>" ).replaceWith('<li id="total-<?php echo $product_id; ?>">Итого: <strong>'+ data.message +'</strong></li>');
-                    $( "#booking-<?php echo $product_id; ?>" ).replaceWith('<a class="button-yellow" id="booking-<?php echo $product_id; ?>" href="<?php echo $booking . '&total='; ?>' + data.clear_price +'">Забронировать авто</a>');
+                    $( "#booking-<?php echo $product_id; ?>" ).replaceWith('<a class="button-yellow" id="booking-<?php echo $product_id; ?>" href="<?php echo $booking . '&total='; ?>' + data.clear_price +'">Заказать</a>');
                 }
             });
         });
@@ -207,7 +207,7 @@
             dataType: 'json',
             success: function(data) {
                 $( "#total-<?php echo $product_id; ?>" ).replaceWith('<li id="total-<?php echo $product_id; ?>">Итого: <strong>'+ data.message +'</strong></li>');
-                $( "#booking-<?php echo $product_id; ?>" ).replaceWith('<a class="button-yellow" id="booking-<?php echo $product_id; ?>" href="<?php echo $booking . '&total='; ?>' + data.clear_price +'">Забронировать авто</a>');
+                $( "#booking-<?php echo $product_id; ?>" ).replaceWith('<a class="button-yellow" id="booking-<?php echo $product_id; ?>" href="<?php echo $booking . '&total='; ?>' + data.clear_price +'">Заказать</a>');
             }
         });
       });
@@ -226,7 +226,7 @@
             dataType: 'json',
             success: function(data) {
                 $( "#total-<?php echo $product_id; ?>" ).replaceWith('<li id="total-<?php echo $product_id; ?>">Итого: <strong>'+ data.message +'</strong></li>');
-                $( "#booking-<?php echo $product_id; ?>" ).replaceWith('<a class="button-yellow" id="booking-<?php echo $product_id; ?>" href="<?php echo $booking . '&total='; ?>' + data.clear_price +'">Забронировать авто</a>');
+                $( "#booking-<?php echo $product_id; ?>" ).replaceWith('<a class="button-yellow" id="booking-<?php echo $product_id; ?>" href="<?php echo $booking . '&total='; ?>' + data.clear_price +'">Заказать</a>');
             }
         });
       });

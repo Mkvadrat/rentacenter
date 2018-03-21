@@ -222,9 +222,9 @@
         
         //$('.datepicker').mask("99.99.9999");
         
-        $(document).ready(function(){
-            $(".datepicker").inputmask("99.99.9999",{ "clearIncomplete": true });
-        });
+        /*$(document).ready(function(){
+            $(".datepicker").inputmask("99.99.99",{ "clearIncomplete": true });
+        });*/
 
         $('.timepicker').timepicker({ 'timeFormat': 'H:i' });
         
