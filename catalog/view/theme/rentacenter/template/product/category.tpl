@@ -6,7 +6,7 @@
 
         <!-- start banner-under-header -->
 
-        <div class="container-fluid black-banner">
+        <!--<div class="container-fluid black-banner">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -30,7 +30,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <!-- end banner-under-header -->
 

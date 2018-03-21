@@ -1,3 +1,14 @@
+<?php if ($options || $show_price) { ?>
+<div class="visible-xs" id="ocfilter-mobile">
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <!--<span class="navbar-brand"><i class="fa fa-filter"></i> <?php echo $heading_title; ?></span>-->
+      <button data-target="#navbar-ocfilter" data-toggle="collapse" class="btn btn-navbar navbar-toggle" type="button"><i class="fa fa-bars"></i></button>
+    </div>
+    <div id="navbar-ocfilter" class="navbar-collapse collapse" aria-expanded="false"></div>
+  </nav>
+</div>
+<div class="panel ocfilter panel-default" id="ocfilter">
 	<div class="sorting-cars">
 			<div class="block-button category-cars">
 					<a href="<?php echo $all_auto; ?>">все классы</a>
@@ -5,31 +16,7 @@
 					<a href="<?php echo $middle; ?>">средний</a>
 					<a href="<?php echo $prestige; ?>">престиж</a>
 			</div>
-			<!--<div class="sort-price">
-					<img src="catalog/view/theme/rentacenter/images/sorting.jpg" alt="">
-			</div>
-			<div class="pick-up-block">
-					<div class="check-block">
-							<input id="check1" type="checkbox" name="check"  value="check1">
-							<label for="check1">Автомат</label>
-							<input id="check2" type="checkbox" name="check"  value="check2">
-							<label for="check2">Кондиционер</label>
-					</div>
-			</div>
-			<button class="pick-up-button">подобрать</button>-->
 	</div>
-	
-<?php if ($options || $show_price) { ?>
-<div class="visible-xs" id="ocfilter-mobile">
-  <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <span class="navbar-brand"><i class="fa fa-filter"></i> <?php echo $heading_title; ?></span>
-      <button data-target="#navbar-ocfilter" data-toggle="collapse" class="btn btn-navbar navbar-toggle" type="button"><i class="fa fa-bars"></i></button>
-    </div>
-    <div id="navbar-ocfilter" class="navbar-collapse collapse" aria-expanded="false"></div>
-  </nav>
-</div>
-<div class="panel ocfilter panel-default" id="ocfilter">
   <div class="panel-heading hidden-xs"><?php echo $heading_title; ?></div>
   <div class="hidden" id="ocfilter-button">
     <button class="btn btn-primary disabled" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Загрузка.."></button>
