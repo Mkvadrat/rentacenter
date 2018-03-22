@@ -51,6 +51,12 @@ p {
   line-height: 30px;
   color: #333; }
 
+p a,
+p a:hover,
+p a:visited {
+  color: #dfa304;
+}
+
 .text-center {
   text-align: center; }
 
@@ -86,7 +92,7 @@ p {
 
 .list-car {
   background-color: #f3f3f3;
-  margin-bottom: 28px;
+  margin-bottom: 0px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -107,7 +113,6 @@ p {
            justify-content: flex-start; }
   .list-car li {
     width: 23%;
-    margin-bottom: 23px;
     background: #fff;
     border-bottom: 2px solid #d8d8d8;
     margin-right: 28px;
@@ -153,7 +158,7 @@ p {
         .list-car li .description li:nth-last-child(2) {
           padding-bottom: 5px; }
         .list-car li .description li:last-child {
-          padding-bottom: 8px; }
+          padding-bottom: 8px !important; }
         .list-car li .description li span {
           color: #96b363; }
         .list-car li .description li strong {
@@ -706,11 +711,11 @@ textarea:focus:-ms-input-placeholder {
 /*--------------------------------------------------------*/
 .banner-under-header {
   text-align: center;
-  padding-top: 95px; }
+  padding-top: 30px; }
   .banner-under-header .title-banner {
-    padding-bottom: 25px; }
+    padding-bottom: 20px; }
   .banner-under-header img {
-    padding-bottom: 30px; }
+    padding-bottom: 20px; }
 
 /*--------------------------------------------------------*/
 /*--------------- end banner-under-header ----------------*/
@@ -719,15 +724,51 @@ textarea:focus:-ms-input-placeholder {
 /*------------------ start main-index --------------------*/
 /*--------------------------------------------------------*/
 .main-index .about-block {
-  text-align: center; }
+  text-align: left;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+       -ms-flex-wrap: wrap;
+           flex-wrap: wrap;
+   }
+.main-index .about-block .left-side {
+  width: 60%;
+}
+
+.main-index .about-block .right-side {
+  width: 40%;
+}
+
+.main-index .about-block .left-side,
+.main-index .about-block .right-side {
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: center;
+          align-content: center;
+}
+
+.main-index .about-block .right-side {
+  -webkit-justify-content: center;
+          justify-content: center;
+}
   .main-index .about-block .title-banner {
     padding: 50px 0 30px; }
   .main-index .about-block img {
-    padding-bottom: 60px; }
+    padding-bottom: 20px; }
   .main-index .about-block p {
-    padding: 0 16%; }
+    padding: 0 2%; }
     .main-index .about-block p:last-child {
       padding-bottom: 60px; }
+
+.main-index .about-block span {
+  color: #2b292a;
+  font-weight: 700;
+}
+
+.main-index .about-block strong {
+  color: red;
+}
 
 .main-index .column-text {
   text-align: center;
@@ -735,15 +776,29 @@ textarea:focus:-ms-input-placeholder {
   .main-index .column-text .block-photo {
     position: relative;
     width: 100%;
-    height: 256px;
     overflow: hidden;
     margin-bottom: 28px; }
     .main-index .column-text .block-photo img {
-      position: absolute;
-      left: 0;
-      top: 0;
       width: 100%;
-      height: auto; }
+      height: auto;
+      margin-bottom: 10px; }
+
+
+.main-index .column-text .block-photo a {
+  display: block;
+  text-align: left;
+  color: #dfa304;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.main-index .column-text .block-photo a:hover,
+.main-index .column-text .block-photo a:visited {
+  color: #dfa304;
+  font-size: 16px;
+  font-weight: 400;
+}
+
   .main-index .column-text .title {
     padding-bottom: 35px;
     font-size: 18px;
@@ -768,7 +823,7 @@ textarea:focus:-ms-input-placeholder {
     font-size: 23px;
     font-weight: 700;
     line-height: 28px;
-    color: #333;
+    color: white;
     text-transform: uppercase; }
     .footer .start-now .title span {
       color: #333; }
@@ -1841,7 +1896,7 @@ p i {
 }
 
 .main-index .content-block {
-  margin-bottom: 45px;
+  margin-bottom: 5px;
 }
 
 .banner-main h3.title-banner {
@@ -1893,4 +1948,34 @@ label.error {
 #toTop i {
   font-size: 60px;
   color: #6c6b69;
+}
+
+.list-main-links {
+  padding-bottom: 15px;
+}
+
+.list-main-links li {
+  padding-left: 0 !important;
+  padding-bottom: 0 !important;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #333;
+}
+
+.list-main-links li a,
+.list-main-links li a:hover,
+.list-main-links li a:visited {
+  color: #dfa304;
+}
+
+.main-index .photo-text-block {
+  margin-bottom: 30px;
+}
+
+.sorting-cars {
+  padding: 10px 15px;
+  border-bottom: 2px solid #ddd;;
+  background: #f5f5f5;
+  margin-bottom: 0;
 }

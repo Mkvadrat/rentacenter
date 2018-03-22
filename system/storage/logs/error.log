@@ -342,3 +342,6 @@
 2018-03-05 14:00:55 - PHP Notice:  Undefined index: separator in /var/www/u0381560/public_html/rentacenter/catalog/view/theme/rentacenter/template/common/success.tpl on line 18
 2018-03-05 14:00:55 - PHP Notice:  Undefined index: separator in /var/www/u0381560/public_html/rentacenter/catalog/view/theme/rentacenter/template/common/success.tpl on line 18
 2018-03-05 14:00:55 - PHP Notice:  Undefined variable: title_success in /var/www/u0381560/public_html/rentacenter/catalog/view/theme/rentacenter/template/common/success.tpl on line 40
+2018-03-22 12:22:23 - PHP Notice:  Undefined variable: ocfilter_stock_status_type in D:\OpenServer\domains\rentacenter.loc\admin\view\template\module\ocfilter.tpl on line 205
+2018-03-22 12:22:23 - PHP Notice:  Undefined variable: ocfilter_stock_status_type in D:\OpenServer\domains\rentacenter.loc\admin\view\template\module\ocfilter.tpl on line 205
+2018-03-22 12:22:23 - PHP Notice:  Undefined variable: ocfilter_stock_status_type in D:\OpenServer\domains\rentacenter.loc\admin\view\template\module\ocfilter.tpl on line 205
