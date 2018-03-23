@@ -321,6 +321,7 @@ p a:visited {
   background: #FFF;
   /*padding: 30px 20px;*/
   padding: 80px;
+  padding-top: 30px;
   border-bottom: 2px solid #d8d8d8; }
   .text-block p:last-child {
     padding-bottom: 0px; }
@@ -759,7 +760,7 @@ textarea:focus:-ms-input-placeholder {
   .main-index .about-block p {
     padding: 0 2%; }
     .main-index .about-block p:last-child {
-      padding-bottom: 60px; }
+      padding-bottom: 10px; }
 
 .main-index .about-block span {
   color: #2b292a;
@@ -1722,7 +1723,7 @@ select::-ms-expand {
 }
 
 .scale {
-  margin-bottom: 64px !important;
+  margin-bottom: 30px !important;
 }
 
 /* 14.08.2017 */
@@ -1974,8 +1975,64 @@ label.error {
 }
 
 .sorting-cars {
-  padding: 10px 15px;
+  padding: 15px 15px 10px;
   border-bottom: 2px solid #ddd;;
   background: #f5f5f5;
   margin-bottom: 0;
+}
+
+.ocfilter a {
+  text-decoration: underline;
+}
+
+.sorting-cars a.active {
+  text-decoration: none;
+  background: transparent;
+}
+
+.panel > .list-group #option-1,
+.panel > .list-group #option-2 {
+  float: left;
+  border-top: 0px;
+  margin-top: 2px;
+}
+
+.panel > .list-group  #option-1 {
+  border-top: none;
+}
+
+.panel > .list-group  #option-2 {
+  border-botom: none;
+}
+
+.panel > .list-group {
+  overflow: hidden;
+}
+
+.content-block {
+  width: 100%;
+}
+
+.conditions-block .text-block:nth-child(3),
+.conditions-block .text-block:nth-child(4) {
+  margin-bottom: 0;
+}
+
+#option-1 > div,
+#option-2 > div {
+  float: left;
+}
+
+#option-1 .option-name,
+#option-2 .option-name {
+  margin-top: 5px;
+  margin-right: 15px;
+}
+
+.selected-options .ocfilter-option {
+  padding: 10px 15px !important;
+}
+
+.selected-options .ocfilter-option span {
+  padding-right: 15px;
 }

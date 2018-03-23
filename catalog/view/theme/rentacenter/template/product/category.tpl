@@ -40,11 +40,6 @@
                 <div class="col-md-12">
                     <p class="title-banner"><?php echo $heading_title; ?></p>
                     <img src="catalog/view/theme/rentacenter/images/banner-main.png" alt="">
-                    <div class="about-block">
-                    <?php if ($description) { ?>
-                        <?php echo $description; ?>
-                    <?php } ?>
-                    </div>
                 </div>
             </div>
         </div>
@@ -133,6 +128,18 @@
                     </ul>
                 </div>
             </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <?php if ($description) { ?>
+              <div class="about-block">
+                <?php echo $description; ?>
+              </div>
+              <?php } ?>
+            </div>
+          </div>
         </div>
 
     </main>
