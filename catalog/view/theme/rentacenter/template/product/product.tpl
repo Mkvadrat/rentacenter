@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="content-block">
                     <div class="col-md-9 pad-left">
-                        
+                    <h1 class="pages"><?php echo $heading_title; ?></h1>
                         <div class="block-slider">
                             <?php if ($thumb || $images) { ?>
                             <div id="example3" class="slider-pro">
@@ -68,7 +68,7 @@
                             <?php } ?>
                             
                             <div class="description">
-                              <p class="title"><?php echo $heading_title; ?></p>
+
                               <ul>
                                 <?php if($options){ ?>
                                 <li>
@@ -116,18 +116,52 @@
                         </div>
                 
                         <ul class="nav nav-tabs">
-                            <li class="active"><a data-toggle="tab" href="#panel1">Описание</a></li>
-                            <li><a data-toggle="tab" href="#panel2">Тарифы</a></li>
+                           <li class="active"><a data-toggle="tab" href="#panel2">Тарифы</a></li>
+                           <li><a data-toggle="tab" href="#panel1">Описание</a></li>
+                           <?php if ($review_status) { ?>
+                           <li><a data-toggle="tab" href="#panel3"><?php echo $tab_review; ?></a></li>
+                           <?php } ?>
                         </ul>
                 
                         <div class="tab-content">
-                            <div id="panel1" class="tab-pane fade in active">
-                              <?php echo $description; ?>
-                            </div>
-                            <div id="panel2" class="tab-pane fade">
+                           <div id="panel2" class="tab-pane fade in active">
                               <?php echo $rates; ?>
-                            </div>
+                           </div>
+                           <div id="panel1" class="tab-pane fade">
+                              <?php echo $description; ?>
+                           </div>
+                           <?php if ($review_status) { ?>
+                           <div id="panel3" class="tab-pane fade">
+                              <div id="review"></div>
+                           </div>
+                           <?php } ?>
                         </div>
+                    </div>
+                    <div class="col-md-3">
+                        <p class="title-text">Рекомендуемые авто</p>
+                        <ul class="list-side">
+                           <li><span>→</span><a href="/automobiles/chevrolet-aveo">CHEVROLET AVEO</a></li>
+                           <li><span>→</span><a href="/automobiles/chevrolet-lacetti">CHEVROLET LACETTI</a></li>
+                           <li><span>→</span><a href="/automobiles/ford-fiesta">FORD FIESTA</a></li>
+                           <li><span>→</span><a href="/automobiles/ford-focus">FORD FOCUS</a></li>
+                           <li><span>→</span><a href="/automobiles/honda-accord">HONDA ACCORD</a></li>
+                           <li><span>→</span><a href="/automobiles/honda-civic">HONDA CIVIC</a></li>
+                           <li><span>→</span><a href="/automobiles/hyundai-elantra">HYUNDAI ELANTRA</a></li>
+                           <li><span>→</span><a href="/automobiles/hyundai-solaris">HYUNDAI SOLARIS</a></li>
+                           <li><span>→</span><a href="/automobiles/kia-optima">KIA OPTIMA</a></li>
+                           <li><span>→</span><a href="/automobiles/kia-sportage">KIA SPORTAGE 2016</a></li>
+                           <li><span>→</span><a href="/automobiles/lexus-nx200">LEXUS NX200</a></li>
+                           <li><span>→</span><a href="/automobiles/mazda-3">MAZDA 3</a></li>
+                           <li><span>→</span><a href="/automobiles/mazda-6">MAZDA 6</a></li>
+                           <li><span>→</span><a href="/automobiles/mitsubishi-lancer">MITSUBISHI LANCER</a></li>
+                           <li><span>→</span><a href="/automobiles/renault-logan">RENAULT LOGAN</a></li>
+                           <li><span>→</span><a href="/automobiles/skoda-fabia">SKODA FABIA</a></li>
+                           <li><span>→</span><a href="/automobiles/skoda-octavia">SKODA OCTAVIA</a></li>
+                           <li><span>→</span><a href="/automobiles/toyota-camry">TOYOTA CAMRY</a></li>
+                           <li><span>→</span><a href="/automobiles/toyota-corola">TOYOTA COROLA</a></li>
+                           <li><span>→</span><a href="/automobiles/vw-passat">VOLKSWAGEN PASSAT</a></li>
+                           <li><span>→</span><a href="/automobiles/volkswagen-polo">VOLKSWAGEN POLO</a></li>
+                        </ul>
                     </div>
                     <?php if ($products) { ?>
                     <div class="col-md-3">
@@ -154,7 +188,7 @@
         </div>
     </main>
 
-    <script>
+   <script>
     $(document).ready(function() {
         // SLIDER-PRO
         $( '#example3' ).sliderPro({
@@ -172,9 +206,9 @@
             autoplay: false
         });
     });
-    </script>
+   </script>
     
-    <script>
+   <script>
     //Загрузка страницы
     $(function() {
         $(window).load(function(){
@@ -232,6 +266,19 @@
       });
     });
     <?php } ?>
-    </script>
-
+   </script>
+   
+   <script type="text/javascript"><!--
+   $('#review').delegate('.pagination li a', 'click', function(e) {
+       e.preventDefault();
+   
+       $('#review').fadeOut('slow');
+   
+       $('#review').load(this.href);
+   
+       $('#review').fadeIn('slow');
+   });
+   
+   $('#review').load('index.php?route=product/product/review&product_id=<?php echo $product_id; ?>');
+   </script>
 <?php echo $footer; ?>

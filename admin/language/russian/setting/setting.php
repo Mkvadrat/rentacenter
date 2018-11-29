@@ -3,6 +3,11 @@
 $_['heading_title']                    = 'Настройки';
 
 // Text
+$_['text_google_captcha']              = 'Google reCAPTCHA';
+$_['entry_google_captcha_public']      = 'Ключ сайта';
+$_['entry_google_captcha_secret']      = 'Секретный ключ';
+$_['entry_status']                     = 'Статус';
+$_['help_google_captcha']              = 'Перейдите на страницу <a href="https://www.google.com/recaptcha/intro/index.html" target="_blank"> <u>Google reCAPTCHA</u></a> и зарегистрируйте свой сайт.';
 $_['text_stores']                      = 'Магазины';
 $_['text_success']                     = 'Настройки успешно сохранены!';
 $_['text_edit']                        = 'Редактирование настроек магазина';

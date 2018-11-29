@@ -25,6 +25,7 @@ Disallow: /*?tracking=
 Disallow: /*&tracking=
 Disallow: /*?filter_ocfilter=
 Disallow: /*?page=*&filter_ocfilter=
+Disallow: /index.php?route=product/reservation&product_id=
 
 User-agent: Yandex
 Disallow: /*route=account/
@@ -51,8 +52,10 @@ Disallow: /*?filter_description=
 Disallow: /*&filter_description=
 Disallow: /*?filter_ocfilter=
 Disallow: /*?page=*&filter_ocfilter=
+Disallow: /index.php?route=product/reservation&product_id=
+
 
 Clean-param: tracking
 
 Host: rentacentr.ru
-Sitemap: http://rentacentr.ru/sitemap.xml
+Sitemap: https://rentacentr.ru/sitemap.xml

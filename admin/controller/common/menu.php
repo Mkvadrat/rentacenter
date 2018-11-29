@@ -117,6 +117,7 @@ class ControllerCommonMenu extends Controller {
 		$data['api'] = $this->url->link('user/api', 'token=' . $this->session->data['token'], 'SSL');
 		$data['attribute'] = $this->url->link('catalog/attribute', 'token=' . $this->session->data['token'], 'SSL');
 		$data['attribute_group'] = $this->url->link('catalog/attribute_group', 'token=' . $this->session->data['token'], 'SSL');
+		$data['testimonial'] = $this->url->link('testimonial/testimonial', 'token=' . $this->session->data['token'], 'SSL');
 		$data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'], 'SSL');
 		$data['banner'] = $this->url->link('design/banner', 'token=' . $this->session->data['token'], 'SSL');
 		$data['captcha'] = $this->url->link('extension/captcha', 'token=' . $this->session->data['token'], 'SSL');
@@ -213,7 +214,7 @@ class ControllerCommonMenu extends Controller {
 			'amazonus' => $this->config->get('openbay_amazonus_status'),
 			'etsy' => $this->config->get('etsy_status'),
 		);
-
+		
     /* octeam */
     $data['octeam_toolset'] = $this->url->link('octeam/toolset', 'token=' . $this->session->data['token'], 'SSL');
 

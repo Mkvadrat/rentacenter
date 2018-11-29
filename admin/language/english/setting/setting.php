@@ -3,6 +3,11 @@
 $_['heading_title']                    = 'Settings';
 
 // Text
+$_['text_google_captcha']              = 'Google reCAPTCHA';
+$_['entry_google_captcha_public']      = 'Site key';
+$_['entry_google_captcha_secret']      = 'Secret key';
+$_['entry_status']                     = 'Status';
+$_['help_google_captcha']              = 'Go to <a href="https://www.google.com/recaptcha/intro/index.html" target="_blank"><u>Google reCAPTCHA page</u></a> and register your website.';
 $_['text_stores']                      = 'Stores';
 $_['text_success']                     = 'Success: You have modified settings!';
 $_['text_edit']                        = 'Edit Setting';

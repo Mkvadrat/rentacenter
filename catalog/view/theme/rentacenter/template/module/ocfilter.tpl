@@ -17,7 +17,7 @@
 					<a href="<?php echo $prestige; ?>">престиж</a>
 			</div>
 	</div>
-  <div class="panel-heading hidden-xs"><?php echo $heading_title; ?></div>
+  <!--<div class="panel-heading hidden-xs"><?php echo $heading_title; ?></div>-->
   <div class="hidden" id="ocfilter-button">
     <button class="btn btn-primary disabled" data-loading-text="<i class='fa fa-refresh fa-spin'></i> Загрузка.."></button>
   </div>

@@ -42,14 +42,48 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- start list-car -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="content-block" itemscope itemtype="http://schema.org/LocalBusiness">
+                        <div class="col-md-6">
+                            <p class="title-text">Головной офис в Ростове-на-Дону</p>
+                            
+                            <p itemscope itemtype="http://schema.org/PostalAddress">Адрес:</p>
+                            <address><?php echo $address; ?></address>
+                            <p><a href="<?php echo $email; ?>"><?php echo $email; ?></a></p>
+
+                            <p class="sub-titile">Номера телефона:</p>
+                            <p itemprop="telephone"><a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a></p>
+                            <p itemprop="telephone"><a href="tel:<?php echo $mobile; ?>"><?php echo $mobile; ?></a></p>
+                            <p itemprop="telephone">Viber: <a href="tel:<?php echo $fax; ?>"><?php echo $fax; ?></a></p>
+                            
+                            <p class="sub-titile">Мы в социальных сетях:</p>
+                            <p><a href="#">Facebook</a> и <a href="https://vk.com/arenda_avto_rostov_na_donu">ВКонтакте</a></p>
+
+                            <meta itemprop="priceRange" content="от 1600р./сутки до 6500р./сутки">
+
+                            <p class="sub-titile">Часы работы:</p>
+                            <?php echo $open; ?>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="facade-photo">
+                                <img itemprop="image" src="catalog/view/theme/rentacenter/images/image-for-contact-page.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- start map-block -->
 
             <div class="container-fluid map-container">
                 <div class="map-block">
                     <!--<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A634f38ccc436f06ed1cd4380c289ca8ea98d4b938bf5fea5f64856c8db4f5d7c&amp;width=100%25&amp;height=524&amp;lang=ru_RU&amp;scroll=false"></script>-->
-                <div id="YMapsID" style="width:100%25; height:524px"></div>
-                <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+                <div id="YMapsID" style="width:100%; height:524px"></div>
+                <script src="https://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
                 <script type="text/javascript">
                  
                     var myMap, myPlacemark, coords;
@@ -102,36 +136,6 @@
             </div>
 
             <!-- end map-block -->
-
-            <!-- start list-car -->
-
-            <div class="container">
-                <div class="row">
-                    <div class="content-block">
-                        <div class="col-md-6" itemscope itemtype="http://schema.org/LocalBusiness">
-                            <p class="title-text">Головной офис в Ростове-на-Дону</p>
-                            
-                            <meta itemscope itemtype="http://schema.org/Organization" itemprop="name" content="Avto prokat">
-                            <p itemscope itemtype="http://schema.org/PostalAddress" itemprop="location">Адрес:</p>
-                            <address><?php echo $address; ?></address>
-                            <p><a href="<?php echo $email; ?>"><?php echo $email; ?></a></p>
-
-                            <p class="sub-titile">Номера телефона:</p>
-                            <p><a href="tel:<?php echo $telephone; ?>" itemprop="telephone"><?php echo $telephone; ?></a></p>
-                            <p><a href="tel:<?php echo $mobile; ?>" itemprop="telephone"><?php echo $mobile; ?></a></p>
-                            <p>Viber:  <a href="tel:<?php echo $fax; ?>" itemprop="telephone"><?php echo $fax; ?></a></p>
-                            
-                            <p class="sub-titile">Часы работы:</p>
-                            <?php echo $open; ?>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="facade-photo">
-                                <img src="catalog/view/theme/rentacenter/images/image-for-contact-page.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </main>
 
 <?php echo $footer; ?>

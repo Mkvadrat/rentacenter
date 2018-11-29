@@ -43,6 +43,14 @@ class ControllerSettingSetting extends Controller {
 		}
 
 		$data['heading_title'] = $this->language->get('heading_title');
+		
+		$data['text_google_captcha'] = $this->language->get('text_google_captcha');
+		$data['entry_google_captcha_public'] = $this->language->get('entry_google_captcha_public');
+		$data['entry_google_captcha_secret'] = $this->language->get('entry_google_captcha_secret');
+		$data['entry_status'] = $this->language->get('entry_status');
+		$data['text_enabled'] = $this->language->get('text_enabled');
+		$data['text_disabled'] = $this->language->get('text_disabled');
+		$data['help_google_captcha'] = $this->language->get('help_google_captcha');
 
 		$data['text_edit'] = $this->language->get('text_edit');
 		$data['text_enabled'] = $this->language->get('text_enabled');
@@ -1114,6 +1122,11 @@ class ControllerSettingSetting extends Controller {
 		}
 
 		$data['captcha_pages'] = array();
+		
+		$data['captcha_pages'][] = array(
+			'text'  => 'Testimonials',
+			'value' => 'testimonial'
+		);
 
 		$data['captcha_pages'][] = array(
 			'text'  => $this->language->get('text_register'),
@@ -1575,6 +1588,24 @@ class ControllerSettingSetting extends Controller {
 			$data['config_sms_copy'] = $this->request->post['config_sms_copy'];
 		} else {
 			$data['config_sms_copy'] = $this->config->get('config_sms_copy');
+		}
+		
+		if (isset($this->request->post['config_google_captcha_public'])) {
+			$data['config_google_captcha_public'] = $this->request->post['config_google_captcha_public'];
+		} else {
+			$data['config_google_captcha_public'] = $this->config->get('config_google_captcha_public');
+		}
+
+		if (isset($this->request->post['config_google_captcha_secret'])) {
+			$data['config_google_captcha_secret'] = $this->request->post['config_google_captcha_secret'];
+		} else {
+			$data['config_google_captcha_secret'] = $this->config->get('config_google_captcha_secret');
+		}
+
+		if (isset($this->request->post['config_google_captcha_status'])) {
+			$data['config_google_captcha_status'] = $this->request->post['config_google_captcha_status'];
+		} else {
+			$data['config_google_captcha_status'] = $this->config->get('config_google_captcha_status');
 		}
 
 		$data['header'] = $this->load->controller('common/header');

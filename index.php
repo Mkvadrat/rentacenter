@@ -58,7 +58,8 @@ foreach ($query->rows as $result) {
 
 if (!$store_query->num_rows) {
 	$config->set('config_url', HTTP_SERVER);
-	$config->set('config_ssl', HTTPS_SERVER);
+	$config->set('config_url', HTTP_SERVER);
+	//$config->set('config_ssl', HTTPS_SERVER);
 }
 
 // Url

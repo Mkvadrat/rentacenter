@@ -47,7 +47,7 @@ class ControllerCommonHeader extends Controller {
 		}
 
 		$this->load->language('common/header');
-		$data['og_url'] = (isset($this->request->server['HTTPS']) ? HTTPS_SERVER : HTTP_SERVER) . substr($this->request->server['REQUEST_URI'], 1, (strlen($this->request->server['REQUEST_URI'])-1));
+		//$data['og_url'] = (isset($this->request->server['HTTPS']) ? HTTPS_SERVER : HTTP_SERVER) . substr($this->request->server['REQUEST_URI'], 1, (strlen($this->request->server['REQUEST_URI'])-1));
 		$data['og_image'] = $this->document->getOgImage();
 
 		$data['text_home'] = $this->language->get('text_home');
@@ -101,6 +101,27 @@ class ControllerCommonHeader extends Controller {
 		$data['conditions'] = $this->url->link('information/information&information_id=8');
 		$data['rates'] = $this->url->link('information/information&information_id=9');
 		$data['cars'] = $this->url->link('product/category&path=59');
+		$data['auto_a'] = $this->url->link('product/product' . '&product_id=62');
+		$data['auto_b'] = $this->url->link('product/product' . '&product_id=59');
+		$data['auto_c'] = $this->url->link('product/product' . '&product_id=52');
+		$data['auto_d'] = $this->url->link('product/product' . '&product_id=64');
+		$data['auto_e'] = $this->url->link('product/product' . '&product_id=55');
+		$data['auto_f'] = $this->url->link('product/product' . '&product_id=51');
+		$data['auto_g'] = $this->url->link('product/product' . '&product_id=54');
+		$data['auto_h'] = $this->url->link('product/product' . '&product_id=63');
+		$data['auto_i'] = $this->url->link('product/product' . '&product_id=69');
+		$data['auto_k'] = $this->url->link('product/product' . '&product_id=70');
+		$data['auto_l'] = $this->url->link('product/product' . '&product_id=68');
+		$data['auto_m'] = $this->url->link('product/product' . '&product_id=50');
+		$data['auto_n'] = $this->url->link('product/product' . '&product_id=66');
+		$data['auto_o'] = $this->url->link('product/product' . '&product_id=53');
+		$data['auto_p'] = $this->url->link('product/product' . '&product_id=65');
+		$data['auto_r'] = $this->url->link('product/product' . '&product_id=56');
+		$data['auto_s'] = $this->url->link('product/product' . '&product_id=67');
+		$data['auto_t'] = $this->url->link('product/product' . '&product_id=58');
+		$data['auto_u'] = $this->url->link('product/product' . '&product_id=57');
+		$data['auto_v'] = $this->url->link('product/product' . '&product_id=60');
+		$data['auto_w'] = $this->url->link('product/product' . '&product_id=61');
 		$data['cooperation'] = $this->url->link('information/information&information_id=10');
 		$data['news'] = $this->url->link('information/news');
 		$data['telephone'] = $this->config->get('config_telephone');
@@ -110,6 +131,7 @@ class ControllerCommonHeader extends Controller {
 		$data['booking'] = $this->url->link('product/reservation', 'product_id=0', 'SSL');
 		$data['without_driver'] = $this->url->link('information/information&information_id=11');
 		$data['rental_airport'] = $this->url->link('information/information&information_id=12');
+		$data['reviews_guest'] = $this->url->link('testimonial/testimonial');
 
 		$status = true;
 
