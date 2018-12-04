@@ -32,7 +32,7 @@
 <?php } ?>
 <meta property="og:site_name" content="<?php echo $name; ?>" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="catalog/view/theme/rentacenter/js/jquery-1.9.1.min.js"></script>
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 
 <!-- JQUERY UI -->
 <script src="catalog/view/theme/rentacenter/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>

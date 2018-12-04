@@ -182,6 +182,22 @@ class ControllerModuleRentcar extends Controller {
 		} else {
 			$data['height'] = 200;
 		}
+		
+		if (isset($this->request->post['from_valute'])) {
+			$data['from_valute'] = $this->request->post['from_valute'];
+		} elseif (!empty($module_info)) {
+			$data['from_valute'] = $module_info['from_valute'];
+		} else {
+			$data['from_valute'] = '';
+		}
+		
+		if (isset($this->request->post['to_valute'])) {
+			$data['to_valute'] = $this->request->post['to_valute'];
+		} elseif (!empty($module_info)) {
+			$data['to_valute'] = $module_info['to_valute'];
+		} else {
+			$data['to_valute'] = '';
+		}
 
 		if (isset($this->request->post['status'])) {
 			$data['status'] = $this->request->post['status'];

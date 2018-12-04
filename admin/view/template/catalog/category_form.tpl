@@ -185,6 +185,12 @@
                 </div>
               </div>
               <div class="form-group">
+                <label class="col-sm-2 control-label" for="input-sort-order-mf">Порядок сортировки для фильтра</label>
+                <div class="col-sm-10">
+                  <input type="text" name="sort_order_mf" value="<?php echo $sort_order_mf; ?>" placeholder="Порядок сортировки для фильтра на Главной странице" id="input-sort-order-mf" class="form-control" />
+                </div>
+              </div>
+              <div class="form-group">
                 <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
                 <div class="col-sm-10">
                   <select name="status" id="input-status" class="form-control">

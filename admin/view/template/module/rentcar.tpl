@@ -102,6 +102,19 @@
               <?php } ?>
             </div>
           </div>
+          <h3>Фильтр</h3>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-from-valute">Валюта(от)</label>
+            <div class="col-sm-10">
+              <input type="text" name="from_valute" value="<?php echo $from_valute; ?>" placeholder="Валюта (от)" id="input-from-valute" class="form-control" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="input-to-valute">Валюта(до), сепаратор - ";"</label>
+            <div class="col-sm-10">
+              <input type="text" name="to_valute" value="<?php echo $to_valute; ?>" placeholder="Валюта (до)" id="input-to-valute" class="form-control" />
+            </div>
+          </div>
           <div class="form-group">
             <label class="col-sm-2 control-label" for="input-status"><?php echo $entry_status; ?></label>
             <div class="col-sm-10">

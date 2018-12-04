@@ -84,6 +84,88 @@
             </div>
           </div>
         </div>
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+                <h3>Зарезервируйте авто онлайн</h3>
+                Цена:
+                от
+                <?php if($price_from){ ?>
+                <select name="price_from" id="price_from">
+                    <?php foreach($price_from as $from){ ?>
+                    <option value="<?php echo $from; ?>"><?php echo $from; ?></option>
+                    <?php } ?>
+                </select>
+                <?php } ?>
+                До
+                <?php if($price_to){ ?>
+                <select name="price_to" id="price_to">
+                    <?php foreach($price_to as $to){ ?>
+                    <option value="<?php echo $to; ?>"><?php echo $to; ?></option>
+                    <?php } ?>
+                </select>
+                <?php } ?>
+                
+                <p>Класс авто:</p>
+                <?php if($filter_categories){ ?>
+                <select name="filter_categories" id="type">
+                    <?php foreach($filter_categories as $category){ ?>
+                    <option value="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></option>
+                    <?php } ?>
+                </select>
+                <?php } ?>
+                
+                <?php if($options){ ?>
+                <?php foreach($options as $option){ ?>
+                <?php echo $option['option_name']; ?>:
+                <input type="checkbox" id="option-<?php echo $option['option_id']; ?>" name="option_<?php echo $option['option_id']; ?>" value="<?php echo $option['option_id'] . ':' . $option['value_id']; ?>">
+                <?php echo $option['value']; ?>
+                <?php } ?>
+                <?php } ?>
+                
+                <input type="submit" onclick="SendRequest(); return false;" value="Подобрать">
+            </div>
+          </div>
+        </div>
+        
+        <script>      
+            function SendRequest(){
+                var checkedValue = [];
+                <?php if($options){ ?>
+                <?php foreach($options as $option){ ?>
+                    if ($('#option-<?php echo $option['option_id']; ?>').is(':checked')) {
+                        checkedValue[<?php echo $option['option_id']; ?>] = $('#option-<?php echo $option['option_id']; ?>').val();
+                    }
+                <?php } ?>
+                <?php } ?>
+                var data = {
+                    'price_from' : $('#price_from').val(),
+                    'price_to' : $('#price_to').val(),
+                    'filter_categories' : $('#type').val(),
+                    <?php if($options){ ?>
+                    <?php foreach($options as $option){ ?>
+                    'option_<?php echo $option['option_id']; ?>' : checkedValue[<?php echo $option['option_id']; ?>],
+                    <?php } ?>
+                    <?php } ?>
+                };
+                $.ajax({
+                    url:'index.php?route=module/rentcar/getRequest',
+                    data:data,
+                    type:'POST',
+                    success:function(data){
+                        var href = 'index.php?route=product/category&path=' + data.category_id + '&filter_ocfilter=p:' + data.price_from + '-' + data.price_to;
+
+                        $.each(data.options, function(item, options) {
+                            href += ';' + options; 
+                        });
+                        
+                        return window.location.href = href;
+                    }
+                });
+            }
+        </script>
+        
 
         <?php echo $html; ?>
 

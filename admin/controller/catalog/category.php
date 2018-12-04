@@ -523,6 +523,14 @@ class ControllerCatalogCategory extends Controller {
 		} else {
 			$data['sort_order'] = 0;
 		}
+		
+		if (isset($this->request->post['sort_order_mf'])) {
+			$data['sort_order_mf'] = $this->request->post['sort_order_mf'];
+		} elseif (!empty($category_info)) {
+			$data['sort_order_mf'] = $category_info['sort_order_mf'];
+		} else {
+			$data['sort_order_mf'] = 0;
+		}
 
 		if (isset($this->request->post['status'])) {
 			$data['status'] = $this->request->post['status'];

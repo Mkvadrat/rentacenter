@@ -86,7 +86,32 @@ class ControllerModuleRentcar extends Controller {
 				}
 			}
 		}
+		
+		/*FILTER*/
+		//price
+		$data['price_from'] = explode(';', $setting['from_valute']);
+		$data['price_to'] = explode(';', $setting['to_valute']);
+		
+		$this->load->model('catalog/ocfilter');
+		
+		$data['options'] = $this->model_catalog_ocfilter->getData();
+		
+		//Menu
+		$this->load->model('catalog/category');
+	
+		$data['filter_categories'] = array();
+		
+		$filter_categories = $this->model_catalog_category->getCategoriesMainFilter();
 
+		foreach ($filter_categories as $category) {
+			// Level 1
+			$data['filter_categories'][] = array(
+				'name'     => $category['name'],
+				'column'   => $category['column'] ? $category['column'] : 1,
+				'href'     => $category['category_id']
+			);
+		}
+		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/module/rentcar.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/module/rentcar.tpl', $data);
 		} else {
@@ -133,6 +158,45 @@ class ControllerModuleRentcar extends Controller {
 	public function renderTotal(){
 		$json = $this->totalPrice();
 		
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+	
+	public function getRequest(){
+		$json = array();
+		
+		if (isset($this->request->post['filter_categories'])) {
+			$json['category_id'] = $this->request->post['filter_categories'];
+		}else{
+			$json['category_id'] = 0;
+		}
+				
+		if (isset($this->request->post['price_from'])) {
+			$json['price_from'] = $this->request->post['price_from'];
+		}else{
+			$json['price_from'] = 0;
+		}
+		
+		if (isset($this->request->post['price_to'])) {
+			$json['price_to'] = $this->request->post['price_to'];
+		}else{
+			$json['price_to'] = 0;
+		}
+		
+		$this->load->model('catalog/ocfilter');
+		
+		$options = $this->model_catalog_ocfilter->getData();
+		
+		$json['options'] = array();
+		
+		if($options){
+			foreach($options as $option){
+				if(isset($this->request->post['option_' . $option['option_id']])) {
+					$json['options'][] = $this->request->post["option_" . $option['option_id']];
+				}
+			}
+		}
+
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
